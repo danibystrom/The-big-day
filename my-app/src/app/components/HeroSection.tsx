@@ -9,8 +9,9 @@ export default function HeroSection() {
                 variant="h1"
                 sx={{ fontFamily: '"Italiana", sans-serif' }}
             >
-                SAVE THE DATE
+                WELCOME TO OUR WEDDING
             </Typography>
+
 
             <CountdownTimer />
         </Box>
