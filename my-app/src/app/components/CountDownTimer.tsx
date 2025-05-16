@@ -2,26 +2,26 @@
 import { useCallback, useEffect, useState } from 'react';
 
 function CountdownTimer() {
-    const [currentTime, setCurrentTime] = useState(new Date());
-    const [targetDate] = useState(new Date('2026-08-21T10:00:00')); 
-    
-    const onTimerEnd = useCallback(() => {
-      console.log('Timer Ended!'); 
-    }, []);
+  const [currentTime, setCurrentTime] = useState(new Date());
+  const [targetDate] = useState(new Date('2026-08-21T10:00:00'));
+
+  const onTimerEnd = useCallback(() => {
+    console.log('Timer Ended!');
+  }, []);
 
   useEffect(() => {
     const intervalId = setInterval(() => {
       setCurrentTime(new Date());
     }, 1000);
-  
+
     return () => {
       clearInterval(intervalId);
       if (currentTime >= targetDate) {
         onTimerEnd();
       }
     };
-  }, [currentTime, targetDate]); 
-  
+  }, [currentTime, targetDate]);
+
 
   const getTimeRemaining = () => {
     const totalTime = targetDate.getTime() - currentTime.getTime();
