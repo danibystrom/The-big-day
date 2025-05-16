@@ -9,7 +9,7 @@ export default function HeroSection() {
                 variant="h1"
                 sx={{ fontFamily: '"Italiana", sans-serif' }}
             >
-                WELCOME TO OUR WEDDING
+                SEE YOU THERE
             </Typography>
 
 
