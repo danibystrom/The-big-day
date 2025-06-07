@@ -1,6 +1,6 @@
 'use client';
 import { Box, Typography } from "@mui/material";
-import SplitSection from "../components/SplitSection";
+import SplitSectionLeft from "../components/SplitSectionLeft";
 
 export default function OurStorySection() {
     return (
@@ -19,7 +19,7 @@ export default function OurStorySection() {
                     28 augusti 14.00 | Villa Strömfors 1, Svenljunga
                 </Typography>
             </Box>
-            <SplitSection />
+            <SplitSectionLeft title="Bla bla bla" text="blaa bla bla" imageSrc="/champagne.jpeg" buttonText="Text för knapp" />
         </Box>
     )
 }

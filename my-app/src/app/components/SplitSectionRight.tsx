@@ -1,7 +1,21 @@
 "use client";
 import { Box, Button, Grid, Typography } from "@mui/material";
 
-export default function AboutSection() {
+interface SectionProps {
+    title: string;
+    text: string;
+    imageSrc: string;
+    imageAlt?: string;
+    buttonText: string;
+}
+
+export default function SplitSectionRight({
+    title,
+    text,
+    imageSrc,
+    imageAlt,
+    buttonText,
+}: SectionProps) {
     return (
         <Box
             sx={{
@@ -28,10 +42,10 @@ export default function AboutSection() {
                     }}
                 >
                     <Typography variant="h3" sx={{ fontFamily: '"Italiana", sans-serif', marginBottom: 6, fontWeight: 400 }}>
-                        DEN SOM VÄNTAR PÅ NÅGOT GOTT...
+                        {title}
                     </Typography>
                     <Typography variant="body1" sx={{ fontFamily: '"Antic Didone", serif', marginBottom: 8 }}>
-                        Mer info kommer... Om du har några frågor eller vill veta mer feel free att höra av dig.
+                        {text}
                     </Typography>
                     <Button
                         variant="contained"
@@ -44,9 +58,13 @@ export default function AboutSection() {
                             fontFamily: '"Antic Didone", serif',
                             textTransform: "none",
                             width: "50%",
+                            boxShadow: "none",
+                            "&:hover": {
+                                boxShadow: "none",
+                            },
                         }}
                     >
-                        Knapptext
+                        {buttonText}
                     </Button>
                 </Grid>
                 <Grid
@@ -57,8 +75,8 @@ export default function AboutSection() {
                 >
                     <Box
                         component="img"
-                        src="/champagne.jpeg"
-                        alt="About image"
+                        src={imageSrc}
+                        alt={imageAlt}
                         sx={{
                             width: "100%",
                             height: "100vh",
