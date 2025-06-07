@@ -28,25 +28,10 @@ export default function AboutSection() {
                     }}
                 >
                     <Typography variant="h3" sx={{ fontFamily: '"Italiana", sans-serif', marginBottom: 6, fontWeight: 400 }}>
-                        BORN IN THE HEART OF ITALY
-                    </Typography>
-                    <Typography variant="body1" sx={{ fontFamily: '"Antic Didone", serif', marginBottom: 4 }}>
-                        Ciliegia is not just a drink, its a celebration of tradition,
-                        craftsmanship, and the unforgettable taste of sun-ripened cherries.
-                        Our grappa is meticulously crafted from handpicked cherries,
-                        capturing the essence of Italian passion in every sip.
-                    </Typography>
-                    <Typography variant="body1" sx={{ fontFamily: '"Antic Didone", serif', marginBottom: 4 }}>
-                        With a bold character and a hint of sweetness, Ciliegia is perfect
-                        for those who appreciate lifes finer indulgences. Whether enjoyed
-                        neat, on the rocks, or as the secret twist in your favorite
-                        cocktail, our cherry grappa promises to turn any moment into a
-                        vibrant Italian adventure.
+                        DEN SOM VÄNTAR PÅ NÅGOT GOTT...
                     </Typography>
                     <Typography variant="body1" sx={{ fontFamily: '"Antic Didone", serif', marginBottom: 8 }}>
-                        Taste the unexpected. Embrace the tradition. Dive into the world of
-                        Ciliegia, where every sip tells a story, and every story leaves you
-                        wanting more.
+                        Mer info kommer... Om du har några frågor eller vill veta mer feel free att höra av dig.
                     </Typography>
                     <Button
                         variant="contained"
@@ -72,7 +57,7 @@ export default function AboutSection() {
                 >
                     <Box
                         component="img"
-                        src="https://images.unsplash.com/photo-1578664182178-7079cc6dd953?q=80&w=2787&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                        src="/champagne.jpeg"
                         alt="About image"
                         sx={{
                             width: "100%",
