@@ -1,4 +1,5 @@
 'use client';
+import { Box, Typography } from '@mui/material';
 import { useCallback, useEffect, useState } from 'react';
 
 function CountdownTimer() {
@@ -20,7 +21,7 @@ function CountdownTimer() {
         onTimerEnd();
       }
     };
-  }, [currentTime, targetDate]);
+  }, [currentTime, targetDate, onTimerEnd]);
 
 
   const getTimeRemaining = () => {
@@ -41,14 +42,12 @@ function CountdownTimer() {
   const { days, hours, minutes, seconds } = getTimeRemaining();
 
   return (
-    <div>
-      <div>
-        {days > 0 && <span> days: {days}</span>}
-        {hours > 0 && <span> hours: {hours.toString().padStart(2, '0')}</span>}
-        <span> minutes: {minutes.toString().padStart(2, '0')}:</span>
-        <span> seconds: {seconds.toString().padStart(2, '0')}</span>
-      </div>
-    </div>
+    <Box sx={{ display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'center' }}>
+      {days > 0 && <Typography sx={{ padding: 0.5 }}>{days} days,</Typography>}
+      {hours > 0 && <Typography sx={{ padding: 0.5 }}>{hours.toString().padStart(2, '0')} hours,</Typography>}
+      <Typography sx={{ padding: 0.5 }}>{minutes.toString().padStart(2, '0')} minutes,</Typography>
+      <Typography sx={{ padding: 0.5 }}>{seconds.toString().padStart(2, '0')} seconds,</Typography>
+    </Box>
   );
 }
 
