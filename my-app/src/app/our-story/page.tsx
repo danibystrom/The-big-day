@@ -1,14 +1,14 @@
 'use client';
 import { Box, Typography } from "@mui/material";
 
-export default function HeroSection() {
+export default function OurStorySection() {
     return (
         <Box sx={{ height: "100vh", display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center", backgroundImage: "url(/coupleimg.jpg)", backgroundSize: "cover", backgroundPosition: "center" }}>
             <Typography
                 variant="h1"
                 sx={{ fontFamily: '"Italiana", sans-serif', textAlign: "center", lineHeight: 1, marginBottom: 4 }}
             >
-                SAVE THE DATE
+                VÅR HISTORIA
             </Typography>
             <Typography
                 variant="h6"
