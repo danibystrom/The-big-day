@@ -47,19 +47,104 @@ function CountdownTimer() {
         flexDirection: "row",
         alignItems: "center",
         justifyContent: "center",
+        whiteSpace: "nowrap",
       }}
     >
-      {days > 0 && <Typography sx={{ padding: 0.5 }}>{days} days,</Typography>}
-      {hours > 0 && (
-        <Typography sx={{ padding: 0.5 }}>
-          {hours.toString().padStart(2, "0")} hours,
+      {days > 0 && (
+        <Typography
+          variant="h1"
+          sx={{
+            fontFamily: '"Italiana", sans-serif',
+            display: "inline-flex",
+            alignItems: "baseline",
+            padding: 0.5,
+            lineHeight: 1,
+            marginBottom: 2,
+
+          }}
+        >
+          {days}
+          <span
+            style={{
+              fontSize: "1.25rem",
+              marginLeft: "0.25rem",
+              verticalAlign: "bottom",
+            }}
+          >
+            days,
+          </span>
         </Typography>
       )}
-      <Typography sx={{ padding: 0.5 }}>
-        {minutes.toString().padStart(2, "0")} minutes,
+      {hours > 0 && (
+        <Typography
+          variant="h1"
+          sx={{
+            fontFamily: '"Italiana", sans-serif',
+            display: "inline-flex",
+            alignItems: "baseline",
+            padding: 0.5,
+            lineHeight: 1,
+            marginBottom: 2,
+
+          }}
+        >
+          {hours.toString().padStart(2, "0")}
+          <span
+            style={{
+              fontSize: "1.25rem",
+              marginLeft: "0.25rem",
+              verticalAlign: "bottom",
+            }}
+          >
+            hours,
+          </span>
+        </Typography>
+      )}
+      <Typography
+        variant="h1"
+        sx={{
+          fontFamily: '"Italiana", sans-serif',
+          display: "inline-flex",
+          alignItems: "baseline",
+          padding: 0.5,
+          lineHeight: 1,
+          marginBottom: 2,
+
+        }}
+      >
+        {minutes.toString().padStart(2, "0")}
+        <span
+          style={{
+            fontSize: "1.25rem",
+            marginLeft: "0.25rem",
+            verticalAlign: "bottom",
+          }}
+        >
+          minutes,
+        </span>
       </Typography>
-      <Typography sx={{ padding: 0.5 }}>
-        {seconds.toString().padStart(2, "0")} seconds,
+      <Typography
+        variant="h1"
+        sx={{
+          fontFamily: '"Italiana", sans-serif',
+          display: "inline-flex",
+          alignItems: "baseline",
+          padding: 0.5,
+          lineHeight: 1,
+          marginBottom: 2,
+
+        }}
+      >
+        {seconds.toString().padStart(2, "0")}
+        <span
+          style={{
+            fontSize: "1.25rem",
+            marginLeft: "0.25rem",
+            verticalAlign: "bottom",
+          }}
+        >
+          seconds,
+        </span>
       </Typography>
     </Box>
   );

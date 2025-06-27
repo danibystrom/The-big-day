@@ -10,7 +10,7 @@ export default function HeroSection() {
     useEffect(() => {
         const interval = setInterval(() => {
             setShowTitle((prev) => !prev);
-        }, 3000); // Toggle every 3 seconds
+        }, 2000);
 
         return () => clearInterval(interval);
     }, []);
