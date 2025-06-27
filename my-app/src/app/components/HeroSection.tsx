@@ -4,10 +4,10 @@ import CountdownTimer from "./CountDownTimer";
 
 export default function HeroSection() {
     return (
-        <Box sx={{ height: "100vh", display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center", backgroundImage: "url(/coupleimg.jpg)", backgroundSize: "cover", backgroundPosition: "center" }}>
+        <Box sx={{ height: "100vh", display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center", backgroundImage: "url(/herobw.png)", backgroundSize: "cover", backgroundPosition: "center" }}>
             <Typography
                 variant="h1"
-                sx={{ fontFamily: '"Italiana", sans-serif', textAlign: "center", lineHeight: 1, marginBottom: 4 }}
+                sx={{ fontFamily: '"Italiana", sans-serif', textAlign: "center", lineHeight: 1, marginBottom: 2 }}
             >
                 SAVE THE DATE
             </Typography>
