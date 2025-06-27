@@ -1,5 +1,6 @@
 'use client';
 import { Box, Typography } from "@mui/material";
+import CountdownTimer from "./CountDownTimer";
 
 export default function HeroSection() {
     return (
@@ -16,7 +17,7 @@ export default function HeroSection() {
             >
                 28 augusti 14.00 | Villa Strömfors 1, Svenljunga
             </Typography>
-            {/* <CountdownTimer /> */}
+            <CountdownTimer />
         </Box>
     )
 }
