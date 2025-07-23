@@ -48,7 +48,7 @@ export default function HeroSection() {
                     fontSize: { xs: '1.1rem', sm: '1.5rem' }
                 }}
             >
-                28 augusti 2026 kl. 14.00 | Villa Strömfors 1, Svenljunga
+                22 Augusti 2026 kl. 14.00 | Villa Strömfors 1, Svenljunga
             </Typography>
         </Box>
         // <Box
