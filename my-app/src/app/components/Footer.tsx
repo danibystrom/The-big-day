@@ -1,7 +1,9 @@
 "use client";
+import AddIcon from '@mui/icons-material/Add';
 import {
     Accordion,
     AccordionDetails,
+    AccordionSummary,
     Box,
     Container,
     Grid,
@@ -50,8 +52,7 @@ export default function Footer() {
                 width: "100%",
                 padding: "1rem 0",
                 paddingTop: "2rem",
-                borderTop:
-                    pathname === "/about" ? "1px solid #2a2a2a" : "1px solid #e0e0e0",
+                borderTop: "1px solid #e0e0e0",
             }}
         >
             <Container
@@ -65,9 +66,7 @@ export default function Footer() {
                     sx={{
                         fontFamily: "Playfair Display",
                         marginTop: "2rem",
-
                         marginBottom: "2rem",
-
                         color: "#ffffff",
                     }}
                 >
@@ -96,11 +95,31 @@ export default function Footer() {
                         </Box>
                         <Hidden mdUp>
                             <Accordion>
+                                <AccordionSummary
+                                    expandIcon={<AddIcon sx={{ fontSize: "1rem", color: "#fff" }} />}
+                                    aria-controls="panel1a-content"
+                                    id="panel1a-header"
+                                    sx={{
+                                        backgroundColor: "#000",
+                                    }}
+                                >
+                                    <Typography
+                                        sx={{
+                                            fontWeight: "100",
+                                            letterSpacing: "-0.05em",
+
+                                            fontSize: "0.7rem",
+
+                                            color: "#ffffff",
+                                        }}
+                                    >
+                                        VÅR HISTORIA
+                                    </Typography>
+                                </AccordionSummary>
                                 <AccordionDetails
                                     sx={{
                                         display: "flex",
                                         flexDirection: "column",
-
                                         backgroundColor: "#000",
                                     }}
                                 >
@@ -136,6 +155,27 @@ export default function Footer() {
                         </Box>
                         <Hidden mdUp>
                             <Accordion>
+                                <AccordionSummary
+                                    expandIcon={<AddIcon sx={{ fontSize: "1rem", color: "#fff" }} />}
+                                    aria-controls="panel1a-content"
+                                    id="panel1a-header"
+                                    sx={{
+                                        backgroundColor: "#000",
+                                    }}
+                                >
+                                    <Typography
+                                        sx={{
+                                            fontWeight: "100",
+                                            letterSpacing: "-0.05em",
+
+                                            fontSize: "0.7rem",
+
+                                            color: "#ffffff",
+                                        }}
+                                    >
+                                        BRÖLLOPPET
+                                    </Typography>
+                                </AccordionSummary>
                                 <AccordionDetails
                                     sx={{
                                         display: "flex",
@@ -176,6 +216,27 @@ export default function Footer() {
                         </Box>
                         <Hidden mdUp>
                             <Accordion>
+                                <AccordionSummary
+                                    expandIcon={<AddIcon sx={{ fontSize: "1rem", color: "#fff" }} />}
+                                    aria-controls="panel1a-content"
+                                    id="panel1a-header"
+                                    sx={{
+                                        backgroundColor: "#000",
+                                    }}
+                                >
+                                    <Typography
+                                        sx={{
+                                            fontWeight: "100",
+                                            letterSpacing: "-0.05em",
+
+                                            fontSize: "0.7rem",
+
+                                            color: "#ffffff",
+                                        }}
+                                    >
+                                        KONTAKT
+                                    </Typography>
+                                </AccordionSummary>
                                 <AccordionDetails
                                     sx={{
                                         display: "flex",
@@ -214,6 +275,27 @@ export default function Footer() {
                         </Box>
                         <Hidden mdUp>
                             <Accordion>
+                                <AccordionSummary
+                                    expandIcon={<AddIcon sx={{ fontSize: "1rem", color: "#fff" }} />}
+                                    aria-controls="panel1a-content"
+                                    id="panel1a-header"
+                                    sx={{
+                                        backgroundColor: "#000",
+                                    }}
+                                >
+                                    <Typography
+                                        sx={{
+                                            fontWeight: "100",
+                                            letterSpacing: "-0.05em",
+
+                                            fontSize: "0.7rem",
+
+                                            color: "#ffffff",
+                                        }}
+                                    >
+                                        FÖLJ OSS
+                                    </Typography>
+                                </AccordionSummary>
                                 <AccordionDetails
                                     sx={{
                                         display: "flex",
