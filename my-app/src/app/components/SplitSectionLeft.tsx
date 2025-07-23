@@ -48,12 +48,12 @@ export default function SplitSectionRight({
                     xs={12}
                     md={6}
                     sx={{
-                        color: "#2a2a2a",
+                        color: "#fff",
                         display: "flex",
                         flexDirection: "column",
                         justifyContent: "center",
                         padding: "40px",
-                        backgroundColor: "#ede0d4",
+                        backgroundColor: "#000",
                         height: "100%",
                     }}
                 >
@@ -68,6 +68,7 @@ export default function SplitSectionRight({
                         disableRipple
                         sx={{
                             backgroundColor: "#000",
+                            border: "1px solid #fff",
                             color: "#fff",
                             padding: "10px 20px",
                             borderRadius: 0,
