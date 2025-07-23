@@ -15,7 +15,7 @@ export default function HeroSection() {
     return (
         <Box
             sx={{
-                height: "80vh",
+                height: "90vh",
                 display: "flex",
                 flexDirection: "column",
                 justifyContent: "center",
@@ -35,7 +35,7 @@ export default function HeroSection() {
                     textAlign: "center",
                     lineHeight: 1,
                     marginBottom: 2,
-                    fontSize: { xs: '5rem', sm: '6rem' },
+                    fontSize: { xs: '4.4rem', sm: '5rem' },
                 }}
             >
                 SAVE THE DATE
@@ -45,10 +45,10 @@ export default function HeroSection() {
                 variant="h6"
                 sx={{
                     fontFamily: '"Antic Didone", serif',
-                    fontSize: { xs: '1.25rem', sm: '1.5rem' }
+                    fontSize: { xs: '1.1rem', sm: '1.5rem' }
                 }}
             >
-                28 augusti 14.00 | Villa Strömfors 1, Svenljunga
+                28 augusti 2026 kl. 14.00 | Villa Strömfors 1, Svenljunga
             </Typography>
         </Box>
         // <Box
