@@ -38,7 +38,7 @@ function CountdownTimer() {
     };
   };
 
-  const { days, hours, minutes, seconds } = getTimeRemaining();
+  const { days, hours, minutes } = getTimeRemaining();
 
   return (
     <Box
@@ -71,7 +71,7 @@ function CountdownTimer() {
               verticalAlign: "bottom",
             }}
           >
-            days,
+            DAYS
           </span>
         </Typography>
       )}
@@ -96,7 +96,7 @@ function CountdownTimer() {
               verticalAlign: "bottom",
             }}
           >
-            hours,
+            HOURS
           </span>
         </Typography>
       )}
@@ -120,10 +120,10 @@ function CountdownTimer() {
             verticalAlign: "bottom",
           }}
         >
-          minutes,
+          MINUTES
         </span>
       </Typography>
-      <Typography
+      {/* <Typography
         variant="h1"
         sx={{
           fontFamily: '"Italiana", sans-serif',
@@ -145,7 +145,7 @@ function CountdownTimer() {
         >
           seconds,
         </span>
-      </Typography>
+      </Typography> */}
     </Box>
   );
 }

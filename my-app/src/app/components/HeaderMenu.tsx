@@ -1,10 +1,11 @@
+'use client';
 import { Typography } from "@mui/material";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 import Toolbar from "@mui/material/Toolbar";
 
-export default function ButtonAppBar() {
+export default function HeaderMenu() {
   return (
     <Box sx={{ flexGrow: 1, zIndex: 1000 }}>
       <AppBar
