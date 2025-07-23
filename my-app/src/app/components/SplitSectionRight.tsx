@@ -1,9 +1,10 @@
 "use client";
-import { Box, Button, Grid, Typography } from "@mui/material";
+import { Box, Grid, Typography } from "@mui/material";
 
 interface SectionProps {
     title: string;
     text: string;
+    text2?: string;
     imageSrc: string;
     imageAlt?: string;
     buttonText: string;
@@ -12,9 +13,10 @@ interface SectionProps {
 export default function SplitSectionRight({
     title,
     text,
+    text2,
     imageSrc,
     imageAlt,
-    buttonText,
+    // buttonText,
 }: SectionProps) {
     return (
         <Box
@@ -44,10 +46,13 @@ export default function SplitSectionRight({
                     <Typography variant="h3" sx={{ fontFamily: '"Italiana", sans-serif', marginBottom: 6, fontWeight: 400 }}>
                         {title}
                     </Typography>
-                    <Typography variant="body1" sx={{ fontFamily: '"Antic Didone", serif', marginBottom: 8 }}>
+                    <Typography variant="body1" sx={{ fontFamily: '"Antic Didone", serif', marginBottom: 2 }}>
                         {text}
                     </Typography>
-                    <Button
+                    <Typography variant="body1" sx={{ fontFamily: '"Antic Didone", serif', marginBottom: 8 }}>
+                        {text2}
+                    </Typography>
+                    {/* <Button
                         variant="contained"
                         disableRipple
                         sx={{
@@ -66,7 +71,7 @@ export default function SplitSectionRight({
                         }}
                     >
                         {buttonText}
-                    </Button>
+                    </Button> */}
                 </Grid>
                 <Grid
                     item
