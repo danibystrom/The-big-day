@@ -24,7 +24,7 @@ export default function HeaderMenu() {
         >
 
           <Typography
-            sx={{ color: "#fff", fontFamily: '"Italiana", sans-serif' }}
+            sx={{ color: "#fff", fontFamily: '"Italiana", sans-serif', fontSize: { xs: '1.4rem', sm: '1.7rem' } }}
           >
             FELICIA & SEBASTIAN
           </Typography>

@@ -52,7 +52,7 @@ export default function Footer() {
                 width: "100%",
                 padding: "1rem 0",
                 paddingTop: "2rem",
-                borderTop: "1px solid #e0e0e0",
+                // borderTop: "1px solid #e0e0e0",
             }}
         >
             <Container
@@ -88,8 +88,9 @@ export default function Footer() {
                                     >
                                         VÅR HISTORIA
                                     </Typography>
-                                    <StyledLink text="Om Felicia & Sebastian" href="/" />
-                                    <StyledLink text="Till våra gäster" href="/" />
+                                    <StyledLink text="Mer info kommer" href="/" />
+                                    {/* <StyledLink text="Om Felicia & Sebastian" href="/" /> */}
+                                    {/* <StyledLink text="Till våra gäster" href="/" /> */}
                                 </Box>
                             </Hidden>
                         </Box>
@@ -123,8 +124,9 @@ export default function Footer() {
                                         backgroundColor: "#000",
                                     }}
                                 >
-                                    <StyledLink text="Om Felicia & Sebastian" href="/" />
-                                    <StyledLink text="Till våra gäster" href="/" />
+                                    <StyledLink text="Mer info kommer" href="/" />
+                                    {/* <StyledLink text="Om Felicia & Sebastian" href="/" /> */}
+                                    {/* <StyledLink text="Till våra gäster" href="/" /> */}
                                 </AccordionDetails>
                             </Accordion>
                         </Hidden>
@@ -147,9 +149,10 @@ export default function Footer() {
                                     >
                                         BRÖLLOPPET
                                     </Typography>
-                                    <StyledLink text="OSA" href="/" />
-                                    <StyledLink text="Klädkod" href="/" />
-                                    <StyledLink text="Viktig information" href="/" />
+                                    <StyledLink text="Mer info kommer" href="/" />
+                                    {/* <StyledLink text="OSA" href="/" /> */}
+                                    {/* <StyledLink text="Klädkod" href="/" /> */}
+                                    {/* <StyledLink text="Viktig information" href="/" /> */}
                                 </Box>
                             </Hidden>
                         </Box>
@@ -184,9 +187,10 @@ export default function Footer() {
                                         backgroundColor: "#000",
                                     }}
                                 >
-                                    <StyledLink text="OSA" href="/" />
-                                    <StyledLink text="Klädkod" href="/" />
-                                    <StyledLink text="Viktig information" href="/" />
+                                    <StyledLink text="Mer info kommer" href="/" />
+                                    {/* <StyledLink text="OSA" href="/" /> */}
+                                    {/* <StyledLink text="Klädkod" href="/" /> */}
+                                    {/* <StyledLink text="Viktig information" href="/" /> */}
                                 </AccordionDetails>
                             </Accordion>
                         </Hidden>
@@ -209,8 +213,9 @@ export default function Footer() {
                                     >
                                         KONTAKT
                                     </Typography>
-                                    <StyledLink text="Hör av dig" href="/" />
-                                    <StyledLink text="Frågor & Svar" href="/" />
+                                    <StyledLink text="Mer info kommer" href="/" />
+                                    {/* <StyledLink text="Hör av dig" href="/" /> */}
+                                    {/* <StyledLink text="Frågor & Svar" href="/" /> */}
                                 </Box>
                             </Hidden>
                         </Box>
@@ -244,8 +249,9 @@ export default function Footer() {
                                         backgroundColor: "#000",
                                     }}
                                 >
-                                    <StyledLink text="Hör av dig" href="/" />
-                                    <StyledLink text="Frågor & Svar" href="/" />
+                                    <StyledLink text="Mer info kommer" href="/" />
+                                    {/* <StyledLink text="Hör av dig" href="/" /> */}
+                                    {/* <StyledLink text="Frågor & Svar" href="/" /> */}
                                 </AccordionDetails>
                             </Accordion>
                         </Hidden>
