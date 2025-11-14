@@ -3,12 +3,52 @@ import { Box, Button, Typography } from "@mui/material";
 import { useRouter } from "next/navigation";
 import { useCallback, useEffect, useState } from "react";
 
+type TimeBlockProps = {
+  value: number | string;
+  label: string;
+};
+
+function TimeBlock({ value, label }: TimeBlockProps) {
+  return (
+    <Box
+      sx={{
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        minWidth: 140,
+      }}
+    >
+      <Typography
+        variant="h2"
+        sx={{
+          fontFamily: '"Italiana", sans-serif',
+          fontSize: { xs: "6rem", sm: "5rem" },
+          lineHeight: 1,
+        }}
+      >
+        {value}
+      </Typography>
+
+      <Typography
+        variant="subtitle2"
+        sx={{
+          fontFamily: '"Antic Didone", serif',
+          fontSize: "0.8rem",
+          letterSpacing: "0.15em",
+          textTransform: "uppercase",
+          alignSelf: "flex-end",
+        }}
+      >
+        {label}
+      </Typography>
+    </Box>
+  );
+}
+
 function CountdownTimer() {
   const [currentTime, setCurrentTime] = useState(new Date());
   const [targetDate] = useState(new Date("2026-08-21T10:00:00"));
-
   const router = useRouter();
-
 
   const onTimerEnd = useCallback(() => {
     console.log("Timer Ended!");
@@ -34,13 +74,7 @@ function CountdownTimer() {
     const hours = Math.floor((totalTime / (1000 * 60 * 60)) % 24);
     const days = Math.floor(totalTime / (1000 * 60 * 60 * 24));
 
-
-    return {
-      days,
-      hours,
-      minutes,
-      seconds,
-    };
+    return { days, hours, minutes, seconds };
   };
 
   const { days, hours, minutes, seconds } = getTimeRemaining();
@@ -48,131 +82,71 @@ function CountdownTimer() {
   return (
     <Box
       sx={{
+        minHeight: "100vh",
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
         justifyContent: "center",
-        whiteSpace: "nowrap",
-        mt: 10,
+        backgroundColor: "#cbc4ba",
       }}
     >
-      {days > 0 && (
-        <Typography
-          variant="h1"
-          sx={{
-            fontFamily: '"Italiana", sans-serif',
-            display: "block",
-            alignItems: "baseline",
-            padding: 0.5,
-            lineHeight: 1,
-
-          }}
-        >
-          {days}
-          <span
-            style={{
-              fontSize: "1.25rem",
-              marginLeft: "0.25rem",
-              verticalAlign: "bottom",
-            }}
-          >
-            DAGAR
-          </span>
-        </Typography>
-      )}
-      {hours > 0 && (
-        <Typography
-          variant="h1"
-          sx={{
-            fontFamily: '"Italiana", sans-serif',
-            display: "block",
-            alignItems: "baseline",
-            padding: 0.5,
-            lineHeight: 1,
-
-          }}
-        >
-          {hours.toString().padStart(2, "0")}
-          <span
-            style={{
-              fontSize: "1.25rem",
-              marginLeft: "0.25rem",
-              verticalAlign: "bottom",
-            }}
-          >
-            TIMMAR
-          </span>
-        </Typography>
-      )}
-      <Typography
-        variant="h1"
+      <Box
         sx={{
-          fontFamily: '"Italiana", sans-serif',
-          display: "block",
-          alignItems: "baseline",
-          padding: 0.5,
-          lineHeight: 1,
-
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
         }}
       >
-        {minutes.toString().padStart(2, "0")}
-        <span
-          style={{
-            fontSize: "1.25rem",
-            marginLeft: "0.25rem",
-            verticalAlign: "bottom",
-          }}
-        >
-          MINUTER
-        </span>
-      </Typography>
-      <Typography
-        variant="h1"
-        sx={{
-          fontFamily: '"Italiana", sans-serif',
-          display: "block",
-          alignItems: "baseline",
-          padding: 0.5,
-          lineHeight: 1,
+        {days > 0 && (
+          <TimeBlock
+            value={days}
+            label="DAGAR"
+          />
+        )}
 
-        }}
-      >
-        {seconds.toString().padStart(2, "0")}
-        <span
-          style={{
-            fontSize: "1.25rem",
-            marginLeft: "0.25rem",
-            verticalAlign: "bottom",
-          }}
-        >
-          SEKUNDER
-        </span>
-      </Typography>
+        {hours > 0 && (
+          <TimeBlock
+            value={hours.toString().padStart(2, "0")}
+            label="TIMMAR"
+          />
+        )}
+
+        <TimeBlock
+          value={minutes.toString().padStart(2, "0")}
+          label="MINUTER"
+        />
+
+        <TimeBlock
+          value={seconds.toString().padStart(2, "0")}
+          label="SEKUNDER"
+        />
+      </Box>
 
       <Button
         onClick={() => router.push("/start")}
-        variant="outlined"
+        variant="contained"
         disableRipple
         sx={{
-          border: "1px solid #000",
-          color: "#000",
-          padding: "10px 20px",
+          mt: 8,
+          backgroundColor: "#000",
+          color: "#fff",
+          padding: "10px 40px",
+          width: "200px",
           borderRadius: 0,
           fontFamily: '"Antic Didone", serif',
           textTransform: "none",
           boxShadow: "none",
-          mt: 10,
           "&:hover": {
+            backgroundColor: "#111",
             boxShadow: "none",
           },
         }}
       >
-        Gå vidare till inbjudan
+        Fortsätt
       </Button>
-
-
     </Box>
   );
 }
+
 
 export default CountdownTimer;
