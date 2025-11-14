@@ -1,5 +1,5 @@
 "use client";
-import { Box, Grid, Typography } from "@mui/material";
+import { Box, Button, Grid, Link, Typography } from "@mui/material";
 
 interface SectionProps {
     title: string;
@@ -8,6 +8,7 @@ interface SectionProps {
     imageSrc: string;
     imageAlt?: string;
     buttonText: string;
+    buttonHref: string;
 }
 
 /* This component displays a split section with the image on the right and text on the left. */
@@ -17,7 +18,8 @@ export default function SplitSectionRight({
     text2,
     imageSrc,
     imageAlt,
-    // buttonText,
+    buttonText,
+    buttonHref,
 }: SectionProps) {
     return (
         <Box
@@ -35,12 +37,12 @@ export default function SplitSectionRight({
                     xs={12}
                     md={6}
                     sx={{
-                        color: "#fff",
+                        color: "#000",
                         display: "flex",
                         flexDirection: "column",
                         justifyContent: "center",
                         padding: "40px",
-                        backgroundColor: "#000",
+                        backgroundColor: "#cbc4ba",
                         height: "100%",
                     }}
                 >
@@ -53,13 +55,14 @@ export default function SplitSectionRight({
                     <Typography variant="body1" sx={{ fontFamily: '"Antic Didone", serif', marginBottom: 8 }}>
                         {text2}
                     </Typography>
-                    {/* <Button
-                        variant="contained"
+                    <Button
+                        component={Link}
+                        href={buttonHref}
+                        variant="outlined"
                         disableRipple
                         sx={{
-                            backgroundColor: "#000",
-                            border: "1px solid #fff",
-                            color: "#fff",
+                            border: "1px solid #000",
+                            color: "#000",
                             padding: "10px 20px",
                             borderRadius: 0,
                             fontFamily: '"Antic Didone", serif',
@@ -72,7 +75,7 @@ export default function SplitSectionRight({
                         }}
                     >
                         {buttonText}
-                    </Button> */}
+                    </Button>
                 </Grid>
                 <Grid
                     item

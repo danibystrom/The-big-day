@@ -1,10 +1,14 @@
 "use client";
-import { Box, Typography } from "@mui/material";
+import { Box, Button, Typography } from "@mui/material";
+import { useRouter } from "next/navigation";
 import { useCallback, useEffect, useState } from "react";
 
 function CountdownTimer() {
   const [currentTime, setCurrentTime] = useState(new Date());
   const [targetDate] = useState(new Date("2026-08-21T10:00:00"));
+
+  const router = useRouter();
+
 
   const onTimerEnd = useCallback(() => {
     console.log("Timer Ended!");
@@ -30,6 +34,7 @@ function CountdownTimer() {
     const hours = Math.floor((totalTime / (1000 * 60 * 60)) % 24);
     const days = Math.floor(totalTime / (1000 * 60 * 60 * 24));
 
+
     return {
       days,
       hours,
@@ -48,6 +53,7 @@ function CountdownTimer() {
         alignItems: "center",
         justifyContent: "center",
         whiteSpace: "nowrap",
+        mt: 10,
       }}
     >
       {days > 0 && (
@@ -142,6 +148,29 @@ function CountdownTimer() {
           SEKUNDER
         </span>
       </Typography>
+
+      <Button
+        onClick={() => router.push("/start")}
+        variant="outlined"
+        disableRipple
+        sx={{
+          border: "1px solid #000",
+          color: "#000",
+          padding: "10px 20px",
+          borderRadius: 0,
+          fontFamily: '"Antic Didone", serif',
+          textTransform: "none",
+          boxShadow: "none",
+          mt: 10,
+          "&:hover": {
+            boxShadow: "none",
+          },
+        }}
+      >
+        Gå vidare till inbjudan
+      </Button>
+
+
     </Box>
   );
 }

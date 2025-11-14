@@ -1,5 +1,6 @@
 "use client";
 import { Box, Button, Grid, Typography } from "@mui/material";
+import Link from "next/link";
 
 interface SectionProps {
     title: string;
@@ -7,6 +8,7 @@ interface SectionProps {
     imageSrc: string;
     imageAlt?: string;
     buttonText: string;
+    buttonHref: string;
 }
 
 /* This component displays a split section with the image on the left and text on the right. */
@@ -16,6 +18,7 @@ export default function SplitSectionRight({
     imageSrc,
     imageAlt,
     buttonText,
+    buttonHref,
 }: SectionProps) {
     return (
         <Box
@@ -65,11 +68,13 @@ export default function SplitSectionRight({
                         {text}
                     </Typography>
                     <Button
+                        component={Link}
+                        href={buttonHref}
                         variant="contained"
                         disableRipple
                         sx={{
-                            backgroundColor: "#000",
-                            border: "1px solid #fff",
+                            backgroundColor: "#cbc4ba",
+                            border: "1px solid #000",
                             color: "#fff",
                             padding: "10px 20px",
                             borderRadius: 0,
