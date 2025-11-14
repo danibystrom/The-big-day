@@ -1,15 +1,34 @@
-import HeroSection from "./components/HeroSection";
-import SplitSection from "./components/SplitSectionRight";
+"use client";
+
+import { Button } from "@mui/material";
+import { useRouter } from "next/navigation";
+import CountdownTimer from "./components/CountDownTimer";
 
 export default function Home() {
+  const router = useRouter();
+
   return (
     <>
-      {/* <HeaderMenu /> */}
-      <HeroSection />
-      <SplitSection title="DEN SOM VÄNTAR PÅ NÅGOT GOTT..." text="Två hjärtan fann varandra, och en berättelse vi aldrig ville ta slut på började.
-En berättelse om kärlek, om skratt, om drömmar vi delar och om livet vi vill bygga tillsammans.
-Vi har skrivit många kapitel, men det största ligger framför oss. Nu vill vi säga ja till varandra med er vid vår sida, för en kärlek som växer och blomstrar i evighet.
-Vi vill redan nu skicka en kärleksfull påminnelse om att skriva in datumet i kalendern. Mer information kommer längre fram, vi längtar att få fira den största dagen i våra liv tillsammans med er, våra viktigaste som vi älskar allra mest." imageSrc="/garden.jpg" buttonText="Text för knapp" />
+      <CountdownTimer />
+      <Button
+        onClick={() => router.push("/start")}
+        variant="outlined"
+        disableRipple
+        sx={{
+          border: "1px solid #000",
+          color: "#000",
+          padding: "10px 20px",
+          borderRadius: 0,
+          fontFamily: '"Antic Didone", serif',
+          textTransform: "none",
+          boxShadow: "none",
+          "&:hover": {
+            boxShadow: "none",
+          },
+        }}
+      >
+        Gå vidare till inbjudan
+      </Button>
     </>
   );
 }

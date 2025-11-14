@@ -38,13 +38,13 @@ function CountdownTimer() {
     };
   };
 
-  const { days, hours, minutes } = getTimeRemaining();
+  const { days, hours, minutes, seconds } = getTimeRemaining();
 
   return (
     <Box
       sx={{
         display: "flex",
-        flexDirection: "row",
+        flexDirection: "column",
         alignItems: "center",
         justifyContent: "center",
         whiteSpace: "nowrap",
@@ -55,11 +55,10 @@ function CountdownTimer() {
           variant="h1"
           sx={{
             fontFamily: '"Italiana", sans-serif',
-            display: "inline-flex",
+            display: "block",
             alignItems: "baseline",
             padding: 0.5,
             lineHeight: 1,
-            marginBottom: 2,
 
           }}
         >
@@ -71,7 +70,7 @@ function CountdownTimer() {
               verticalAlign: "bottom",
             }}
           >
-            DAYS
+            DAGAR
           </span>
         </Typography>
       )}
@@ -80,11 +79,10 @@ function CountdownTimer() {
           variant="h1"
           sx={{
             fontFamily: '"Italiana", sans-serif',
-            display: "inline-flex",
+            display: "block",
             alignItems: "baseline",
             padding: 0.5,
             lineHeight: 1,
-            marginBottom: 2,
 
           }}
         >
@@ -96,7 +94,7 @@ function CountdownTimer() {
               verticalAlign: "bottom",
             }}
           >
-            HOURS
+            TIMMAR
           </span>
         </Typography>
       )}
@@ -104,11 +102,10 @@ function CountdownTimer() {
         variant="h1"
         sx={{
           fontFamily: '"Italiana", sans-serif',
-          display: "inline-flex",
+          display: "block",
           alignItems: "baseline",
           padding: 0.5,
           lineHeight: 1,
-          marginBottom: 2,
 
         }}
       >
@@ -120,18 +117,17 @@ function CountdownTimer() {
             verticalAlign: "bottom",
           }}
         >
-          MINUTES
+          MINUTER
         </span>
       </Typography>
-      {/* <Typography
+      <Typography
         variant="h1"
         sx={{
           fontFamily: '"Italiana", sans-serif',
-          display: "inline-flex",
+          display: "block",
           alignItems: "baseline",
           padding: 0.5,
           lineHeight: 1,
-          marginBottom: 2,
 
         }}
       >
@@ -143,9 +139,9 @@ function CountdownTimer() {
             verticalAlign: "bottom",
           }}
         >
-          seconds,
+          SEKUNDER
         </span>
-      </Typography> */}
+      </Typography>
     </Box>
   );
 }

@@ -9,6 +9,7 @@ interface SectionProps {
     buttonText: string;
 }
 
+/* This component displays a split section with the image on the left and text on the right. */
 export default function SplitSectionRight({
     title,
     text,

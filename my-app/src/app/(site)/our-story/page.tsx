@@ -1,6 +1,6 @@
 'use client';
 import { Box, Typography } from "@mui/material";
-import SplitSectionLeft from "../components/SplitSectionLeft";
+import SplitSectionLeft from "../../components/SplitSectionLeft";
 
 export default function OurStorySection() {
     return (
