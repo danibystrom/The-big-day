@@ -15,14 +15,14 @@ function TimeBlock({ value, label }: TimeBlockProps) {
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
-        minWidth: 140,
+        minWidth: { xs: 120, md: 140 },
       }}
     >
       <Typography
         variant="h2"
         sx={{
           fontFamily: '"Italiana", sans-serif',
-          fontSize: { xs: "6rem", sm: "5rem" },
+          fontSize: { xs: "6rem", sm: "5rem", md: "7rem" },
           lineHeight: 1,
         }}
       >
@@ -93,7 +93,7 @@ function CountdownTimer() {
       <Box
         sx={{
           display: "flex",
-          flexDirection: "column",
+          flexDirection: { xs: "column", sm: "row", md: "row" },
           alignItems: "center",
         }}
       >
