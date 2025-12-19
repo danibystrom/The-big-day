@@ -4,7 +4,6 @@ import SplitSectionRight from '../../components/SplitSectionRight';
 export default function Home() {
     return (
         <>
-            {/* <HeaderMenu /> */}
             <HeroSection />
             <SplitSectionRight title="DEN SOM VÄNTAR PÅ NÅGOT GOTT..." text="Två hjärtan fann varandra, och en berättelse vi aldrig ville ta slut på började.
 En berättelse om kärlek, om skratt, om drömmar vi delar och om livet vi vill bygga tillsammans.
