@@ -1,4 +1,5 @@
 'use client';
+import SplitSectionLeft from "@/app/components/SplitSectionLeft";
 import { Box, Button, Typography } from "@mui/material";
 
 export default function OurStorySection() {
@@ -64,6 +65,7 @@ export default function OurStorySection() {
                     </Typography>
 
                     <Typography
+                        variant="body1"
                         sx={{
                             fontFamily: '"Antic Didone", serif',
                             color: "#1a1a1a",
@@ -117,6 +119,8 @@ export default function OurStorySection() {
                     </Button>
                 </Box>
             </Box>
+            <SplitSectionLeft title="OM VÅRT BRÖLLOP..." text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas posuere luctus eros sed sollicitudin. Curabitur mattis leo mauris, at pharetra lectus iaculis sollicitudin. Donec cursus commodo congue. Praesent eu accumsan metus. Donec suscipit venenatis placerat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas posuere luctus eros sed sollicitudin. Curabitur mattis leo mauris, at pharetra lectus iaculis sollicitudin. Donec cursus commodo congue. Praesent eu accumsan metus. Donec suscipit venenatis placerat." imageSrc="/cheers.jpeg" buttonText="Vårt bröllop" buttonHref="/our-story" />
         </Box>
+
     );
 }

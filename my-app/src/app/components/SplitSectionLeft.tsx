@@ -5,6 +5,7 @@ import Link from "next/link";
 interface SectionProps {
     title: string;
     text: string;
+    text2?: string;
     imageSrc: string;
     imageAlt?: string;
     buttonText: string;
@@ -12,9 +13,10 @@ interface SectionProps {
 }
 
 /* This component displays a split section with the image on the left and text on the right. */
-export default function SplitSectionRight({
+export default function SplitSectionLeft({
     title,
     text,
+    text2,
     imageSrc,
     imageAlt,
     buttonText,
@@ -64,17 +66,20 @@ export default function SplitSectionRight({
                     <Typography variant="h3" sx={{ fontFamily: '"Italiana", sans-serif', marginBottom: 6, fontWeight: 400 }}>
                         {title}
                     </Typography>
-                    <Typography variant="body1" sx={{ fontFamily: '"Antic Didone", serif', marginBottom: 8 }}>
+                    <Typography variant="body1" sx={{ fontFamily: '"Antic Didone", serif', marginBottom: 2 }}>
                         {text}
+                    </Typography>
+                    <Typography variant="body1" sx={{ fontFamily: '"Antic Didone", serif', marginBottom: 8 }}>
+                        {text2}
                     </Typography>
                     <Button
                         component={Link}
                         href={buttonHref}
-                        variant="contained"
+                        variant="outlined"
                         disableRipple
                         sx={{
-                            backgroundColor: "#cbc4ba",
-                            border: "1px solid #000",
+                            // backgroundColor: "#cbc4ba",
+                            border: "1px solid #fff",
                             color: "#fff",
                             padding: "10px 20px",
                             borderRadius: 0,
