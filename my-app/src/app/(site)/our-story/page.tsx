@@ -119,7 +119,7 @@ export default function OurStorySection() {
                     </Button>
                 </Box>
             </Box>
-            <SplitSectionLeft title="OM VÅRT BRÖLLOP..." text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas posuere luctus eros sed sollicitudin. Curabitur mattis leo mauris, at pharetra lectus iaculis sollicitudin. Donec cursus commodo congue. Praesent eu accumsan metus. Donec suscipit venenatis placerat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas posuere luctus eros sed sollicitudin. Curabitur mattis leo mauris, at pharetra lectus iaculis sollicitudin. Donec cursus commodo congue. Praesent eu accumsan metus. Donec suscipit venenatis placerat." imageSrc="/cheers.jpeg" buttonText="Vårt bröllop" buttonHref="/our-story" />
+            <SplitSectionLeft title="OM VÅRT BRÖLLOP..." text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas posuere luctus eros sed sollicitudin. Curabitur mattis leo mauris, at pharetra lectus iaculis sollicitudin. Donec cursus commodo congue. Praesent eu accumsan metus. Donec suscipit venenatis placerat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas posuere luctus eros sed sollicitudin. Curabitur mattis leo mauris, at pharetra lectus iaculis sollicitudin. Donec cursus commodo congue. Praesent eu accumsan metus. Donec suscipit venenatis placerat." imageSrc="/cheers.jpeg" buttonText="Vårt bröllop" buttonHref="/our-story" bgColor="#000" />
         </Box>
 
     );

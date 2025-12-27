@@ -9,6 +9,8 @@ interface SectionProps {
     imageAlt?: string;
     buttonText: string;
     buttonHref: string;
+
+    bgColor?: "#cbc4ba" | "#000";
 }
 
 /* This component displays a split section with the image on the right and text on the left. */
@@ -20,7 +22,12 @@ export default function SplitSectionRight({
     imageAlt,
     buttonText,
     buttonHref,
+    bgColor = "#000",
 }: SectionProps) {
+    const isDark = bgColor === "#000";
+    const textColor = isDark ? "#fff" : "#000";
+    const buttonVariant = isDark ? "outlined" : "contained";
+
     return (
         <Box
             sx={{
@@ -37,12 +44,12 @@ export default function SplitSectionRight({
                     xs={12}
                     md={6}
                     sx={{
-                        color: "#000",
+                        color: textColor,
                         display: "flex",
                         flexDirection: "column",
                         justifyContent: "center",
                         padding: "40px",
-                        backgroundColor: "#cbc4ba",
+                        backgroundColor: bgColor,
                         height: "100%",
                     }}
                 >
@@ -58,20 +65,28 @@ export default function SplitSectionRight({
                     <Button
                         component={Link}
                         href={buttonHref}
-                        variant="outlined"
+                        variant={buttonVariant}
                         disableRipple
                         sx={{
-                            border: "1px solid #000",
-                            color: "#000",
-                            padding: "10px 20px",
+                            width: "50%",
                             borderRadius: 0,
                             fontFamily: '"Antic Didone", serif',
                             textTransform: "none",
-                            width: "50%",
+                            padding: "10px 20px",
                             boxShadow: "none",
-                            "&:hover": {
-                                boxShadow: "none",
-                            },
+
+                            ...(isDark
+                                ? {
+                                    border: "1px solid #fff",
+                                    color: "#fff",
+                                    backgroundColor: "transparent",
+                                    "&:hover": { backgroundColor: "transparent", boxShadow: "none" },
+                                }
+                                : {
+                                    backgroundColor: "#000",
+                                    color: "#fff",
+                                    "&:hover": { backgroundColor: "#000", boxShadow: "none" },
+                                }),
                         }}
                     >
                         {buttonText}
