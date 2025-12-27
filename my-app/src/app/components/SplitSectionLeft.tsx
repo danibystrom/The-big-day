@@ -5,21 +5,29 @@ import Link from "next/link";
 interface SectionProps {
     title: string;
     text: string;
+    text2?: string;
     imageSrc: string;
     imageAlt?: string;
     buttonText: string;
     buttonHref: string;
+
+    bgColor?: "#cbc4ba" | "#000";
 }
 
 /* This component displays a split section with the image on the left and text on the right. */
-export default function SplitSectionRight({
+export default function SplitSectionLeft({
     title,
     text,
+    text2,
     imageSrc,
     imageAlt,
     buttonText,
     buttonHref,
+    bgColor = "#000",
 }: SectionProps) {
+    const isDark = bgColor === "#000";
+    const textColor = isDark ? "#fff" : "#000";
+    const buttonVariant = isDark ? "outlined" : "contained";
     return (
         <Box
             sx={{
@@ -52,39 +60,49 @@ export default function SplitSectionRight({
                     xs={12}
                     md={6}
                     sx={{
-                        color: "#fff",
+                        color: textColor,
                         display: "flex",
                         flexDirection: "column",
                         justifyContent: "center",
                         padding: "40px",
-                        backgroundColor: "#000",
+                        backgroundColor: bgColor,
                         height: "100%",
                     }}
                 >
                     <Typography variant="h3" sx={{ fontFamily: '"Italiana", sans-serif', marginBottom: 6, fontWeight: 400 }}>
                         {title}
                     </Typography>
-                    <Typography variant="body1" sx={{ fontFamily: '"Antic Didone", serif', marginBottom: 8 }}>
+                    <Typography variant="body1" sx={{ fontFamily: '"Antic Didone", serif', marginBottom: 2 }}>
                         {text}
+                    </Typography>
+                    <Typography variant="body1" sx={{ fontFamily: '"Antic Didone", serif', marginBottom: 8 }}>
+                        {text2}
                     </Typography>
                     <Button
                         component={Link}
                         href={buttonHref}
-                        variant="contained"
+                        variant={buttonVariant}
                         disableRipple
                         sx={{
-                            backgroundColor: "#cbc4ba",
-                            border: "1px solid #000",
-                            color: "#fff",
-                            padding: "10px 20px",
+                            width: "50%",
                             borderRadius: 0,
                             fontFamily: '"Antic Didone", serif',
                             textTransform: "none",
-                            width: "50%",
+                            padding: "10px 20px",
                             boxShadow: "none",
-                            "&:hover": {
-                                boxShadow: "none",
-                            },
+
+                            ...(isDark
+                                ? {
+                                    border: "1px solid #fff",
+                                    color: "#fff",
+                                    backgroundColor: "transparent",
+                                    "&:hover": { backgroundColor: "transparent", boxShadow: "none" },
+                                }
+                                : {
+                                    backgroundColor: "#000",
+                                    color: "#fff",
+                                    "&:hover": { backgroundColor: "#000", boxShadow: "none" },
+                                }),
                         }}
                     >
                         {buttonText}

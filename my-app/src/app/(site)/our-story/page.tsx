@@ -1,28 +1,126 @@
 'use client';
 import SplitSectionLeft from "@/app/components/SplitSectionLeft";
-import { Box, Typography } from "@mui/material";
+import { Box, Button, Typography } from "@mui/material";
 
 export default function OurStorySection() {
     return (
         <Box>
-            <Box sx={{ height: "100vh", display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center", backgroundImage: "url(/coupleimg.jpg)", backgroundSize: "cover", backgroundPosition: "center" }}>
+            <Box
+                sx={{
+                    height: "90vh",
+                    display: "flex",
+                    flexDirection: "column",
+                    justifyContent: "center",
+                    alignItems: "center",
+                    backgroundImage: "url(/sectionimg.jpeg)",
+                    backgroundSize: "cover",
+                    backgroundPosition: "center",
+                }}
+            >
                 <Typography
                     variant="h1"
-                    sx={{ fontFamily: '"Italiana", sans-serif', color: "#fff", textAlign: "center", lineHeight: 1, marginBottom: 4 }}
+                    sx={{
+                        fontFamily: '"Italiana", sans-serif',
+                        color: "#fff",
+                        textAlign: "center",
+                        lineHeight: 1,
+                        mb: 4,
+                    }}
                 >
                     VÅR HISTORIA
                 </Typography>
-                <Typography
-                    variant="h6"
-                    sx={{ fontFamily: '"Antic Didone", serif', color: "#fff" }}
-                >
-                    28 augusti 14.00 | Villa Strömfors 1, Svenljunga
-                </Typography>
             </Box>
-            <SplitSectionLeft title="DEN SOM VÄNTAR PÅ NÅGOT GOTT..." text="Två hjärtan fann varandra, och en berättelse vi aldrig ville ta slut på började.
-           En berättelse om kärlek, om skratt, om drömmar vi delar och om livet vi vill bygga tillsammans.
-           Vi har skrivit många kapitel, men det största ligger framför oss. Nu vill vi säga ja till varandra med er vid vår sida, för en kärlek som växer och blomstrar i evighet.
-           Vi vill redan nu skicka en kärleksfull påminnelse om att skriva in datumet i kalendern. Mer information kommer längre fram, vi längtar att få fira den största dagen i våra liv tillsammans med er, våra viktigaste som vi älskar allra mest." imageSrc="/garden.jpg" buttonText="Mer om oss" buttonHref="/our-story" />
+
+            <Box
+                component="section"
+                sx={{
+                    minHeight: "90vh",
+                    backgroundColor: "#cbc4ba",
+                    display: "flex",
+                    alignItems: "center",
+                }}
+            >
+                <Box
+                    sx={{
+                        width: "100%",
+                        maxWidth: "85vw",
+                        px: { xs: 3, sm: 6, md: 8 },
+                        py: { xs: 6, md: 6 },
+                    }}
+                >
+                    <Typography
+                        variant="h3"
+                        sx={{
+                            fontFamily: '"Italiana", sans-serif',
+                            color: "#000",
+                            textAlign: "left",
+                            lineHeight: 1.05,
+                            mb: 3,
+                            letterSpacing: 0.5,
+                        }}
+                    >
+                        HÄR KOMMER EN TITEL
+                        <br />
+                        OM HUR VI TRÄFFADES...
+                    </Typography>
+
+                    <Typography
+                        variant="body1"
+                        sx={{
+                            fontFamily: '"Antic Didone", serif',
+                            color: "#1a1a1a",
+                            fontSize: { xs: 16, sm: 18 },
+                            lineHeight: 1.2,
+                            mb: 4,
+                        }}
+                    >
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas posuere luctus eros sed sollicitudin.
+                        Curabitur mattis leo mauris, at pharetra lectus iaculis sollicitudin. Donec cursus commodo congue.
+                        Praesent eu accumsan metus. Donec suscipit venenatis placerat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas posuere luctus eros sed sollicitudin.
+                        Curabitur mattis leo mauris, at pharetra lectus iaculis sollicitudin. Donec cursus commodo congue.
+                        Praesent eu accumsan metus. Donec suscipit venenatis placerat.
+
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas posuere luctus eros sed sollicitudin.
+                        Curabitur mattis leo mauris, at pharetra lectus iaculis sollicitudin. Donec cursus commodo congue.
+                        Praesent eu accumsan metus. Donec suscipit venenatis placerat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas posuere luctus eros sed sollicitudin.
+                        Curabitur mattis leo mauris, at pharetra lectus iaculis sollicitudin. Donec cursus commodo congue.
+                        Praesent eu accumsan metus. Donec suscipit venenatis placerat.
+                        <br />
+                        <br />
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas posuere luctus eros sed sollicitudin.
+                        Curabitur mattis leo mauris, at pharetra lectus iaculis sollicitudin. Donec cursus commodo congue.
+                        Praesent eu accumsan metus. Donec suscipit venenatis placerat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas posuere luctus eros sed sollicitudin.
+                        Curabitur mattis leo mauris, at pharetra lectus iaculis sollicitudin. Donec cursus commodo congue.
+                        Praesent eu accumsan metus. Donec suscipit venenatis placerat.
+
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas posuere luctus eros sed sollicitudin.
+                        Curabitur mattis leo mauris, at pharetra lectus iaculis sollicitudin. Donec cursus commodo congue.
+                        Praesent eu accumsan metus. Donec suscipit venenatis placerat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas posuere luctus eros sed sollicitudin.
+                        Curabitur mattis leo mauris, at pharetra lectus iaculis sollicitudin. Donec cursus commodo congue.
+                        Praesent eu accumsan metus. Donec suscipit venenatis placerat.
+
+                    </Typography>
+
+                    <Button
+                        variant="contained"
+                        sx={{
+                            backgroundColor: "#000",
+                            color: "#fff",
+                            borderRadius: 0,
+                            px: 4,
+                            py: 1.2,
+                            textTransform: "none",
+                            fontFamily: '"Antic Didone", serif',
+                            boxShadow: "none",
+                            "&:hover": { backgroundColor: "#000", boxShadow: "none" },
+                        }}
+                    >
+                        Anmäl dig här
+                    </Button>
+                </Box>
+            </Box>
+            <SplitSectionLeft title="OM VÅRT BRÖLLOP..." text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas posuere luctus eros sed sollicitudin. Curabitur mattis leo mauris, at pharetra lectus iaculis sollicitudin. Donec cursus commodo congue. Praesent eu accumsan metus. Donec suscipit venenatis placerat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas posuere luctus eros sed sollicitudin. Curabitur mattis leo mauris, at pharetra lectus iaculis sollicitudin. Donec cursus commodo congue. Praesent eu accumsan metus. Donec suscipit venenatis placerat." imageSrc="/cheers.jpeg" buttonText="Vårt bröllop" buttonHref="/our-story" bgColor="#000" />
         </Box>
-    )
+
+    );
 }
