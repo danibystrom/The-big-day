@@ -14,6 +14,7 @@
     "@mui/icons-material": "^6.0.0",
     "@mui/material": "^6.0.0",
     "@mui/styles": "^6.4.12",
+    "@prisma/client": "^6.19.2",
     "framer-motion": "^12.19.2",
     "next": "15.3.2",
     "react": "^19.0.0",
@@ -26,6 +27,7 @@
     "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "15.3.2",
+    "prisma": "^6.19.2",
     "typescript": "^5"
   }
 }

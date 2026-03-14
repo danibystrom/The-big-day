@@ -1,3 +1,303 @@
+"use client";
+
+import SplitSectionLeft from "@/app/components/SplitSectionLeft";
+import { Box, Button, TextField, Typography, Alert, Snackbar } from "@mui/material";
+import { FormEvent, useState } from "react";
+
 export default function OsaPage() {
-    return <div>The OSA Page</div>;
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
+  const [allergies, setAllergies] = useState("");
+  const [submitting, setSubmitting] = useState(false);
+  const [successOpen, setSuccessOpen] = useState(false);
+  const [errorOpen, setErrorOpen] = useState(false);
+
+  const fieldSx = {
+    "& .MuiInputLabel-root": {
+      fontFamily: '"Antic Didone", serif',
+      color: "#000",
+      letterSpacing: 0.2,
+      transform: "none",
+      position: "static",
+    },
+    "& .MuiInputLabel-root.Mui-focused": {
+      color: "#000",
+    },
+    "& .MuiInputBase-root": {
+      fontFamily: '"Antic Didone", serif',
+      color: "#000",
+      fontSize: { xs: 16, sm: 18 },
+      paddingTop: 0,
+      paddingBottom: 0,
+    },
+    "& .MuiInput-underline:before": {
+      borderBottomColor: "#000",
+      borderBottomWidth: "1px",
+    },
+    "& .MuiInput-underline:hover:before": {
+      borderBottom: "1px solid #000",
+    },
+    "& .MuiInput-underline:hover:not(.Mui-disabled):before": {
+      borderBottom: "1px solid #000",
+    },
+    "& .MuiInput-underline:after": {
+      borderBottomColor: "#000",
+      borderBottomWidth: "1px",
+    },
+    "& textarea": {
+      padding: 0,
+    },
+  } as const;
+
+  const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    if (!firstName || !lastName || !email || !phone) {
+      setErrorOpen(true);
+      return;
+    }
+
+    setSubmitting(true);
+    try {
+      const res = await fetch("/api/rsvp", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          firstName,
+          lastName,
+          email,
+          phone,
+          allergies: allergies.trim() || null,
+        }),
+      });
+
+      if (!res.ok) {
+        throw new Error("Request failed");
+      }
+
+      setSuccessOpen(true);
+      setFirstName("");
+      setLastName("");
+      setEmail("");
+      setPhone("");
+      setAllergies("");
+    } catch (e) {
+      setErrorOpen(true);
+    } finally {
+      setSubmitting(false);
+    }
+  };
+
+  return (
+    <Box>
+      <Box
+        sx={{
+          height: "90vh",
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "center",
+          alignItems: "center",
+          backgroundImage: "url(/osapage.jpeg)",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+        }}
+      >
+        <Typography
+          variant="h1"
+          sx={{
+            fontFamily: '"Italiana", sans-serif',
+            color: "#fff",
+            textAlign: "center",
+            lineHeight: 1,
+            mb: 4,
+          }}
+        >
+          ANMÄL DIG TILL BRÖLLOPET
+        </Typography>
+      </Box>
+
+      <Box
+        component="section"
+        sx={{
+          minHeight: "90vh",
+          backgroundColor: "#cbc4ba",
+          display: "flex",
+          alignItems: "center",
+        }}
+      >
+        <Box
+          sx={{
+            width: "100%",
+            maxWidth: "85vw",
+            px: { xs: 3, sm: 6, md: 8 },
+            py: { xs: 6, md: 6 },
+          }}
+        >
+          <Typography
+            variant="h3"
+            sx={{
+              fontFamily: '"Italiana", sans-serif',
+              color: "#000",
+              textAlign: "left",
+              lineHeight: 1.05,
+              mb: 3,
+              letterSpacing: 0.5,
+            }}
+          >
+            FYLL I DINA UPPGIFTER NEDAN
+          </Typography>
+          <Typography
+            variant="h5"
+            sx={{
+              fontFamily: '"Italiana", sans-serif',
+              color: "#000",
+              textAlign: "left",
+              lineHeight: 1.05,
+              mb: 3,
+              letterSpacing: 0.5,
+            }}
+          >
+            OM ER INBJUDAN INNEHÅLLER TVÅ NAMN BEHÖVER VI ATT NI FYLLER I ANMÄLAN SEPARAT.
+          </Typography>
+
+          <Box component="form" noValidate autoComplete="off" sx={{ mt: 8 }} onSubmit={handleSubmit}>
+            <Box
+              sx={{
+                display: "grid",
+                gridTemplateColumns: { xs: "1fr", md: "1fr 1fr" },
+                columnGap: { xs: 4, md: 10 },
+                rowGap: 2,
+                mb: 6,
+              }}
+            >
+              <TextField
+                variant="standard"
+                label="Förnamn:"
+                fullWidth
+                sx={fieldSx}
+                value={firstName}
+                onChange={(e) => setFirstName(e.target.value)}
+                required
+              />
+
+              <TextField
+                variant="standard"
+                label="Efternamn:"
+                fullWidth
+                InputLabelProps={{ shrink: true }}
+                sx={fieldSx}
+                value={lastName}
+                onChange={(e) => setLastName(e.target.value)}
+                required
+              />
+
+              <TextField
+                variant="standard"
+                label="Epost:"
+                type="email"
+                fullWidth
+                InputLabelProps={{ shrink: true }}
+                sx={fieldSx}
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                required
+              />
+
+              <TextField
+                variant="standard"
+                label="Telefonnummer:"
+                fullWidth
+                InputLabelProps={{ shrink: true }}
+                sx={fieldSx}
+                value={phone}
+                onChange={(e) => setPhone(e.target.value)}
+                required
+              />
+            </Box>
+
+            <TextField
+              variant="standard"
+              label="Om du har någon form av allergi eller önskemål om specialkost, fyll i nedan:"
+              fullWidth
+              multiline
+              InputLabelProps={{ shrink: true }}
+              sx={{
+                ...fieldSx,
+                mb: 6,
+                "& .MuiInputBase-root": {
+                  paddingTop: 0,
+                  paddingBottom: 0,
+                },
+                "& textarea": {
+                  padding: 0,
+                },
+              }}
+              value={allergies}
+              onChange={(e) => setAllergies(e.target.value)}
+            />
+
+            <Button
+              type="submit"
+              variant="contained"
+              sx={{
+                backgroundColor: "#000",
+                color: "#fff",
+                borderRadius: 0,
+                px: 4,
+                py: 1.2,
+                textTransform: "none",
+                fontFamily: '"Antic Didone", serif',
+                boxShadow: "none",
+                "&:hover": { backgroundColor: "#000", boxShadow: "none" },
+              }}
+              disabled={submitting}
+            >
+              {submitting ? "Skickar..." : "Anmäl dig här"}
+            </Button>
+          </Box>
+        </Box>
+      </Box>
+      <SplitSectionLeft
+        title="OM VÅRT BRÖLLOP..."
+        text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas posuere luctus eros sed sollicitudin. Curabitur mattis leo mauris, at pharetra lectus iaculis sollicitudin. Donec cursus commodo congue. Praesent eu accumsan metus. Donec suscipit venenatis placerat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas posuere luctus eros sed sollicitudin. Curabitur mattis leo mauris, at pharetra lectus iaculis sollicitudin. Donec cursus commodo congue. Praesent eu accumsan metus. Donec suscipit venenatis placerat."
+        imageSrc="/cheers.jpeg"
+        buttonText="Vårt bröllop"
+        buttonHref="/our-story"
+        bgColor="#000"
+      />
+
+      <Snackbar
+        open={successOpen}
+        autoHideDuration={4000}
+        onClose={() => setSuccessOpen(false)}
+        anchorOrigin={{ vertical: "bottom", horizontal: "center" }}
+      >
+        <Alert
+          onClose={() => setSuccessOpen(false)}
+          severity="success"
+          sx={{ width: "100%" }}
+        >
+          Tack för din anmälan!
+        </Alert>
+      </Snackbar>
+
+      <Snackbar
+        open={errorOpen}
+        autoHideDuration={4000}
+        onClose={() => setErrorOpen(false)}
+        anchorOrigin={{ vertical: "bottom", horizontal: "center" }}
+      >
+        <Alert
+          onClose={() => setErrorOpen(false)}
+          severity="error"
+          sx={{ width: "100%" }}
+        >
+          Något gick fel. Kontrollera fälten och försök igen.
+        </Alert>
+      </Snackbar>
+    </Box>
+  );
 }
