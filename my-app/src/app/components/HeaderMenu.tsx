@@ -18,7 +18,7 @@ import Link from "next/link";
 import { useState } from "react";
 
 const navLeft = [
-  { label: "Hem", href: "/start" },
+  { label: "Hem", href: "/" },
   { label: "Vår historia", href: "/our-story" },
   { label: "Bröllopet", href: "/the-wedding" },
 ];

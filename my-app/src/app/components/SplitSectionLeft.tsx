@@ -1,5 +1,6 @@
 "use client";
 import { Box, Button, Grid, Typography } from "@mui/material";
+import Image from "next/image";
 import Link from "next/link";
 
 interface SectionProps {
@@ -42,17 +43,14 @@ export default function SplitSectionLeft({
                     item
                     xs={12}
                     md={6}
-                    sx={{ display: "flex", height: "100%" }}
+                    sx={{ position: "relative", height: { xs: "50vh", md: "100vh" } }}
                 >
-                    <Box
-                        component="img"
+                    <Image
                         src={imageSrc}
-                        alt={imageAlt}
-                        sx={{
-                            width: "100%",
-                            height: "100vh",
-                            objectFit: "cover",
-                        }}
+                        alt={imageAlt ?? ""}
+                        fill
+                        sizes="(max-width: 768px) 100vw, 50vw"
+                        style={{ objectFit: "cover" }}
                     />
                 </Grid>
                 <Grid

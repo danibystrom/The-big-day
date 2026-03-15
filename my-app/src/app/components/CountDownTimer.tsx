@@ -123,7 +123,7 @@ function CountdownTimer() {
       </Box>
 
       <Button
-        onClick={() => router.push("/start")}
+        onClick={() => router.push("/")}
         variant="contained"
         disableRipple
         sx={{
