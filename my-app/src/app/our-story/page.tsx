@@ -79,7 +79,8 @@ export default function OurStorySection() {
                         Praesent eu accumsan metus. Donec suscipit venenatis placerat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas posuere luctus eros sed sollicitudin.
                         Curabitur mattis leo mauris, at pharetra lectus iaculis sollicitudin. Donec cursus commodo congue.
                         Praesent eu accumsan metus. Donec suscipit venenatis placerat.
-
+                        <br />
+                        <br />
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas posuere luctus eros sed sollicitudin.
                         Curabitur mattis leo mauris, at pharetra lectus iaculis sollicitudin. Donec cursus commodo congue.
                         Praesent eu accumsan metus. Donec suscipit venenatis placerat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas posuere luctus eros sed sollicitudin.
