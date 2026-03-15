@@ -170,8 +170,8 @@ export default function HeaderMenu() {
         onClose={handleCloseMobile}
         PaperProps={{
           sx: {
-            backgroundColor: "#cbc4ba",
-            color: "#000",
+            backgroundColor: "#F2EDE4",
+            color: "#1C1A18",
             width: 260,
           },
         }}

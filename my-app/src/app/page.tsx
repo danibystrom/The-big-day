@@ -15,7 +15,7 @@ Vi vill redan nu skicka en kärleksfull påminnelse om att skriva in datumet i k
         imageSrc="/garden.jpg"
         buttonText="Mer om oss"
         buttonHref="/our-story"
-        bgColor="#cbc4ba"
+        bgColor="#F2EDE4"
       />
       <SplitSectionLeft
         title="OM VÅRT BRÖLLOP..."
@@ -23,7 +23,7 @@ Vi vill redan nu skicka en kärleksfull påminnelse om att skriva in datumet i k
         imageSrc="/cheers.jpeg"
         buttonText="Vårt bröllop"
         buttonHref="/our-story"
-        bgColor="#cbc4ba"
+        bgColor="#F2EDE4"
       />
     </>
   );

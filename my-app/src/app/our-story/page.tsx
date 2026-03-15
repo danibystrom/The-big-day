@@ -35,7 +35,7 @@ export default function OurStorySection() {
                 component="section"
                 sx={{
                     minHeight: "90vh",
-                    backgroundColor: "#cbc4ba",
+                    backgroundColor: "#F2EDE4",
                     display: "flex",
                     alignItems: "center",
                 }}
@@ -52,7 +52,7 @@ export default function OurStorySection() {
                         variant="h3"
                         sx={{
                             fontFamily: '"Italiana", sans-serif',
-                            color: "#000",
+                            color: "#1C1A18",
                             textAlign: "left",
                             lineHeight: 1.05,
                             mb: 3,
@@ -105,7 +105,7 @@ export default function OurStorySection() {
                     <Button
                         variant="contained"
                         sx={{
-                            backgroundColor: "#000",
+                            backgroundColor: "#1C1A18",
                             color: "#fff",
                             borderRadius: 0,
                             px: 4,
@@ -113,14 +113,14 @@ export default function OurStorySection() {
                             textTransform: "none",
                             fontFamily: '"Antic Didone", serif',
                             boxShadow: "none",
-                            "&:hover": { backgroundColor: "#000", boxShadow: "none" },
+                            "&:hover": { backgroundColor: "#1C1A18", boxShadow: "none" },
                         }}
                     >
                         Anmäl dig här
                     </Button>
                 </Box>
             </Box>
-            <SplitSectionLeft title="OM VÅRT BRÖLLOP..." text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas posuere luctus eros sed sollicitudin. Curabitur mattis leo mauris, at pharetra lectus iaculis sollicitudin. Donec cursus commodo congue. Praesent eu accumsan metus. Donec suscipit venenatis placerat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas posuere luctus eros sed sollicitudin. Curabitur mattis leo mauris, at pharetra lectus iaculis sollicitudin. Donec cursus commodo congue. Praesent eu accumsan metus. Donec suscipit venenatis placerat." imageSrc="/cheers.jpeg" buttonText="Vårt bröllop" buttonHref="/our-story" bgColor="#000" />
+            <SplitSectionLeft title="OM VÅRT BRÖLLOP..." text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas posuere luctus eros sed sollicitudin. Curabitur mattis leo mauris, at pharetra lectus iaculis sollicitudin. Donec cursus commodo congue. Praesent eu accumsan metus. Donec suscipit venenatis placerat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas posuere luctus eros sed sollicitudin. Curabitur mattis leo mauris, at pharetra lectus iaculis sollicitudin. Donec cursus commodo congue. Praesent eu accumsan metus. Donec suscipit venenatis placerat." imageSrc="/cheers.jpeg" buttonText="Vårt bröllop" buttonHref="/our-story" bgColor="#1C1A18" />
         </Box>
 
     );

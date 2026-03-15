@@ -48,7 +48,7 @@ export default function Footer() {
         <Box
             component="footer"
             sx={{
-                backgroundColor: "#000",
+                backgroundColor: "#1C1A18",
                 width: "100%",
                 padding: "1rem 0",
                 paddingTop: "2rem",
@@ -101,7 +101,7 @@ export default function Footer() {
                                     aria-controls="panel1a-content"
                                     id="panel1a-header"
                                     sx={{
-                                        backgroundColor: "#000",
+                                        backgroundColor: "#1C1A18",
                                     }}
                                 >
                                     <Typography
@@ -121,7 +121,7 @@ export default function Footer() {
                                     sx={{
                                         display: "flex",
                                         flexDirection: "column",
-                                        backgroundColor: "#000",
+                                        backgroundColor: "#1C1A18",
                                     }}
                                 >
                                     <StyledLink text="Mer info kommer" href="/" />
@@ -163,7 +163,7 @@ export default function Footer() {
                                     aria-controls="panel1a-content"
                                     id="panel1a-header"
                                     sx={{
-                                        backgroundColor: "#000",
+                                        backgroundColor: "#1C1A18",
                                     }}
                                 >
                                     <Typography
@@ -184,7 +184,7 @@ export default function Footer() {
                                         display: "flex",
                                         flexDirection: "column",
 
-                                        backgroundColor: "#000",
+                                        backgroundColor: "#1C1A18",
                                     }}
                                 >
                                     <StyledLink text="Mer info kommer" href="/" />
@@ -226,7 +226,7 @@ export default function Footer() {
                                     aria-controls="panel1a-content"
                                     id="panel1a-header"
                                     sx={{
-                                        backgroundColor: "#000",
+                                        backgroundColor: "#1C1A18",
                                     }}
                                 >
                                     <Typography
@@ -246,7 +246,7 @@ export default function Footer() {
                                     sx={{
                                         display: "flex",
                                         flexDirection: "column",
-                                        backgroundColor: "#000",
+                                        backgroundColor: "#1C1A18",
                                     }}
                                 >
                                     <StyledLink text="Mer info kommer" href="/" />
@@ -286,7 +286,7 @@ export default function Footer() {
                                     aria-controls="panel1a-content"
                                     id="panel1a-header"
                                     sx={{
-                                        backgroundColor: "#000",
+                                        backgroundColor: "#1C1A18",
                                     }}
                                 >
                                     <Typography
@@ -307,7 +307,7 @@ export default function Footer() {
                                         display: "flex",
                                         flexDirection: "column",
 
-                                        backgroundColor: "#000",
+                                        backgroundColor: "#1C1A18",
                                     }}
                                 >
                                     <StyledLink text="@feliciarosensporre" href="/" />
