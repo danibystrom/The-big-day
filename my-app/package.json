@@ -13,6 +13,7 @@
     "@emotion/styled": "^11.14.1",
     "@mui/icons-material": "^6.0.0",
     "@mui/material": "^6.0.0",
+    "@mui/material-nextjs": "^7.3.9",
     "@mui/styles": "^6.4.12",
     "@prisma/client": "^6.19.2",
     "framer-motion": "^12.19.2",

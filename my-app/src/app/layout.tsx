@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import dynamic from "next/dynamic";
 import { Italiana } from "next/font/google";
 import HeaderMenu from "./components/HeaderMenu";
+import MuiAppProvider from "./MuiAppProvider";
 import "./globals.css";
 
 const italiana = Italiana({ weight: "400", subsets: ["latin"], display: "swap" });
@@ -39,9 +40,11 @@ export default function RootLayout({
         />
       </head>
       <body suppressHydrationWarning>
-        <HeaderMenu />
-        {children}
-        <Footer />
+        <MuiAppProvider>
+          <HeaderMenu />
+          {children}
+          <Footer />
+        </MuiAppProvider>
       </body>
     </html>
   );
