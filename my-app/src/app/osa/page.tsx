@@ -265,7 +265,7 @@ export default function OsaPage() {
         text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas posuere luctus eros sed sollicitudin. Curabitur mattis leo mauris, at pharetra lectus iaculis sollicitudin. Donec cursus commodo congue. Praesent eu accumsan metus. Donec suscipit venenatis placerat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas posuere luctus eros sed sollicitudin. Curabitur mattis leo mauris, at pharetra lectus iaculis sollicitudin. Donec cursus commodo congue. Praesent eu accumsan metus. Donec suscipit venenatis placerat."
         imageSrc="/cheers.jpeg"
         buttonText="Vårt bröllop"
-        buttonHref="/our-story"
+        buttonHref="/brollopet"
         bgColor="#1C1A18"
       />
 

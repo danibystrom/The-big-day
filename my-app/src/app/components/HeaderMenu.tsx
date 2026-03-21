@@ -19,13 +19,13 @@ import { useState } from "react";
 
 const navLeft = [
   { label: "Hem", href: "/" },
-  { label: "Vår historia", href: "/our-story" },
-  { label: "Bröllopet", href: "/the-wedding" },
+  { label: "Vår historia", href: "/var-historia" },
+  { label: "Bröllopet", href: "/brollopet" },
 ];
 
 const navRight = [
   { label: "Inspiration", href: "/inspiration" },
-  { label: "Kontakt", href: "/contact" },
+  { label: "Kontakt", href: "/kontakt" },
   { label: "OSA", href: "/osa" },
 ];
 

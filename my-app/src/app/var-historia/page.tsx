@@ -1,127 +1,32 @@
-'use client';
-import SplitSectionLeft from "@/app/components/SplitSectionLeft";
-import { Box, Button, Typography } from "@mui/material";
+"use client";
 
-export default function OurStorySection() {
-    return (
-        <Box>
-            <Box
-                sx={{
-                    height: "90vh",
-                    display: "flex",
-                    flexDirection: "column",
-                    justifyContent: "center",
-                    alignItems: "center",
-                    backgroundImage: "url(/sectionimg.jpeg)",
-                    backgroundSize: "cover",
-                    backgroundPosition: "center",
-                }}
-            >
-                <Typography
-                    variant="h1"
-                    sx={{
-                        fontFamily: '"Italiana", sans-serif',
-                        color: "#fff",
-                        textAlign: "center",
-                        lineHeight: 1,
-                        mb: 4,
-                    }}
-                >
-                    VÅR HISTORIA
-                </Typography>
-            </Box>
+import SitePageLayout from "@/app/components/SitePageLayout";
 
-            <Box
-                component="section"
-                sx={{
-                    minHeight: "90vh",
-                    backgroundColor: "#F2EDE4",
-                    display: "flex",
-                    alignItems: "center",
-                }}
-            >
-                <Box
-                    sx={{
-                        width: "100%",
-                        maxWidth: "85vw",
-                        px: { xs: 3, sm: 6, md: 8 },
-                        py: { xs: 6, md: 6 },
-                    }}
-                >
-                    <Typography
-                        variant="h3"
-                        sx={{
-                            fontFamily: '"Italiana", sans-serif',
-                            color: "#1C1A18",
-                            textAlign: "left",
-                            lineHeight: 1.05,
-                            mb: 3,
-                            letterSpacing: 0.5,
-                        }}
-                    >
-                        HÄR KOMMER EN TITEL
-                        <br />
-                        OM HUR VI TRÄFFADES...
-                    </Typography>
+const LOREM =
+  "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas posuere luctus eros sed sollicitudin. Curabitur mattis leo mauris, at pharetra lectus iaculis sollicitudin. Donec cursus commodo congue. Praesent eu accumsan metus. Donec suscipit venenatis placerat. Integer vitae libero vel nisi tincidunt facilisis. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae.";
 
-                    <Typography
-                        variant="body1"
-                        sx={{
-                            fontFamily: '"Antic Didone", serif',
-                            color: "#1a1a1a",
-                            fontSize: { xs: 16, sm: 18 },
-                            lineHeight: 1.2,
-                            mb: 4,
-                        }}
-                    >
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas posuere luctus eros sed sollicitudin.
-                        Curabitur mattis leo mauris, at pharetra lectus iaculis sollicitudin. Donec cursus commodo congue.
-                        Praesent eu accumsan metus. Donec suscipit venenatis placerat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas posuere luctus eros sed sollicitudin.
-                        Curabitur mattis leo mauris, at pharetra lectus iaculis sollicitudin. Donec cursus commodo congue.
-                        Praesent eu accumsan metus. Donec suscipit venenatis placerat.
-                        <br />
-                        <br />
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas posuere luctus eros sed sollicitudin.
-                        Curabitur mattis leo mauris, at pharetra lectus iaculis sollicitudin. Donec cursus commodo congue.
-                        Praesent eu accumsan metus. Donec suscipit venenatis placerat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas posuere luctus eros sed sollicitudin.
-                        Curabitur mattis leo mauris, at pharetra lectus iaculis sollicitudin. Donec cursus commodo congue.
-                        Praesent eu accumsan metus. Donec suscipit venenatis placerat.
-                        <br />
-                        <br />
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas posuere luctus eros sed sollicitudin.
-                        Curabitur mattis leo mauris, at pharetra lectus iaculis sollicitudin. Donec cursus commodo congue.
-                        Praesent eu accumsan metus. Donec suscipit venenatis placerat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas posuere luctus eros sed sollicitudin.
-                        Curabitur mattis leo mauris, at pharetra lectus iaculis sollicitudin. Donec cursus commodo congue.
-                        Praesent eu accumsan metus. Donec suscipit venenatis placerat.
+const SPLIT_TEXT =
+  "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas posuere luctus eros sed sollicitudin. Curabitur mattis leo mauris, at pharetra lectus iaculis sollicitudin. Donec cursus commodo congue. Praesent eu accumsan metus. Donec suscipit venenatis placerat.";
 
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas posuere luctus eros sed sollicitudin.
-                        Curabitur mattis leo mauris, at pharetra lectus iaculis sollicitudin. Donec cursus commodo congue.
-                        Praesent eu accumsan metus. Donec suscipit venenatis placerat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas posuere luctus eros sed sollicitudin.
-                        Curabitur mattis leo mauris, at pharetra lectus iaculis sollicitudin. Donec cursus commodo congue.
-                        Praesent eu accumsan metus. Donec suscipit venenatis placerat.
-
-                    </Typography>
-
-                    <Button
-                        variant="contained"
-                        sx={{
-                            backgroundColor: "#1C1A18",
-                            color: "#fff",
-                            borderRadius: 0,
-                            px: 4,
-                            py: 1.2,
-                            textTransform: "none",
-                            fontFamily: '"Antic Didone", serif',
-                            boxShadow: "none",
-                            "&:hover": { backgroundColor: "#1C1A18", boxShadow: "none" },
-                        }}
-                    >
-                        Anmäl dig här
-                    </Button>
-                </Box>
-            </Box>
-            <SplitSectionLeft title="OM VÅRT BRÖLLOP..." text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas posuere luctus eros sed sollicitudin. Curabitur mattis leo mauris, at pharetra lectus iaculis sollicitudin. Donec cursus commodo congue. Praesent eu accumsan metus. Donec suscipit venenatis placerat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas posuere luctus eros sed sollicitudin. Curabitur mattis leo mauris, at pharetra lectus iaculis sollicitudin. Donec cursus commodo congue. Praesent eu accumsan metus. Donec suscipit venenatis placerat." imageSrc="/cheers.jpeg" buttonText="Vårt bröllop" buttonHref="/our-story" bgColor="#1C1A18" />
-        </Box>
-
-    );
+export default function VarHistoriaPage() {
+  return (
+    <SitePageLayout
+      heroTitle="VÅR HISTORIA"
+      heroSubtitle="En kort berättelse om oss – mer innehåll kommer snart."
+      heroImageSrc="/sectionimg.jpeg"
+      sectionTitle="Hur vi träffades"
+      sectionBody={LOREM}
+      split={{
+        variant: "left",
+        title: "OM VÅRT BRÖLLOP…",
+        text: SPLIT_TEXT,
+        imageSrc: "/cheers.jpeg",
+        imageAlt: "Skål",
+        buttonText: "Till bröllopet",
+        buttonHref: "/brollopet",
+        bgColor: "#1C1A18",
+        buttonStyle: "outlined",
+      }}
+    />
+  );
 }
