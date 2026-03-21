@@ -64,7 +64,7 @@ export default function SplitSectionLeft({
                         display: "flex",
                         flexDirection: "column",
                         justifyContent: "center",
-                        padding: "40px",
+                        padding: { xs: "28px 24px", md: "40px 28px" },
                         backgroundColor: bgColor,
                         height: "100%",
                     }}

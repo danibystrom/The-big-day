@@ -3,6 +3,7 @@
 import SplitSectionLeft from "@/app/components/SplitSectionLeft";
 import SplitSectionRight from "@/app/components/SplitSectionRight";
 import { Box, Typography } from "@mui/material";
+import type { ReactNode } from "react";
 
 const LOREM =
   "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas posuere luctus eros sed sollicitudin. Curabitur mattis leo mauris, at pharetra lectus iaculis sollicitudin. Donec cursus commodo congue. Praesent eu accumsan metus. Donec suscipit venenatis placerat. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.";
@@ -25,6 +26,8 @@ export type SitePageLayoutProps = {
   heroImageSrc?: string;
   sectionTitle?: string;
   sectionBody?: string;
+  /** När satt: renderas istället för `sectionBody` (t.ex. strukturerat innehåll). `sectionTitle` kan fortfarande visas ovanför. */
+  sectionChildren?: ReactNode;
   split: SitePageSplitConfig;
 };
 
@@ -34,6 +37,7 @@ export default function SitePageLayout({
   heroImageSrc = "/sectionimg.jpeg",
   sectionTitle,
   sectionBody = LOREM,
+  sectionChildren,
   split,
 }: SitePageLayoutProps) {
   const Split =
@@ -59,12 +63,14 @@ export default function SitePageLayout({
           variant="h1"
           sx={{
             fontFamily: '"Italiana", sans-serif',
+            fontWeight: 400,
             color: "#fff",
             textAlign: "center",
-            lineHeight: 1,
+            lineHeight: { xs: 1.12, sm: 1.08 },
             mb: heroSubtitle ? 2 : 4,
-            fontSize: { xs: "2.2rem", sm: "3rem", md: "3.5rem" },
+            fontSize: { xs: "1.85rem", sm: "2.65rem", md: "3.1rem" },
             maxWidth: "min(90vw, 900px)",
+            textShadow: "0 2px 24px rgba(0,0,0,0.45)",
           }}
         >
           {heroTitle}
@@ -74,9 +80,11 @@ export default function SitePageLayout({
             variant="h6"
             sx={{
               fontFamily: '"Antic Didone", serif',
+              fontWeight: 400,
               color: "#fff",
               fontSize: { xs: "1rem", sm: "1.15rem" },
               maxWidth: "min(90vw, 640px)",
+              textShadow: "0 1px 16px rgba(0,0,0,0.4)",
             }}
           >
             {heroSubtitle}
@@ -98,35 +106,44 @@ export default function SitePageLayout({
             width: "100%",
             maxWidth: "85vw",
             px: { xs: 3, sm: 6, md: 8 },
-            py: { xs: 6, md: 8 },
+            py: { xs: 6, md: 6 },
           }}
         >
           {sectionTitle ? (
             <Typography
               variant="h3"
+              component="h2"
               sx={{
                 fontFamily: '"Italiana", sans-serif',
+                fontWeight: 400,
                 color: "#1C1A18",
                 textAlign: "left",
-                lineHeight: 1.05,
-                mb: 3,
+                lineHeight: 1.08,
+                mb: sectionChildren ? { xs: 4, md: 5 } : 3,
                 letterSpacing: 0.5,
+                fontSize: { xs: "1.65rem", sm: "2rem" },
               }}
             >
               {sectionTitle}
             </Typography>
           ) : null}
-          <Typography
-            variant="body1"
-            sx={{
-              fontFamily: '"Antic Didone", serif',
-              color: "#1a1a1a",
-              fontSize: { xs: 16, sm: 18 },
-              lineHeight: 1.35,
-            }}
-          >
-            {sectionBody}
-          </Typography>
+          {sectionChildren ? (
+            sectionChildren
+          ) : (
+            <Typography
+              variant="body1"
+              component="div"
+              sx={{
+                fontFamily: '"Antic Didone", serif',
+                fontWeight: 400,
+                color: "#1a1a1a",
+                fontSize: { xs: 16, sm: 18 },
+                lineHeight: 1.65,
+              }}
+            >
+              {sectionBody}
+            </Typography>
+          )}
         </Box>
       </Box>
 
