@@ -1,5 +1,6 @@
 "use client";
 
+import CheckIcon from "@mui/icons-material/Check";
 import SplitSectionLeft from "@/app/components/SplitSectionLeft";
 import { Box, Button, TextField, Typography, Alert, Snackbar } from "@mui/material";
 import { FormEvent, useState } from "react";
@@ -314,7 +315,39 @@ export default function OsaPage() {
         <Alert
           onClose={() => setSuccessOpen(false)}
           severity="success"
-          sx={{ width: "100%" }}
+          variant="filled"
+          icon={<CheckIcon sx={{ fontSize: "1.35rem", opacity: 0.95 }} />}
+          sx={{
+            width: "100%",
+            maxWidth: 420,
+            alignItems: "center",
+            backgroundColor: "#1C1A18",
+            color: "#F2EDE4",
+            fontFamily: bodyFont,
+            fontSize: "1rem",
+            letterSpacing: 0.02,
+            borderRadius: 0,
+            border: "1px solid rgba(242, 237, 228, 0.2)",
+            boxShadow: "0 12px 40px rgba(0, 0, 0, 0.35)",
+            "&.MuiAlert-filled.MuiAlert-filledSuccess": {
+              backgroundColor: "#1C1A18",
+            },
+            "& .MuiAlert-icon": {
+              color: "#F2EDE4",
+              opacity: 0.9,
+            },
+            "& .MuiAlert-message": {
+              padding: "4px 0",
+            },
+            "& .MuiAlert-action": {
+              color: "#F2EDE4",
+              paddingTop: 0,
+              alignItems: "center",
+            },
+            "& .MuiAlert-action .MuiIconButton-root": {
+              color: "#F2EDE4",
+            },
+          }}
         >
           Tack för din anmälan!
         </Alert>
@@ -329,7 +362,37 @@ export default function OsaPage() {
         <Alert
           onClose={() => setErrorOpen(false)}
           severity="error"
-          sx={{ width: "100%" }}
+          variant="filled"
+          sx={{
+            width: "100%",
+            maxWidth: 420,
+            alignItems: "center",
+            backgroundColor: "#1C1A18",
+            color: "#F2EDE4",
+            fontFamily: bodyFont,
+            fontSize: "1rem",
+            letterSpacing: 0.02,
+            borderRadius: 0,
+            border: "1px solid rgba(224, 180, 180, 0.35)",
+            boxShadow: "0 12px 40px rgba(0, 0, 0, 0.35)",
+            "&.MuiAlert-filled.MuiAlert-filledError": {
+              backgroundColor: "#1C1A18",
+            },
+            "& .MuiAlert-icon": {
+              color: "#e8c4c4",
+            },
+            "& .MuiAlert-message": {
+              padding: "4px 0",
+            },
+            "& .MuiAlert-action": {
+              color: "#F2EDE4",
+              paddingTop: 0,
+              alignItems: "center",
+            },
+            "& .MuiAlert-action .MuiIconButton-root": {
+              color: "#F2EDE4",
+            },
+          }}
         >
           Något gick fel. Kontrollera fälten och försök igen.
         </Alert>
