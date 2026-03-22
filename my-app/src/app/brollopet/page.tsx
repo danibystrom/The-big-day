@@ -132,7 +132,8 @@ export default function BrollopetPage() {
           flexDirection: "column",
           justifyContent: "center",
           alignItems: "center",
-          backgroundImage: "url(/osapage.jpeg)",
+          backgroundImage:
+            "linear-gradient(to bottom, rgba(28, 26, 24, 0.62) 0%, rgba(28, 26, 24, 0.18) 20%, transparent 42%), url(/Tezza-7683.jpg)",
           backgroundSize: "cover",
           backgroundPosition: "center",
           textAlign: "center",
@@ -178,7 +179,7 @@ export default function BrollopetPage() {
       <SplitSectionLeft
         title="EN HELG I TRE KAPITEL"
         text={SPLIT_TEXT}
-        imageSrc="/sectionimg.jpeg"
+        imageSrc="/bubbel-torn.jpeg"
         imageAlt="Bröllop"
         buttonText="Se helgens program"
         buttonHref="/brollopet/helgens-program"
@@ -188,7 +189,7 @@ export default function BrollopetPage() {
       <SplitSectionRight
         title="RESA, BOENDET OCH ALLT DÄREMELLAN"
         text={SPLIT_TEXT2}
-        imageSrc="/sectionimg.jpeg"
+        imageSrc="/Tezza-8542.jpg"
         imageAlt="Bröllop"
         buttonText="Läs mer om resa & boende"
         buttonHref="/brollopet/resa-ankomst"
