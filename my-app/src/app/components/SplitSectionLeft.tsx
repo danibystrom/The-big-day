@@ -1,7 +1,7 @@
 "use client";
-import { Box, Button, Grid, Typography } from "@mui/material";
+import { Box, Grid, Typography } from "@mui/material";
 import Image from "next/image";
-import Link from "next/link";
+import WeddingButton from "./WeddingButton";
 
 interface SectionProps {
     title: string;
@@ -11,8 +11,9 @@ interface SectionProps {
     imageAlt?: string;
     buttonText: string;
     buttonHref: string;
+    buttonStyle?: "filled" | "outlined";
 
-    bgColor?: "#cbc4ba" | "#000";
+    bgColor?: "#F2EDE4" | "#1C1A18";
 }
 
 /* This component displays a split section with the image on the left and text on the right. */
@@ -24,11 +25,12 @@ export default function SplitSectionLeft({
     imageAlt,
     buttonText,
     buttonHref,
-    bgColor = "#000",
+    buttonStyle,
+    bgColor = "#1C1A18",
 }: SectionProps) {
-    const isDark = bgColor === "#000";
-    const textColor = isDark ? "#fff" : "#000";
-    const buttonVariant = isDark ? "outlined" : "contained";
+    const isDark = bgColor === "#1C1A18";
+    const textColor = isDark ? "#fff" : "#1C1A18";
+    const resolvedButtonStyle = buttonStyle ?? (isDark ? "outlined" : "filled");
     return (
         <Box
             sx={{
@@ -62,7 +64,7 @@ export default function SplitSectionLeft({
                         display: "flex",
                         flexDirection: "column",
                         justifyContent: "center",
-                        padding: "40px",
+                        padding: { xs: "28px 24px", md: "40px 28px" },
                         backgroundColor: bgColor,
                         height: "100%",
                     }}
@@ -76,35 +78,12 @@ export default function SplitSectionLeft({
                     <Typography variant="body1" sx={{ fontFamily: '"Antic Didone", serif', marginBottom: 8 }}>
                         {text2}
                     </Typography>
-                    <Button
-                        component={Link}
+                    <WeddingButton
+                        text={buttonText}
                         href={buttonHref}
-                        variant={buttonVariant}
-                        disableRipple
-                        sx={{
-                            width: "50%",
-                            borderRadius: 0,
-                            fontFamily: '"Antic Didone", serif',
-                            textTransform: "none",
-                            padding: "10px 20px",
-                            boxShadow: "none",
-
-                            ...(isDark
-                                ? {
-                                    border: "1px solid #fff",
-                                    color: "#fff",
-                                    backgroundColor: "transparent",
-                                    "&:hover": { backgroundColor: "transparent", boxShadow: "none" },
-                                }
-                                : {
-                                    backgroundColor: "#000",
-                                    color: "#fff",
-                                    "&:hover": { backgroundColor: "#000", boxShadow: "none" },
-                                }),
-                        }}
-                    >
-                        {buttonText}
-                    </Button>
+                        background={isDark ? "dark" : "light"}
+                        variant={resolvedButtonStyle}
+                    />
                 </Grid>
 
             </Grid>

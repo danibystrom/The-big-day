@@ -87,7 +87,7 @@ function CountdownTimer() {
         flexDirection: "column",
         alignItems: "center",
         justifyContent: "center",
-        backgroundColor: "#cbc4ba",
+        backgroundColor: "#F2EDE4",
       }}
     >
       <Box
@@ -128,7 +128,7 @@ function CountdownTimer() {
         disableRipple
         sx={{
           mt: 8,
-          backgroundColor: "#000",
+          backgroundColor: "#1C1A18",
           color: "#fff",
           padding: "10px 40px",
           width: "200px",
