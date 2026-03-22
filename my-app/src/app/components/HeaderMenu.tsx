@@ -29,11 +29,11 @@ export const BROLLOPET_SUBLINKS = [
 
 const navLeftSimple = [
   { label: "Hem", href: "/" },
-  { label: "Vår historia", href: "/var-historia" },
+  // { label: "Vår historia", href: "/var-historia" },
 ];
 
 const navRight = [
-  { label: "Inspiration", href: "/inspiration" },
+  // { label: "Inspiration", href: "/inspiration" },
   { label: "Kontakt", href: "/kontakt" },
   { label: "OSA", href: "/osa" },
 ];
