@@ -100,7 +100,9 @@ export default function OsaPage() {
           flexDirection: "column",
           justifyContent: "center",
           alignItems: "center",
-          backgroundImage: "url(/osapage.jpeg)",
+          // Kort mörk ton upptill – samma som Bröllopet-heron (kontrast mot header)
+          backgroundImage:
+            "linear-gradient(to bottom, rgba(28, 26, 24, 0.62) 0%, rgba(28, 26, 24, 0.18) 20%, transparent 42%), url(/Tezza-0266.jpg)",
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}
