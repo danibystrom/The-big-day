@@ -7,12 +7,18 @@ import type { ReactNode } from "react";
 export default function TextSectionHeadRight({
   title,
   children,
+  uppercaseTitle = true,
 }: {
   title: string;
   children: ReactNode;
+  uppercaseTitle?: boolean;
 }) {
   return (
-    <TextSplitBand title={title} headPosition="right">
+    <TextSplitBand
+      title={title}
+      headPosition="right"
+      uppercaseTitle={uppercaseTitle}
+    >
       {children}
     </TextSplitBand>
   );

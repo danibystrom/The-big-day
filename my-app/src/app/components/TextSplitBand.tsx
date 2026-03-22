@@ -12,7 +12,7 @@ export const textPageColumnSx: SxProps<Theme> = {
   px: { xs: 0, sm: 1 },
 };
 
-const titleSx = {
+const titleSxUppercase = {
   fontFamily: '"Italiana", sans-serif',
   fontWeight: 400,
   color: "#1C1A18",
@@ -20,6 +20,16 @@ const titleSx = {
   lineHeight: 1.08,
   textTransform: "uppercase" as const,
   fontSize: { xs: "1.35rem", sm: "1.65rem", md: "1.85rem" },
+};
+
+const titleSxSentence = {
+  fontFamily: '"Italiana", sans-serif',
+  fontWeight: 400,
+  color: "#1C1A18",
+  letterSpacing: "0.02em",
+  lineHeight: 1.15,
+  textTransform: "none" as const,
+  fontSize: { xs: "1.2rem", sm: "1.4rem", md: "1.55rem" },
 };
 
 const contentSx = {
@@ -46,7 +56,10 @@ export default function TextSplitBand({
   title,
   headPosition,
   children,
+  uppercaseTitle = true,
 }: TextSplitBandProps) {
+  const titleSx = uppercaseTitle ? titleSxUppercase : titleSxSentence;
+
   const titleBlock = (
     <Grid item xs={12} md={5}>
       <Typography component="h3" variant="h4" sx={titleSx}>
