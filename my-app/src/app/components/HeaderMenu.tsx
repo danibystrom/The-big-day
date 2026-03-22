@@ -201,8 +201,10 @@ export default function HeaderMenu() {
               </IconButton>
             </Box>
 
-            {/* TITEL – alltid centrerad */}
+            {/* TITEL – alltid centrerad, klickbar som Hem (start) */}
             <Typography
+              component={Link}
+              href="/"
               sx={{
                 position: "absolute",
                 left: "50%",
@@ -213,6 +215,8 @@ export default function HeaderMenu() {
                 letterSpacing: "0.08em",
                 textTransform: "none",
                 whiteSpace: "nowrap",
+                textDecoration: "none",
+                cursor: "pointer",
               }}
             >
               Felicia & Sebastian

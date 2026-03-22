@@ -1,5 +1,6 @@
 "use client";
 
+import CheckIcon from "@mui/icons-material/Check";
 import SplitSectionLeft from "@/app/components/SplitSectionLeft";
 import { Box, Button, TextField, Typography, Alert, Snackbar } from "@mui/material";
 import { FormEvent, useState } from "react";
@@ -14,16 +15,28 @@ export default function OsaPage() {
   const [successOpen, setSuccessOpen] = useState(false);
   const [errorOpen, setErrorOpen] = useState(false);
 
+  /** Ljus hjälptext i fältet – döljs vid fokus (klick) */
+  const placeholderColor = "rgba(28, 26, 24, 0.32)";
+  const bodyFont = '"Antic Didone", serif';
+
   const fieldSx = {
+    marginTop: 0,
     "& .MuiInputLabel-root": {
-      fontFamily: '"Antic Didone", serif',
+      fontFamily: bodyFont,
       color: "#1C1A18",
       letterSpacing: 0.2,
       transform: "none",
       position: "static",
+      marginBottom: "2px",
+    },
+    "& .MuiInputLabel-shrink": {
+      transform: "none",
     },
     "& .MuiInputLabel-root.Mui-focused": {
       color: "#1C1A18",
+    },
+    "& .MuiInput-root": {
+      marginTop: 0,
     },
     "& .MuiInputBase-root": {
       fontFamily: '"Antic Didone", serif',
@@ -31,6 +44,20 @@ export default function OsaPage() {
       fontSize: { xs: 16, sm: 18 },
       paddingTop: 0,
       paddingBottom: 0,
+      marginTop: 0,
+    },
+    "& .MuiInputBase-input::placeholder": {
+      color: placeholderColor,
+      opacity: 1,
+      fontFamily: bodyFont,
+    },
+    /* Textarea-placeholder följer inte alltid input-regeln i alla webbläsare */
+    "& textarea.MuiInputBase-input::placeholder": {
+      fontFamily: bodyFont,
+    },
+    "& .MuiInputBase-input:focus::placeholder": {
+      opacity: 0,
+      transition: "opacity 0.15s ease",
     },
     "& .MuiInput-underline:before": {
       borderBottomColor: "#1C1A18",
@@ -46,8 +73,9 @@ export default function OsaPage() {
       borderBottomColor: "#1C1A18",
       borderBottomWidth: "1px",
     },
-    "& textarea": {
+    "& textarea.MuiInputBase-input": {
       padding: 0,
+      fontFamily: bodyFont,
     },
   } as const;
 
@@ -100,7 +128,8 @@ export default function OsaPage() {
           flexDirection: "column",
           justifyContent: "center",
           alignItems: "center",
-          backgroundImage: "url(/osapage.jpeg)",
+          backgroundImage:
+            "linear-gradient(to bottom, rgba(28, 26, 24, 0.62) 0%, rgba(28, 26, 24, 0.18) 20%, transparent 42%), url(/Tezza-0266.jpg)",
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}
@@ -177,6 +206,8 @@ export default function OsaPage() {
                 variant="standard"
                 label="Förnamn:"
                 fullWidth
+                InputLabelProps={{ shrink: true }}
+                placeholder="Skriv ditt förnamn här"
                 sx={fieldSx}
                 value={firstName}
                 onChange={(e) => setFirstName(e.target.value)}
@@ -188,6 +219,7 @@ export default function OsaPage() {
                 label="Efternamn:"
                 fullWidth
                 InputLabelProps={{ shrink: true }}
+                placeholder="Skriv ditt efternamn här"
                 sx={fieldSx}
                 value={lastName}
                 onChange={(e) => setLastName(e.target.value)}
@@ -200,6 +232,7 @@ export default function OsaPage() {
                 type="email"
                 fullWidth
                 InputLabelProps={{ shrink: true }}
+                placeholder="namn@exempel.se"
                 sx={fieldSx}
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
@@ -211,6 +244,7 @@ export default function OsaPage() {
                 label="Telefonnummer:"
                 fullWidth
                 InputLabelProps={{ shrink: true }}
+                placeholder="T.ex. 070 123 45 67"
                 sx={fieldSx}
                 value={phone}
                 onChange={(e) => setPhone(e.target.value)}
@@ -223,13 +257,16 @@ export default function OsaPage() {
               label="Om du har någon form av allergi eller önskemål om specialkost, fyll i nedan:"
               fullWidth
               multiline
+              minRows={1}
               InputLabelProps={{ shrink: true }}
+              placeholder="Lämna tomt om inget gäller, eller beskriv kort här…"
               sx={{
                 ...fieldSx,
                 mb: 6,
                 "& .MuiInputBase-root": {
                   paddingTop: 0,
                   paddingBottom: 0,
+                  marginTop: 1,
                 },
                 "& textarea": {
                   padding: 0,
@@ -278,7 +315,39 @@ export default function OsaPage() {
         <Alert
           onClose={() => setSuccessOpen(false)}
           severity="success"
-          sx={{ width: "100%" }}
+          variant="filled"
+          icon={<CheckIcon sx={{ fontSize: "1.35rem", opacity: 0.95 }} />}
+          sx={{
+            width: "100%",
+            maxWidth: 420,
+            alignItems: "center",
+            backgroundColor: "#1C1A18",
+            color: "#F2EDE4",
+            fontFamily: bodyFont,
+            fontSize: "1rem",
+            letterSpacing: 0.02,
+            borderRadius: 0,
+            border: "1px solid rgba(242, 237, 228, 0.2)",
+            boxShadow: "0 12px 40px rgba(0, 0, 0, 0.35)",
+            "&.MuiAlert-filled.MuiAlert-filledSuccess": {
+              backgroundColor: "#1C1A18",
+            },
+            "& .MuiAlert-icon": {
+              color: "#F2EDE4",
+              opacity: 0.9,
+            },
+            "& .MuiAlert-message": {
+              padding: "4px 0",
+            },
+            "& .MuiAlert-action": {
+              color: "#F2EDE4",
+              paddingTop: 0,
+              alignItems: "center",
+            },
+            "& .MuiAlert-action .MuiIconButton-root": {
+              color: "#F2EDE4",
+            },
+          }}
         >
           Tack för din anmälan!
         </Alert>
@@ -293,7 +362,37 @@ export default function OsaPage() {
         <Alert
           onClose={() => setErrorOpen(false)}
           severity="error"
-          sx={{ width: "100%" }}
+          variant="filled"
+          sx={{
+            width: "100%",
+            maxWidth: 420,
+            alignItems: "center",
+            backgroundColor: "#1C1A18",
+            color: "#F2EDE4",
+            fontFamily: bodyFont,
+            fontSize: "1rem",
+            letterSpacing: 0.02,
+            borderRadius: 0,
+            border: "1px solid rgba(224, 180, 180, 0.35)",
+            boxShadow: "0 12px 40px rgba(0, 0, 0, 0.35)",
+            "&.MuiAlert-filled.MuiAlert-filledError": {
+              backgroundColor: "#1C1A18",
+            },
+            "& .MuiAlert-icon": {
+              color: "#e8c4c4",
+            },
+            "& .MuiAlert-message": {
+              padding: "4px 0",
+            },
+            "& .MuiAlert-action": {
+              color: "#F2EDE4",
+              paddingTop: 0,
+              alignItems: "center",
+            },
+            "& .MuiAlert-action .MuiIconButton-root": {
+              color: "#F2EDE4",
+            },
+          }}
         >
           Något gick fel. Kontrollera fälten och försök igen.
         </Alert>
