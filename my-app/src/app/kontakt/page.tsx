@@ -21,11 +21,9 @@ const contactLinkSx = {
 } as const;
 
 const SPLIT_TEXT =
-  "Från fredagens vita förväntan till lördagens svarta löfte — och vidare in i söndagens mjuka morgon efter. Det här är en helg i tre kapitel, var och ett med sin egen känsla, sin egen klädsel och sin egen plats i berättelsen. Här hittar du allt du behöver inför helgen — schema, klädkoder och praktisk information — samlat på ett ställe så att du kan komma förberedd och bara vara närvarande när det väl är dags.";
+  "Vi hoppas att du vill vara en del av det här.Att du vill klä dig i svart, höja ditt glas och fira kärleken med oss. Om du vet att du kommer, eller om hjärtat redan har svarat ja, tar vi emot ditt OSA här med öppna armar.";
 
-const SPLIT_TEXT2 =
-  "Här hittar du allt du behöver för att ta dig dit, hitta rätt boende och packa smart inför de tre dagarna. Så att du kan lägga all din energi på det som faktiskt spelar roll när helgen väl är här.";
-
+const SPLIT_TEXT2 = "Från dresscode till packlista, från vigselns tider till morgonen efter. Vi har tänkt på detaljerna så att du slipper. Här hittar du allt du kan tänkas behöva inför helgen. Vad du ska ha på dig, vad du bör packa, när du ska vara var och vad som väntar dig när du väl är på plats. Allt samlat på ett ställe, med kärlek och omsorg. Kom förberedd. Kom i svart. Kom redo att fira.";
 
 function KontaktContent() {
   return (
@@ -104,7 +102,7 @@ export default function KontaktPage() {
           flexDirection: "column",
           justifyContent: "center",
           alignItems: "center",
-          backgroundImage: "url(/sectionimg.jpeg)",
+          backgroundImage: "url(/Tezza-5981.jpg)",
           backgroundSize: "cover",
           backgroundPosition: "center",
           textAlign: "center",
@@ -149,21 +147,21 @@ export default function KontaktPage() {
         </Box>
       </Box>
       <SplitSectionLeft
-        title="EN HELG I TRE KAPITEL"
+        title="ÄR DU MED OSS?"
         text={SPLIT_TEXT}
-        imageSrc="/sectionimg.jpeg"
+        imageSrc="/cheers.jpeg"
         imageAlt="Bröllop"
-        buttonText="Se helgens program"
+        buttonText="Anmäl dig här"
         buttonHref="/brollopet/helgens-program"
         bgColor="#1C1A18"
         buttonStyle="outlined"
       />
       <SplitSectionRight
-        title="RESA, BOENDET OCH ALLT DÄREMELLAN"
+        title="ALLT DU BEHÖVER VETA INFÖR HELGEN"
         text={SPLIT_TEXT2}
-        imageSrc="/sectionimg.jpeg"
+        imageSrc="/Tezza-1077.jpg"
         imageAlt="Bröllop"
-        buttonText="Läs mer om resa & boende"
+        buttonText="Läs mer om bröllopet"
         buttonHref="/brollopet/resa-ankomst"
         bgColor="#F2EDE4"
         buttonStyle="outlined"
