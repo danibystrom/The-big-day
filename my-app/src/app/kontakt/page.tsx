@@ -66,11 +66,11 @@ function KontaktContent() {
           </Link>{" "}
           eller{" "}
           <Link
-            href="mailto:felicia.rosensporre@gmail.com"
+            href="mailto:feliciarosensporre@gmail.com"
             underline="hover"
             sx={contactLinkSx}
           >
-            felicia.rosensporre@gmail.com.
+            feliciarosensporre@gmail.com.
           </Link>
         </Typography>
         <Typography component="p" variant="body1" sx={{ ...body, mb: 0 }}>
@@ -80,11 +80,11 @@ function KontaktContent() {
           </Link>{" "}
           eller{" "}
           <Link
-            href="mailto:sebastian.szalai@gmail.com"
+            href="mailto:sebastian.szalai.j@gmail.com"
             underline="hover"
             sx={contactLinkSx}
           >
-            sebastian.szalai@gmail.com.
+            sebastian.szalai.j@gmail.com.
           </Link>
         </Typography>
       </TextSectionHeadLeft>
