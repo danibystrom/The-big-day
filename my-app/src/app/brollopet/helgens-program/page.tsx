@@ -3,7 +3,10 @@
 import SplitSectionLeft from "@/app/components/SplitSectionLeft";
 import SplitSectionRight from "@/app/components/SplitSectionRight";
 import TextSectionHeadLeft from "@/app/components/TextSectionHeadLeft";
-import { textPageColumnSx } from "@/app/components/TextSplitBand";
+import {
+  textPageColumnSx,
+  textSplitBandUppercaseTitleSx,
+} from "@/app/components/TextSplitBand";
 import { Box, Link, Typography } from "@mui/material";
 
 const body = {
@@ -21,14 +24,9 @@ const englishPoetic = {
   letterSpacing: 0.02,
 };
 
+/** Samma rubrik som TextSplitBand «VÅR VISION» (Italiana, versaler, storlek) */
 const chapterHeadingSx = {
-  fontFamily: '"Italiana", sans-serif',
-  fontWeight: 400,
-  color: "#1C1A18",
-  fontSize: { xs: "1.15rem", sm: "1.25rem" },
-  letterSpacing: 0.06,
-  lineHeight: 1.25,
-  textTransform: "uppercase" as const,
+  ...textSplitBandUppercaseTitleSx,
   mt: 4,
   mb: 1,
 };
@@ -58,18 +56,17 @@ const introTitleSx = {
   fontFamily: '"Italiana", sans-serif',
   fontWeight: 400,
   color: "#1C1A18",
-  marginBottom: 2,
+  marginBottom: 3,
   marginTop: 3,
-  letterSpacing: "0.06em",
-  lineHeight: 1.15,
-  textTransform: "none" as const,
-  fontSize: { xs: "1.5rem", sm: "1.75rem" },
+  letterSpacing: 0.5,
+  lineHeight: 1.05,
+  textTransform: "uppercase",
 };
 
 function HelgensProgramContent() {
   return (
     <Box component="article">
-      <Typography component="h2" sx={introTitleSx}>
+      <Typography variant="h3" component="h2" sx={introTitleSx}>
         From white to black
       </Typography>
       <Typography component="p" variant="body1" sx={{ ...body, mb: 2, mt: 0 }}>
@@ -88,7 +85,7 @@ function HelgensProgramContent() {
       </Typography>
 
       {/* Fredag */}
-      <Typography component="h3" sx={chapterHeadingSx}>
+      <Typography component="h3" variant="h4" sx={chapterHeadingSx}>
         Fredag, Chapter I — IN WHITE
       </Typography>
       <Typography component="p" sx={audienceNoteSx}>
@@ -143,7 +140,7 @@ function HelgensProgramContent() {
       </Typography>
 
       {/* Lördag */}
-      <Typography component="h3" sx={chapterHeadingSx}>
+      <Typography component="h3" variant="h4" sx={chapterHeadingSx}>
         Lördag, Chapter II — IN BLACK
       </Typography>
       <Typography component="p" sx={audienceNoteSx}>
@@ -208,7 +205,7 @@ function HelgensProgramContent() {
       </Typography>
 
       {/* Söndag */}
-      <Typography component="h3" sx={chapterHeadingSx}>
+      <Typography component="h3" variant="h4" sx={chapterHeadingSx}>
         Söndag, Chapter III — THE MORNING AFTER
       </Typography>
       <Typography component="p" variant="body1" sx={{ ...englishPoetic, mb: 2 }}>
