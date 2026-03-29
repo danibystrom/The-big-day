@@ -116,7 +116,7 @@ export default function BraAttVetaPage() {
         sx={{
           ...heroViewportContainerSx,
           backgroundImage:
-            "linear-gradient(to bottom, rgba(28, 26, 24, 0.62) 0%, rgba(28, 26, 24, 0.18) 20%, transparent 42%), url(/Tezza-7683.jpg)",
+            "linear-gradient(to bottom, rgba(28, 26, 24, 0.62) 0%, rgba(28, 26, 24, 0.18) 20%, transparent 42%), url(/garden.jpg)",
         }}
       >
         <Typography variant="h1" sx={subpageHeroTitleSx}>
