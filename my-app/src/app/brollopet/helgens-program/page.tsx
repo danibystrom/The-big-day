@@ -179,7 +179,7 @@ function HelgensProgramContent() {
           kl ca 21.00 — tills vi inte längre kan stå still, dvs till kl 01.00
         </Typography>
         <Typography component="p" variant="body1" sx={{ ...englishPoetic, mb: 3 }}>
-          From white to black. 
+          From white to black.
           From anticipation to promise. From a beginning to always.
         </Typography>
 
@@ -202,7 +202,7 @@ function HelgensProgramContent() {
           Bara vi. Och ni. Och känslan av att något stort faktiskt har hänt.
         </Typography>
         <Typography component="p" variant="body1" sx={{ ...body, mb: 2 }}>
-          
+
         </Typography>
         <Typography component="p" variant="body1" sx={{ ...body, mb: 2 }}>
           Vi äter långsamt. Vi kramas längre. Vi dröjer oss kvar.
@@ -250,7 +250,7 @@ export default function HelgensProgramPage() {
         sx={{
           ...heroViewportContainerSx,
           backgroundImage:
-            "linear-gradient(to bottom, rgba(28, 26, 24, 0.62) 0%, rgba(28, 26, 24, 0.18) 20%, transparent 42%), url(/Tezza-7683.jpg)",
+            "linear-gradient(to bottom, rgba(28, 26, 24, 0.62) 0%, rgba(28, 26, 24, 0.18) 20%, transparent 42%), url(/Tezza-9263.jpg)",
         }}
       >
         <Typography variant="h1" sx={subpageHeroTitleSx}>

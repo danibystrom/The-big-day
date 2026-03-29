@@ -67,18 +67,16 @@ function ResaAnkomstContent() {
         In i vår värld
       </Typography>
       <Typography component="p" variant="body1" sx={{ ...body, mb: 2, mt: 0 }}>
-        Det är en resa. Inte bara geografiskt utan in i vår värld.
-      </Typography>
-      <Typography component="p" variant="body1" sx={{ ...body, mb: 2 }}>
-        För er som reser längre rekommenderar vi att ni anländer till ert boende
+        Det är en resa. Inte bara geografiskt utan in i vår värld.  För er som reser längre rekommenderar vi att ni anländer till ert boende
         i god tid innan vigseln. Ge er själva utrymme att landa, byta om, andas
         in platsen.
       </Typography>
+
       <Typography component="p" variant="body1" sx={{ ...body, mb: 2 }}>
         <Box component="span" sx={{ fontWeight: 600 }}>
           Transport till boende/vigselplats:
         </Box>{" "}
-        Mer information kommer inom kort!
+        Vi undersöker just nu möjligheten att anordna buss från Heden till Villa Strömsfors på lördag. För att kunna säkerställa detta behöver vi veta hur många som är intresserade. Bocka i transportalternativet i samband med din OSA så återkommer vi med mer information. Transport fredag och söndag ordnar du själv.
       </Typography>
       <Typography component="p" variant="body1" sx={{ ...body, mb: 3 }}>
         Om ni önskar samåka eller dela transport, hör av er till brudparet för
@@ -149,7 +147,7 @@ export default function ResaAnkomstPage() {
         sx={{
           ...heroViewportContainerSx,
           backgroundImage:
-            "linear-gradient(to bottom, rgba(28, 26, 24, 0.62) 0%, rgba(28, 26, 24, 0.18) 20%, transparent 42%), url(/Tezza-7683.jpg)",
+            "linear-gradient(to bottom, rgba(28, 26, 24, 0.62) 0%, rgba(28, 26, 24, 0.18) 20%, transparent 42%), url(/Tezza-7243.jpg)",
         }}
       >
         <Typography variant="h1" sx={subpageHeroTitleSx}>
