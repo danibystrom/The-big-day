@@ -20,9 +20,21 @@ const Footer = dynamic(() => import("./components/Footer"), {
 export const metadata: Metadata = {
   title: "Felicia & Sebastian 2026",
   description: "A wedding website for Felicia and Sebastian",
+  /** Flikar följer ofta systemets ljust/mörkt — välj ikon med kontrast. */
   icons: {
-    icon: "/logo.png",
-    apple: "/logo.png",
+    icon: [
+      {
+        url: "/logo_blad_2.png",
+        media: "(prefers-color-scheme: light)",
+      },
+      {
+        url: "/logo.png",
+        media: "(prefers-color-scheme: dark)",
+      },
+      { url: "/logo_blad_2.png" },
+    ],
+    /** Ingen media-query i alla klienter; mörk logga funkar oftast mot ljus hem-skärm. */
+    apple: "/logo_blad_2.png",
   },
 };
 
