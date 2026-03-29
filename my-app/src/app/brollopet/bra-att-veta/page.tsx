@@ -30,10 +30,10 @@ const linkSx = {
 } as const;
 
 const SPLIT_TEXT =
-  "Schema, kapitel och tider — allt samlat så att du kan komma förberedd och bara vara närvarande.";
+  "Det enda vi ber er om är att låta oss veta att ni kommer. OSA görs enkelt här på hemsidan senast den 30 april 2026. Ange eventuella allergier eller kostpreferenser i samband med anmälan, så att vi kan ta hand om er på bästa sätt..";
 
 const SPLIT_TEXT2 =
-  "Hur du tar dig hit, bor nära och packar smart — praktiskt samlat inför helgen.";
+  "Har du frågor, funderingar eller något du vill stämma av innan den stora dagen? Vi vill att du ska känna dig trygg hela vägen fram. På vår kontaktsida hittar du alla uppgifter du behöver, oavsett om det gäller logistik, tal eller något helt annat. ";
 
 function BraAttVetaContent() {
   return (
@@ -157,22 +157,22 @@ export default function BraAttVetaPage() {
       </Box>
 
       <SplitSectionLeft
-        title="HELGENS PROGRAM"
+        title="YOUR PRESENCE IS EVERYTHING"
         text={SPLIT_TEXT}
-        imageSrc="/bubbel-torn.jpeg"
+        imageSrc="/bubbel.jpeg"
         imageAlt="Helgens program"
-        buttonText="Se helgens program"
-        buttonHref="/brollopet/helgens-program"
+        buttonText="Anmäl dig här"
+        buttonHref="/osa"
         bgColor="#1C1A18"
         buttonStyle="outlined"
       />
       <SplitSectionRight
-        title="RESA & ANKOMST"
+        title="ALLT DU BEHÖVER VETA, OCH VEMS DU SKA FRÅGA."
         text={SPLIT_TEXT2}
-        imageSrc="/Tezza-8542.jpg"
+        imageSrc="/couplebw.jpeg"
         imageAlt="Resa och ankomst"
-        buttonText="Läs mer om resa & ankomst"
-        buttonHref="/brollopet/resa-ankomst"
+        buttonText="Kontakta oss"
+        buttonHref="/kontakt"
         bgColor="#F2EDE4"
         buttonStyle="outlined"
       />

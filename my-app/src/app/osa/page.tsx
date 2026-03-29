@@ -289,10 +289,10 @@ export default function OsaPage() {
         </Box>
       </Box>
       <SplitSectionLeft
-        title="OM VÅRT BRÖLLOP..."
-        text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas posuere luctus eros sed sollicitudin. Curabitur mattis leo mauris, at pharetra lectus iaculis sollicitudin. Donec cursus commodo congue. Praesent eu accumsan metus. Donec suscipit venenatis placerat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas posuere luctus eros sed sollicitudin. Curabitur mattis leo mauris, at pharetra lectus iaculis sollicitudin. Donec cursus commodo congue. Praesent eu accumsan metus. Donec suscipit venenatis placerat."
-        imageSrc="/cheers.jpeg"
-        buttonText="Vårt bröllop"
+        title="DEN SOM VÄNTAR PÅ NÅGOT GOTT..."
+        text="Vi har skrivit många kapitel, men det största ligger framför oss. Nu vill vi säga ja till varandra med er vid vår sida, för en kärlek som växer och blomstrar i evighet. Den här sidan är vår lilla hörna för er. Här hittar ni allt ni behöver veta inför den stora dagen. Från praktisk information till schemalagda festligheter, vi hoppas att ni känner er välkomna, förberedda och lika förväntansfulla som vi."
+        imageSrc="/Tezza-5686.jpg"
+        buttonText="Mer om bröllopet"
         buttonHref="/brollopet"
         bgColor="#1C1A18"
       />

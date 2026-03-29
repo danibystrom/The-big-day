@@ -49,10 +49,10 @@ const introTitleSx = {
 };
 
 const SPLIT_TEXT =
-  "Schema, kapitel och tider — allt samlat så att du kan komma förberedd och bara vara närvarande.";
+  "Två hjärtan fann varandra, och en berättelse ingen av oss ville ta slut på började. Nu skriver vi det största kapitlet av dem alla, och vi vill skriva det med er vid vår sida. Den här sidan är vår lilla hörna för er. Här hittar ni allt ni behöver veta inför den stora dagen.";
 
 const SPLIT_TEXT2 =
-  "Vision, dresscode och känslan i tre kapitel — översikten över vårt bröllop samlar allt på ett ställe.";
+  "Er närvaro är allt vi önskar oss. OSA senast den 30 april 2026 här på hemsidan, och ange gärna eventuella allergier eller kostpreferenser så att vi kan ta hand om er på bästa sätt.";
 
 function ResaAnkomstContent() {
   return (
@@ -190,22 +190,22 @@ export default function ResaAnkomstPage() {
       </Box>
 
       <SplitSectionLeft
-        title="HELGENS PROGRAM"
+        title="DET HÄR ÄR VÅR BERÄTTELSE."
         text={SPLIT_TEXT}
-        imageSrc="/bubbel-torn.jpeg"
+        imageSrc="/garden.jpg"
         imageAlt="Helgens program"
-        buttonText="Se helgens program"
-        buttonHref="/brollopet/helgens-program"
+        buttonText="Om bröllopet"
+        buttonHref="/brollopet"
         bgColor="#1C1A18"
         buttonStyle="outlined"
       />
       <SplitSectionRight
-        title="BRÖLLOPET"
+        title="VI VILL VETA ATT NI KOMMER."
         text={SPLIT_TEXT2}
-        imageSrc="/Tezza-8542.jpg"
+        imageSrc="/Tezza-5306.jpg"
         imageAlt="Bröllop"
-        buttonText="Till bröllopet — översikt"
-        buttonHref="/brollopet"
+        buttonText="Anmäl dig här"
+        buttonHref="/osa"
         bgColor="#F2EDE4"
         buttonStyle="outlined"
       />

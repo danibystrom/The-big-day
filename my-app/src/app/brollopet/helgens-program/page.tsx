@@ -40,10 +40,10 @@ const audienceNoteSx = {
 };
 
 const SPLIT_TEXT =
-  "Vill du se bröllopet i sin helhet — vision, dresscode och känslan i tre kapitel? Översikten samlar allt på ett ställe.";
+  "Vi hoppas att du vill vara en del av det här.Att du vill klä dig i svart, höja ditt glas och fira kärleken med oss. Om du vet att du kommer, eller om hjärtat redan har svarat ja, tar vi emot ditt OSA här med öppna armar.";
 
 const SPLIT_TEXT2 =
-  "Här hittar du allt du behöver för att ta dig dit, hitta rätt boende och packa smart inför de tre dagarna. Så att du kan lägga all din energi på det som faktiskt spelar roll när helgen väl är här.";
+  "Har du frågor, funderingar eller något du vill stämma av innan den stora dagen? Vi vill att du ska känna dig trygg hela vägen fram. På vår kontaktsida hittar du alla uppgifter du behöver, oavsett om det gäller logistik, tal eller något helt annat.";
 
 const linkSx = {
   color: "#1C1A18",
@@ -326,22 +326,22 @@ export default function HelgensProgramPage() {
       </Box>
 
       <SplitSectionLeft
-        title="EN HELG I TRE KAPITEL"
+        title="ÄR DU MED OSS?"
         text={SPLIT_TEXT}
-        imageSrc="/bubbel-torn.jpeg"
+        imageSrc="/cheers.jpeg"
         imageAlt="Bröllop"
-        buttonText="Till bröllopet — översikt"
-        buttonHref="/brollopet"
+        buttonText="Anmäl dig här"
+        buttonHref="/osa"
         bgColor="#1C1A18"
         buttonStyle="outlined"
       />
       <SplitSectionRight
-        title="RESA, BOENDET OCH ALLT DÄREMELLAN"
+        title="ALLT DU BEHÖVER VETA, OCH VEMS DU SKA FRÅGA."
         text={SPLIT_TEXT2}
         imageSrc="/Tezza-8542.jpg"
         imageAlt="Bröllop"
-        buttonText="Läs mer om resa & boende"
-        buttonHref="/brollopet/resa-ankomst"
+        buttonText="Till kontakt"
+        buttonHref="/kontakt"
         bgColor="#F2EDE4"
         buttonStyle="outlined"
       />
