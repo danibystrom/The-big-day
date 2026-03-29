@@ -274,7 +274,6 @@ export default function OsaPage() {
               variant="filled"
               type="submit"
               disabled={submitting}
-              width="50%"
             />
           </Box>
           </StaggerReveal>
