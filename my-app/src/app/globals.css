@@ -1,8 +1,6 @@
-@import url("https://fonts.googleapis.com/css2?family=Italiana&display=swap");
-
 :root {
-  --background: #ffffff;
-  --textColor: #ffffff;
+  --background: #F2EDE4;
+  --textColor: #1C1A18;
 }
 
 html,

@@ -1,15 +1,31 @@
 import HeroSection from "./components/HeroSection";
-import SplitSection from "./components/SplitSectionRight";
+import SplitSectionLeft from "./components/SplitSectionLeft";
+import SplitSectionRight from "./components/SplitSectionRight";
 
 export default function Home() {
   return (
     <>
-      {/* <HeaderMenu /> */}
       <HeroSection />
-      <SplitSection title="DEN SOM VÄNTAR PÅ NÅGOT GOTT..." text="Två hjärtan fann varandra, och en berättelse vi aldrig ville ta slut på började.
-En berättelse om kärlek, om skratt, om drömmar vi delar och om livet vi vill bygga tillsammans.
-Vi har skrivit många kapitel, men det största ligger framför oss. Nu vill vi säga ja till varandra med er vid vår sida, för en kärlek som växer och blomstrar i evighet.
-Vi vill redan nu skicka en kärleksfull påminnelse om att skriva in datumet i kalendern. Mer information kommer längre fram, vi längtar att få fira den största dagen i våra liv tillsammans med er, våra viktigaste som vi älskar allra mest." imageSrc="/garden.jpg" buttonText="Text för knapp" />
+      <SplitSectionRight
+        hideImageOnMobile
+        title="DEN SOM VÄNTAR PÅ NÅGOT GOTT..."
+        text="Vi har skrivit många kapitel, men det största ligger framför oss. Nu vill vi säga ja till varandra med er vid vår sida, för en kärlek som växer och blomstrar i evighet. Den här sidan är vår lilla hörna för er. Här hittar ni allt ni behöver veta inför den stora dagen. Från praktisk information till schemalagda festligheter, vi hoppas att ni känner er välkomna, förberedda och lika förväntansfulla som vi."
+        // text2="Den här sidan är vår lilla hörna för er. Här hittar ni allt ni behöver veta inför den stora dagen. Från praktisk information till schemalagda festligheter, vi hoppas att ni känner er välkomna, förberedda och lika förväntansfulla som vi. Vi längtar efter att få fira livets största dag omringade av er, våra viktigaste som vi älskar allra mest."
+        imageSrc="/garden.jpg"
+        buttonText="Mer om bröllopet"
+        buttonStyle="outlined"
+        buttonHref="/brollopet"
+        bgColor="#F2EDE4"
+      />
+      <SplitSectionLeft
+        title="YOUR PRESENCE IS EVERYTHING"
+        text="Det enda vi ber er om är att låta oss veta att ni kommer. OSA görs enkelt här på hemsidan senast den 30 april 2026. Ange eventuella allergier eller kostpreferenser i samband med anmälan, så att vi kan ta hand om er på bästa sätt.."
+        imageSrc="/cheers.jpeg"
+        buttonText="Anmäl dig här"
+        buttonStyle="outlined"
+        buttonHref="/osa"
+        bgColor="#F2EDE4"
+      />
     </>
   );
 }
