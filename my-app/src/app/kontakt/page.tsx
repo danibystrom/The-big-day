@@ -1,5 +1,9 @@
 "use client";
 
+import {
+  heroViewportContainerSx,
+  subpageHeroTitleSx,
+} from "@/app/components/heroLayout";
 import { StaggerReveal } from "@/app/components/ScrollReveal";
 import TextSectionHeadLeft from "@/app/components/TextSectionHeadLeft";
 import { textPageColumnSx } from "@/app/components/TextSplitBand";
@@ -99,33 +103,11 @@ export default function KontaktPage() {
     <Box>
       <Box
         sx={{
-          height: "100vh",
-          display: "flex",
-          flexDirection: "column",
-          justifyContent: "center",
-          alignItems: "center",
+          ...heroViewportContainerSx,
           backgroundImage: "url(/Tezza-5981.jpg)",
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          textAlign: "center",
-          paddingX: { xs: 2, sm: 4 },
         }}
       >
-        <Typography
-          variant="h1"
-          sx={{
-            fontFamily: '"Italiana", sans-serif',
-            fontWeight: 400,
-            color: "#fff",
-            textAlign: "center",
-            lineHeight: 1,
-            marginBottom: 0,
-            fontSize: { xs: "4.4rem", sm: "5rem" },
-            maxWidth: "min(90vw, 900px)",
-            textShadow: "0 2px 24px rgba(0,0,0,0.45)",
-            textTransform: "uppercase",
-          }}
-        >
+        <Typography variant="h1" sx={subpageHeroTitleSx}>
           KONTAKT
         </Typography>
       </Box>
