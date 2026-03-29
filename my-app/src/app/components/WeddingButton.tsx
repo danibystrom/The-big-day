@@ -20,6 +20,40 @@ interface WeddingButtonProps {
 const DARK = "#1C1A18";
 const LIGHT = "#F2EDE4";
 
+function variantStyles(
+  isDarkBg: boolean,
+  v: StyleVariant
+): {
+  backgroundColor: string;
+  color: string;
+  border: string;
+} {
+  if (isDarkBg) {
+    return v === "filled"
+      ? {
+          backgroundColor: LIGHT,
+          color: DARK,
+          border: "1px solid transparent",
+        }
+      : {
+          backgroundColor: "transparent",
+          color: LIGHT,
+          border: `1px solid ${LIGHT}`,
+        };
+  }
+  return v === "filled"
+    ? {
+        backgroundColor: DARK,
+        color: LIGHT,
+        border: "1px solid transparent",
+      }
+    : {
+        backgroundColor: "transparent",
+        color: DARK,
+        border: `1px solid ${DARK}`,
+      };
+}
+
 export default function WeddingButton({
   text,
   href,
@@ -30,31 +64,16 @@ export default function WeddingButton({
   width = "50%",
 }: WeddingButtonProps) {
   const isDarkBg = background === "dark";
+  const styles = variantStyles(isDarkBg, variant);
+  const hoverStyles = variantStyles(
+    isDarkBg,
+    variant === "filled" ? "outlined" : "filled"
+  );
 
-  const styles =
-    isDarkBg
-      ? variant === "filled"
-        ? {
-            backgroundColor: LIGHT,
-            color: DARK,
-            border: "none",
-          }
-        : {
-            backgroundColor: "transparent",
-            color: LIGHT,
-            border: `1px solid ${LIGHT}`,
-          }
-      : variant === "filled"
-        ? {
-            backgroundColor: DARK,
-            color: LIGHT,
-            border: "none",
-          }
-        : {
-            backgroundColor: "transparent",
-            color: DARK,
-            border: `1px solid ${DARK}`,
-          };
+  const hoverSx = {
+    boxShadow: "none",
+    ...hoverStyles,
+  };
 
   const sx = {
     width,
@@ -65,17 +84,9 @@ export default function WeddingButton({
     boxShadow: "none",
     ...styles,
     ...(href
-      ? {
-          "&:hover": {
-            boxShadow: "none",
-            backgroundColor: styles.backgroundColor,
-          },
-        }
+      ? { "&:hover": hoverSx }
       : {
-          "&:hover:not(:disabled)": {
-            boxShadow: "none",
-            filter: "brightness(0.94)",
-          },
+          "&:hover:not(:disabled)": hoverSx,
           "&:disabled": {
             opacity: 0.55,
             color: LIGHT,

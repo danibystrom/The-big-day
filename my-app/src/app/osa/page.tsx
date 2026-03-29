@@ -16,7 +16,6 @@ export default function OsaPage() {
   const [successOpen, setSuccessOpen] = useState(false);
   const [errorOpen, setErrorOpen] = useState(false);
 
-  /** Ljus hjälptext i fältet – döljs vid fokus (klick) */
   const placeholderColor = "rgba(28, 26, 24, 0.32)";
   const bodyFont = '"Antic Didone", serif';
 
@@ -51,8 +50,7 @@ export default function OsaPage() {
       color: placeholderColor,
       opacity: 1,
       fontFamily: bodyFont,
-    },
-    /* Textarea-placeholder följer inte alltid input-regeln i alla webbläsare */
+    },  
     "& textarea.MuiInputBase-input::placeholder": {
       fontFamily: bodyFont,
     },
@@ -124,7 +122,7 @@ export default function OsaPage() {
     <Box>
       <Box
         sx={{
-          height: "90vh",
+          height: "100vh",
           display: "flex",
           flexDirection: "column",
           justifyContent: "center",

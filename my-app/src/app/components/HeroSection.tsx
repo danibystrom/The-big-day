@@ -6,7 +6,7 @@ export default function HeroSection() {
     return (
         <Box
             sx={{
-                height: "90vh",
+                height: "100vh",
                 display: "flex",
                 flexDirection: "column",
                 justifyContent: "center",

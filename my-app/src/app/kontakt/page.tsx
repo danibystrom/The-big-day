@@ -97,7 +97,7 @@ export default function KontaktPage() {
     <Box>
       <Box
         sx={{
-          height: "90vh",
+          height: "100vh",
           display: "flex",
           flexDirection: "column",
           justifyContent: "center",
