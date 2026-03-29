@@ -8,8 +8,76 @@ import {
 import { StaggerReveal } from "@/app/components/ScrollReveal";
 import SplitSectionLeft from "@/app/components/SplitSectionLeft";
 import WeddingButton from "@/app/components/WeddingButton";
-import { Box, TextField, Typography, Alert, Snackbar } from "@mui/material";
+import {
+  Box,
+  TextField,
+  Typography,
+  Alert,
+  Snackbar,
+  Checkbox,
+  FormControlLabel,
+} from "@mui/material";
 import { FormEvent, useState } from "react";
+
+const transportCheckboxBoxSize = 18;
+const transportCheckboxBg = "#F2EDE4";
+/** Tunn kvadrat + större bock som sticker ut uppåt/höger (enligt skiss) */
+function TransportCheckboxEmpty() {
+  return (
+    <Box
+      aria-hidden
+      sx={{
+        width: transportCheckboxBoxSize,
+        height: transportCheckboxBoxSize,
+        border: "1px solid #1C1A18",
+        backgroundColor: transportCheckboxBg,
+        boxSizing: "border-box",
+        flexShrink: 0,
+      }}
+    />
+  );
+}
+
+function TransportCheckboxChecked() {
+  return (
+    <Box
+      aria-hidden
+      sx={{
+        position: "relative",
+        width: transportCheckboxBoxSize,
+        height: transportCheckboxBoxSize,
+        flexShrink: 0,
+        border: "1px solid #1C1A18",
+        backgroundColor: transportCheckboxBg,
+        boxSizing: "border-box",
+        overflow: "visible",
+      }}
+    >
+      <Box
+        component="svg"
+        viewBox="0 0 36 36"
+        sx={{
+          position: "absolute",
+          left: -8,
+          top: -12,
+          width: 34,
+          height: 34,
+          overflow: "visible",
+          pointerEvents: "none",
+        }}
+      >
+        <path
+          d="M 9 21 L 15.5 27.5 L 29 9.5"
+          fill="none"
+          stroke="#1C1A18"
+          strokeWidth="3.5"
+          strokeLinecap="square"
+          strokeLinejoin="round"
+        />
+      </Box>
+    </Box>
+  );
+}
 
 export default function OsaPage() {
   const [firstName, setFirstName] = useState("");
@@ -20,6 +88,7 @@ export default function OsaPage() {
   const [submitting, setSubmitting] = useState(false);
   const [successOpen, setSuccessOpen] = useState(false);
   const [errorOpen, setErrorOpen] = useState(false);
+  const [transportSaturdayInterested, setTransportSaturdayInterested] = useState(false);
 
   const placeholderColor = "rgba(28, 26, 24, 0.32)";
   const bodyFont = '"Antic Didone", serif';
@@ -103,6 +172,7 @@ export default function OsaPage() {
           email,
           phone,
           allergies: allergies.trim() || null,
+          transportSaturday: transportSaturdayInterested,
         }),
       });
 
@@ -116,6 +186,7 @@ export default function OsaPage() {
       setEmail("");
       setPhone("");
       setAllergies("");
+      setTransportSaturdayInterested(false);
     } catch {
       setErrorOpen(true);
     } finally {
@@ -254,7 +325,7 @@ export default function OsaPage() {
               placeholder="Lämna tomt om inget gäller, eller beskriv kort här…"
               sx={{
                 ...fieldSx,
-                mb: 6,
+                mb: 3,
                 "& .MuiInputBase-root": {
                   paddingTop: 0,
                   paddingBottom: 0,
@@ -266,6 +337,50 @@ export default function OsaPage() {
               }}
               value={allergies}
               onChange={(e) => setAllergies(e.target.value)}
+            />
+
+            <FormControlLabel
+              sx={{
+                alignItems: "flex-start",
+                mt: "6px",
+                mb: 4,
+                ml: 0,
+                gap: 1.25,
+                "& .MuiFormControlLabel-label": {
+                  fontFamily: bodyFont,
+                  color: "#1C1A18",
+                  fontSize: { xs: 16, sm: 18 },
+                  lineHeight: 1.65,
+                  letterSpacing: 0.2,
+                },
+              }}
+              control={
+                <Checkbox
+                  disableRipple
+                  icon={<TransportCheckboxEmpty />}
+                  checkedIcon={<TransportCheckboxChecked />}
+                  checked={transportSaturdayInterested}
+                  onChange={(e) => setTransportSaturdayInterested(e.target.checked)}
+                  sx={{
+                    p: 0,
+                    mr: 0,
+                    mt: "5px",
+                    alignSelf: "flex-start",
+                    overflow: "visible",
+                    color: "transparent",
+                    backgroundColor: "transparent",
+                    "&.Mui-checked": { color: "transparent" },
+                    "&:hover": { backgroundColor: "transparent" },
+                    "&.Mui-focusVisible": {
+                      backgroundColor: "transparent",
+                      outline: "2px solid rgba(28, 26, 24, 0.35)",
+                      outlineOffset: 2,
+                    },
+                    "& .MuiTouchRipple-root": { display: "none" },
+                  }}
+                />
+              }
+              label="Intresserad av transport på lördag? Vi undersöker möjligheten att anordna samåkning från Heden till vigseln. Kryssa i om du vill vara med. (Notera att transport fredag och söndag står du själv för.)"
             />
 
             <WeddingButton
