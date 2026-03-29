@@ -1,11 +1,16 @@
 import type { Metadata } from "next";
 import dynamic from "next/dynamic";
-import { Italiana } from "next/font/google";
+import { Antic_Didone, Italiana } from "next/font/google";
 import HeaderMenu from "./components/HeaderMenu";
 import MuiAppProvider from "./MuiAppProvider";
 import "./globals.css";
 
 const italiana = Italiana({ weight: "400", subsets: ["latin"], display: "swap" });
+const anticDidone = Antic_Didone({
+  weight: "400",
+  subsets: ["latin"],
+  display: "swap",
+});
 
 const Footer = dynamic(() => import("./components/Footer"), {
   ssr: true,
@@ -24,22 +29,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning className={italiana.className}>
-      <head>
-        <link
-          rel="preconnect"
-          href="https://fonts.googleapis.com"
-        />
-        <link
-          rel="preconnect"
-          href="https://fonts.gstatic.com"
-          crossOrigin="anonymous"
-        />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Antic+Didone&display=swap"
-          rel="stylesheet"
-        />
-      </head>
-      <body suppressHydrationWarning>
+      <body className={anticDidone.className} suppressHydrationWarning>
         <MuiAppProvider>
           <HeaderMenu />
           {children}

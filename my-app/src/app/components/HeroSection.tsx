@@ -15,7 +15,7 @@ export default function HeroSection() {
       }}
     >
       <Typography variant="h1" sx={{ ...heroMainTitleSx, marginBottom: 2 }}>
-        WE'RE GETTING MARRIED
+        {"WE'RE GETTING MARRIED"}
       </Typography>
 
       <Typography variant="h6" sx={heroSubtitleSx}>

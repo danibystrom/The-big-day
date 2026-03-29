@@ -116,7 +116,7 @@ export default function OsaPage() {
       setEmail("");
       setPhone("");
       setAllergies("");
-    } catch (e) {
+    } catch {
       setErrorOpen(true);
     } finally {
       setSubmitting(false);
