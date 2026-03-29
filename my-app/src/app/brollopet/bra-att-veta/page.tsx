@@ -1,5 +1,6 @@
 "use client";
 
+import { StaggerReveal } from "@/app/components/ScrollReveal";
 import SplitSectionLeft from "@/app/components/SplitSectionLeft";
 import SplitSectionRight from "@/app/components/SplitSectionRight";
 import {
@@ -38,6 +39,7 @@ const SPLIT_TEXT2 =
 function BraAttVetaContent() {
   return (
     <Box component="article">
+      <StaggerReveal stepDelay={0.09}>
       <Typography component="h3" variant="h4" sx={{ ...chapterHeadingSx, mt: 0 }}>
         Mat & dryck
       </Typography>
@@ -98,6 +100,7 @@ function BraAttVetaContent() {
       <Typography component="p" variant="body1" sx={{ ...body, mb: 0 }}>
         Oavsett väder lovar vi en atmosfär som är varm, intim och oförglömlig.
       </Typography>
+      </StaggerReveal>
     </Box>
   );
 }
@@ -107,7 +110,7 @@ export default function BraAttVetaPage() {
     <Box>
       <Box
         sx={{
-          height: "90vh",
+          height: "100vh",
           display: "flex",
           flexDirection: "column",
           justifyContent: "center",

@@ -1,5 +1,6 @@
 "use client";
 
+import { StaggerReveal } from "@/app/components/ScrollReveal";
 import SplitSectionLeft from "@/app/components/SplitSectionLeft";
 import SplitSectionRight from "@/app/components/SplitSectionRight";
 import {
@@ -57,6 +58,7 @@ const SPLIT_TEXT2 =
 function ResaAnkomstContent() {
   return (
     <Box component="article">
+      <StaggerReveal stepDelay={0.09}>
       <Typography variant="h3" component="h2" sx={introTitleSx}>
         In i vår värld
       </Typography>
@@ -131,6 +133,7 @@ function ResaAnkomstContent() {
       <Typography component="p" variant="body1" sx={{ ...body, mb: 0 }}>
         Och viktigast av allt: energi att fira kärleken.
       </Typography>
+      </StaggerReveal>
     </Box>
   );
 }
@@ -140,7 +143,7 @@ export default function ResaAnkomstPage() {
     <Box>
       <Box
         sx={{
-          height: "90vh",
+          height: "100vh",
           display: "flex",
           flexDirection: "column",
           justifyContent: "center",

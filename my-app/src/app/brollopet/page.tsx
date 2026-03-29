@@ -2,6 +2,7 @@
 
 import SplitSectionLeft from "@/app/components/SplitSectionLeft";
 import SplitSectionRight from "@/app/components/SplitSectionRight";
+import { StaggerReveal } from "@/app/components/ScrollReveal";
 import TextSectionHeadLeft from "@/app/components/TextSectionHeadLeft";
 import TextSectionHeadRight from "@/app/components/TextSectionHeadRight";
 import { textPageColumnSx } from "@/app/components/TextSplitBand";
@@ -24,49 +25,51 @@ const SPLIT_TEXT2 =
 function BrollopetContent() {
   return (
     <Box component="article">
-      <Typography
-        variant="h3"
-        component="h2"
-        sx={{
-          fontFamily: '"Italiana", sans-serif',
-          fontWeight: 400,
-          color: "#1C1A18",
-          marginBottom: 3,
-          marginTop: 3,
-          letterSpacing: 0.5,
-          lineHeight: 1.05,
-          textTransform: "uppercase",
-        }}
-      >
-        VÄLKOMNA TILL VÅRT BRÖLLOP
-      </Typography>
+      <StaggerReveal stepDelay={0.1}>
+        <Typography
+          variant="h3"
+          component="h2"
+          sx={{
+            fontFamily: '"Italiana", sans-serif',
+            fontWeight: 400,
+            color: "#1C1A18",
+            marginBottom: 3,
+            marginTop: 3,
+            letterSpacing: 0.5,
+            lineHeight: 1.05,
+            textTransform: "uppercase",
+          }}
+        >
+          VÄLKOMNA TILL VÅRT BRÖLLOP
+        </Typography>
 
-      <Typography component="p" variant="body1" sx={{ ...body, mb: 2 }}>
-        Det här är mer än en dag.
-        <br />
-        Det är en upplevelse. En känsla. Ett ögonblick vi vill sträcka ut i tiden.
-      </Typography>
+        <Typography component="p" variant="body1" sx={{ ...body, mb: 2 }}>
+          Det här är mer än en dag.
+          <br />
+          Det är en upplevelse. En känsla. Ett ögonblick vi vill sträcka ut i tiden.
+        </Typography>
 
-      <Typography component="p" variant="body1" sx={{ ...body, mb: 2 }}>
-        Vi bjuder in er till ett bröllop där kärlek, estetik och närvaro står i
-        centrum. Där varje detalj är vald med omsorg. Där mörket är kuliss och
-        ljuset kommer från er, och oss.
-      </Typography>
+        <Typography component="p" variant="body1" sx={{ ...body, mb: 2 }}>
+          Vi bjuder in er till ett bröllop där kärlek, estetik och närvaro står i
+          centrum. Där varje detalj är vald med omsorg. Där mörket är kuliss och
+          ljuset kommer från er, och oss.
+        </Typography>
 
-      <Typography component="p" variant="body1" sx={{ ...body, mb: 2 }}>
-        Fredagens inledning blir en mer intim samling tillsammans med våra
-        familjer, brudfölje och marsalkar, enligt bröllopslokalens satta
-        upplägg. Då vi kommer sakna er resterande gästers närvaro så längtar vi
-        desto mer till lördagen, då vi öppnar våra famnar och välkomnar er alla
-        varmt att dela vigseldagen med oss. Det är då vi samlas fullt ut. Det är
-        då vi säger ja till varandra.
-      </Typography>
+        <Typography component="p" variant="body1" sx={{ ...body, mb: 2 }}>
+          Fredagens inledning blir en mer intim samling tillsammans med våra
+          familjer, brudfölje och marsalkar, enligt bröllopslokalens satta
+          upplägg. Då vi kommer sakna er resterande gästers närvaro så längtar vi
+          desto mer till lördagen, då vi öppnar våra famnar och välkomnar er alla
+          varmt att dela vigseldagen med oss. Det är då vi samlas fullt ut. Det är
+          då vi säger ja till varandra.
+        </Typography>
 
-      <Typography component="p" variant="body1" sx={{ ...body, mb: 0 }}>
-        Det här är början på resten av vårt liv.
-        <br />
-        Och vi vill börja det tillsammans med er.
-      </Typography>
+        <Typography component="p" variant="body1" sx={{ ...body, mb: 0 }}>
+          Det här är början på resten av vårt liv.
+          <br />
+          Och vi vill börja det tillsammans med er.
+        </Typography>
+      </StaggerReveal>
 
       <TextSectionHeadLeft title="Vår vision">
         <Typography component="p" variant="body1" sx={body}>
@@ -127,7 +130,7 @@ export default function BrollopetPage() {
     <Box>
       <Box
         sx={{
-          height: "90vh",
+          height: "100vh",
           display: "flex",
           flexDirection: "column",
           justifyContent: "center",

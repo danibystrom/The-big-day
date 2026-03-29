@@ -1,7 +1,8 @@
 "use client";
 
 import { Box, Grid, Typography } from "@mui/material";
-import type { ReactNode } from "react";
+import { Children, type ReactNode } from "react";
+import { ScrollReveal } from "./ScrollReveal";
 import type { SxProps, Theme } from "@mui/material/styles";
 
 /** Gemensam maxbredd/centering för textsidor (välkomsttext + TextSplitBand m.m.) */
@@ -48,6 +49,7 @@ export type TextSplitBandProps = {
   /** "left" = rubrik vänsterkolumn, brödtext höger (som din inspo-bild) */
   headPosition: "left" | "right";
   children: ReactNode;
+  uppercaseTitle?: boolean;
 };
 
 /**
@@ -63,17 +65,34 @@ export default function TextSplitBand({
     ? textSplitBandUppercaseTitleSx
     : titleSxSentence;
 
+  const bodyStaggered = (
+    <Box sx={contentSx}>
+      {Children.map(children, (child, i) => {
+        if (child === null || child === undefined || child === false) {
+          return null;
+        }
+        return (
+          <ScrollReveal key={`split-body-${i}`} delay={0.12 + i * 0.11}>
+            {child}
+          </ScrollReveal>
+        );
+      })}
+    </Box>
+  );
+
   const titleBlock = (
     <Grid item xs={12} md={5}>
-      <Typography component="h3" variant="h4" sx={titleSx}>
-        {title}
-      </Typography>
+      <ScrollReveal delay={0}>
+        <Typography component="h3" variant="h4" sx={titleSx}>
+          {title}
+        </Typography>
+      </ScrollReveal>
     </Grid>
   );
 
   const bodyBlock = (
     <Grid item xs={12} md={7}>
-      <Box sx={contentSx}>{children}</Box>
+      {bodyStaggered}
     </Grid>
   );
 
@@ -104,7 +123,7 @@ export default function TextSplitBand({
               md={7}
               sx={{ order: { xs: 2, md: 1 } }}
             >
-              <Box sx={contentSx}>{children}</Box>
+              {bodyStaggered}
             </Grid>
             <Grid
               item
@@ -115,9 +134,11 @@ export default function TextSplitBand({
                 textAlign: { xs: "left", md: "right" },
               }}
             >
-              <Typography component="h3" variant="h4" sx={titleSx}>
-                {title}
-              </Typography>
+              <ScrollReveal delay={0}>
+                <Typography component="h3" variant="h4" sx={titleSx}>
+                  {title}
+                </Typography>
+              </ScrollReveal>
             </Grid>
           </>
         )}
