@@ -13,12 +13,14 @@ import {
   ListItem,
   ListItemButton,
   ListItemText,
-  Paper,
   Toolbar,
   Typography,
 } from "@mui/material";
 import Link from "next/link";
-import { useState, type MouseEvent } from "react";
+import { useEffect, useState, type MouseEvent } from "react";
+
+const LIGHT = "#F2EDE4";
+const DARK = "#1C1A18";
 
 /** Undersidor under Bröllopet (samma ordning i desktop-dropdown och mobilmeny) */
 export const BROLLOPET_SUBLINKS = [
@@ -38,26 +40,38 @@ const navRight = [
   { label: "OSA", href: "/osa" },
 ];
 
-const linkTypographySx = {
-  color: "#fff",
-  fontFamily: '"Antic Didone", serif',
-  fontSize: "0.95rem",
-} as const;
-
 const dropdownLinkSx = {
   py: 1.25,
   px: 2,
-  color: "#F2EDE4",
+  color: DARK,
   fontFamily: '"Antic Didone", serif',
   fontSize: "0.9rem",
   "&:hover": {
-    backgroundColor: "rgba(242, 237, 228, 0.12)",
+    backgroundColor: "rgba(28, 26, 24, 0.06)",
   },
-};
+} as const;
 
 export default function HeaderMenu() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [mobileBrollopetOpen, setMobileBrollopetOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+  const [headerHovered, setHeaderHovered] = useState(false);
+
+  const elevated = scrolled || headerHovered;
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 12);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  const navTextColor = elevated ? DARK : "#fff";
+  const linkTypographySx = {
+    color: navTextColor,
+    fontFamily: '"Antic Didone", serif',
+    fontSize: "0.95rem",
+  } as const;
 
   const handleToggleMobile = () => {
     setMobileOpen((prev) => !prev);
@@ -76,22 +90,51 @@ export default function HeaderMenu() {
 
   return (
     <>
-      <Box sx={{ flexGrow: 1, zIndex: 1000 }}>
+      <Box sx={{ flexGrow: 1, zIndex: 1300 }}>
         <AppBar
-          position="absolute"
+          position="fixed"
+          elevation={0}
           sx={{
+            top: 0,
+            left: 0,
+            right: 0,
             backgroundColor: "transparent",
-            color: "#fff",
+            color: elevated ? DARK : "#fff",
             boxShadow: "none",
           }}
         >
           <Toolbar
+            disableGutters
             sx={{
               position: "relative",
-              minHeight: 72,
-              px: { xs: 2, md: 6 },
+              minHeight: { xs: 72, md: 88 },
+              px: { xs: 1.5, md: 3 },
+              py: { xs: 1, md: 1.25 },
+              justifyContent: "center",
             }}
           >
+            <Box
+              onMouseEnter={() => setHeaderHovered(true)}
+              onMouseLeave={() => setHeaderHovered(false)}
+              sx={{
+                position: "relative",
+                width: "100%",
+                maxWidth: 1320,
+                mx: "auto",
+                display: "flex",
+                alignItems: "center",
+                minHeight: 56,
+                px: { xs: 2, md: 4 },
+                py: 1,
+                borderRadius: elevated ? { xs: 0, md: "15px" } : 0,
+                backgroundColor: elevated ? LIGHT : "transparent",
+                boxShadow: elevated
+                  ? "0 8px 32px rgba(28, 26, 24, 0.12)"
+                  : "none",
+                transition:
+                  "background-color 0.28s ease, box-shadow 0.28s ease, border-radius 0.28s ease",
+              }}
+            >
             {/* VÄNSTER SIDA – desktop-nav */}
             <Box
               sx={{
@@ -125,6 +168,9 @@ export default function HeaderMenu() {
                     visibility: "visible",
                     pointerEvents: "auto",
                   },
+                  "&:hover .brollopet-chevron": {
+                    transform: "rotate(180deg)",
+                  },
                 }}
               >
                 <Button
@@ -137,7 +183,28 @@ export default function HeaderMenu() {
                     p: 0,
                   }}
                 >
-                  <Typography sx={linkTypographySx}>Bröllopet</Typography>
+                  <Box
+                    component="span"
+                    sx={{
+                      display: "inline-flex",
+                      alignItems: "center",
+                      gap: 0.15,
+                    }}
+                  >
+                    <Typography component="span" sx={linkTypographySx}>
+                      Bröllopet
+                    </Typography>
+                    <ExpandMoreIcon
+                      className="brollopet-chevron"
+                      aria-hidden
+                      sx={{
+                        color: navTextColor,
+                        fontSize: "1.05rem",
+                        transition:
+                          "transform 0.2s ease, color 0.28s ease",
+                      }}
+                    />
+                  </Box>
                 </Button>
                 <Box
                   className="brollopet-dropdown"
@@ -145,7 +212,8 @@ export default function HeaderMenu() {
                     position: "absolute",
                     top: "100%",
                     left: 0,
-                    pt: 1,
+                    pt: 0,
+                    mt: -0.5,
                     opacity: 0,
                     visibility: "hidden",
                     pointerEvents: "none",
@@ -153,14 +221,16 @@ export default function HeaderMenu() {
                     zIndex: 1400,
                   }}
                 >
-                  <Paper
-                    elevation={6}
+                  {/* Box istället för Paper — inga MUI-skuggor; samma yta som headern */}
+                  <Box
                     sx={{
-                      borderRadius: 0,
-                      backgroundColor: "rgba(28, 26, 24, 0.97)",
-                      border: "1px solid rgba(242, 237, 228, 0.15)",
+                      backgroundColor: LIGHT,
+                      border: "none",
+                      borderRadius: "0 0 16px 16px",
+                      boxShadow: "none",
+                      marginTop: 1,
                       minWidth: 220,
-                      py: 0.5,
+                      py: 1.5,
                     }}
                   >
                     <List component="nav" dense disablePadding>
@@ -176,7 +246,7 @@ export default function HeaderMenu() {
                         </ListItem>
                       ))}
                     </List>
-                  </Paper>
+                  </Box>
                 </Box>
               </Box>
             </Box>
@@ -193,7 +263,8 @@ export default function HeaderMenu() {
                 onClick={handleToggleMobile}
                 size="large"
                 sx={{
-                  color: "#fff",
+                  color: navTextColor,
+                  transition: "color 0.28s ease",
                 }}
                 aria-label="Öppna meny"
               >
@@ -209,7 +280,7 @@ export default function HeaderMenu() {
                 position: "absolute",
                 left: "50%",
                 transform: "translateX(-50%)",
-                color: "#fff",
+                color: navTextColor,
                 fontFamily: '"Italiana", sans-serif',
                 fontSize: { xs: "1.4rem", sm: "1.7rem" },
                 letterSpacing: "0.08em",
@@ -217,6 +288,7 @@ export default function HeaderMenu() {
                 whiteSpace: "nowrap",
                 textDecoration: "none",
                 cursor: "pointer",
+                transition: "color 0.28s ease",
               }}
             >
               Felicia & Sebastian
@@ -245,6 +317,7 @@ export default function HeaderMenu() {
                   <Typography sx={linkTypographySx}>{item.label}</Typography>
                 </Button>
               ))}
+            </Box>
             </Box>
           </Toolbar>
         </AppBar>
