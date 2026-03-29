@@ -1,5 +1,6 @@
 "use client";
 
+import CloseIcon from "@mui/icons-material/Close";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import MenuIcon from "@mui/icons-material/Menu";
 import {
@@ -40,6 +41,14 @@ const HEADER_SHAPE_TRANSITION = {
   duration: 0.4,
   ease: "easeInOut" as const,
 };
+/** Mobil: längre varaktighet + mjuk kurva så statiskt ↔ scrollat känns lugnt. */
+const HEADER_SHAPE_TRANSITION_MOBILE = {
+  duration: 0.62,
+  ease: [0.22, 1, 0.36, 1] as const,
+};
+const TOOLBAR_PT_TRANSITION_DESKTOP = "padding-top 0.4s ease-in-out";
+const TOOLBAR_PT_TRANSITION_MOBILE =
+  "padding-top 0.62s cubic-bezier(0.22, 1, 0.36, 1)";
 const LINEN_SHADOW = "0 8px 32px rgba(28, 26, 24, 0.12)";
 
 const MD_UP_MEDIA_QUERY = "(min-width: 900px)";
@@ -135,6 +144,13 @@ export default function HeaderMenu() {
 
   const elevated = scrolled || headerHovered;
 
+  const headerBackdropTransition = isMdUp
+    ? HEADER_SHAPE_TRANSITION
+    : HEADER_SHAPE_TRANSITION_MOBILE;
+  const toolbarPtTransition = isMdUp
+    ? TOOLBAR_PT_TRANSITION_DESKTOP
+    : TOOLBAR_PT_TRANSITION_MOBILE;
+
   const navTextColor = elevated ? DARK : "#fff";
   const linkTypographySx = {
     color: navTextColor,
@@ -182,7 +198,7 @@ export default function HeaderMenu() {
               /* Vid scroll: ingen padding-top så linne-baren ligger kant i kant med viewport (samma 0.4s som bakgrundsformen) */
               pt: scrolled ? 0 : { xs: 1, md: 1.25 },
               pb: { xs: 1, md: 1.25 },
-              transition: "padding-top 0.4s ease-in-out",
+              transition: toolbarPtTransition,
               display: "flex",
               /* center = luftig rad över heron; stretch vid scroll så inget vertikalt glapp ovanför bakgrunden */
               alignItems: scrolled ? "stretch" : "center",
@@ -225,7 +241,7 @@ export default function HeaderMenu() {
                   backgroundColor: elevated ? LIGHT : "transparent",
                   boxShadow: elevated ? LINEN_SHADOW : "none",
                 }}
-                transition={HEADER_SHAPE_TRANSITION}
+                transition={headerBackdropTransition}
                 style={{
                   position: "absolute",
                   top: 0,
@@ -236,6 +252,8 @@ export default function HeaderMenu() {
                   zIndex: 0,
                   pointerEvents: "none",
                   boxSizing: "border-box",
+                  WebkitBackfaceVisibility: "hidden",
+                  backfaceVisibility: "hidden",
                   /* maxWidth i animate + "none" får Framer att tweena mot 0 — kollaps. Pill: tak, scrollat: ingen begränsning */
                   maxWidth: scrolled
                     ? undefined
@@ -475,7 +493,38 @@ export default function HeaderMenu() {
           },
         }}
       >
-        <Box sx={{ mt: 8 }}>
+        <Box
+          sx={{
+            display: "flex",
+            flexDirection: "column",
+            height: "100%",
+            pt: "max(12px, env(safe-area-inset-top, 0px))",
+          }}
+        >
+          <Box
+            sx={{
+              flexShrink: 0,
+              display: "flex",
+              justifyContent: "flex-end",
+              alignItems: "center",
+              px: 0.5,
+              pb: 0.5,
+              minHeight: 48,
+            }}
+          >
+            <IconButton
+              onClick={handleCloseMobile}
+              size="large"
+              edge="end"
+              aria-label="Stäng meny"
+              sx={{
+                color: "#1C1A18",
+              }}
+            >
+              <CloseIcon />
+            </IconButton>
+          </Box>
+        <Box sx={{ flex: 1, overflow: "auto" }}>
           <List disablePadding>
             {navLeftSimple.map((item) => (
               <ListItem key={item.href} disablePadding>
@@ -593,6 +642,7 @@ export default function HeaderMenu() {
               </ListItem>
             ))}
           </List>
+        </Box>
         </Box>
       </Drawer>
     </>
