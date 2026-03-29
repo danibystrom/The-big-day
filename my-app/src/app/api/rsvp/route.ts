@@ -21,6 +21,7 @@ export async function POST(request: Request) {
         email,
         phone,
         allergies: allergies || null,
+        transportSaturday: transportSaturday ?? false,
       },
     });
 
