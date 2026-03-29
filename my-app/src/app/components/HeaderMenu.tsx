@@ -117,12 +117,20 @@ const dropdownLinkSx = {
   },
 } as const;
 
-/** Mobil drawer: samma hover som desktop (ingen grå bakgrund). */
+/** Mobil drawer: understrykning bara vid riktig hover (undviker klibbig :hover efter tryck på touch). */
 const drawerNavLinkButtonSx = {
   "&:hover": {
     backgroundColor: "transparent",
   },
-  "&:hover .MuiListItemText-primary": underlineOnHover,
+  "& .MuiListItemText-primary": {
+    textDecoration: "none",
+  },
+  "&:focus-visible .MuiListItemText-primary": {
+    textDecoration: "none",
+  },
+  "@media (hover: hover) and (pointer: fine)": {
+    "&:hover .MuiListItemText-primary": underlineOnHover,
+  },
 } as const;
 
 export default function HeaderMenu() {
@@ -596,7 +604,7 @@ export default function HeaderMenu() {
             </ListItem>
 
             <Collapse in={mobileBrollopetOpen} timeout="auto" unmountOnExit>
-              <List component="div" disablePadding sx={{ bgcolor: "rgba(28, 26, 24, 0.04)" }}>
+              <List component="div" disablePadding>
                 {BROLLOPET_SUBLINKS.map((sub) => (
                   <ListItem key={sub.href} disablePadding>
                     <ListItemButton
