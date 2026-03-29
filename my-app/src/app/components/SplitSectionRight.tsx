@@ -40,7 +40,10 @@ export default function SplitSectionRight({
         <Box
             sx={{
                 width: "100%",
-                minHeight: "100vh",
+                /* Utan bild på mobil: låt sektionen sluta efter innehållet (inga 100vh “tomraster”). */
+                minHeight: hideImageOnMobile
+                    ? { xs: "auto", md: "100vh" }
+                    : "100vh",
                 display: "flex",
                 flexDirection: "column",
             }}
@@ -59,7 +62,10 @@ export default function SplitSectionRight({
                         justifyContent: "center",
                         padding: { xs: "28px 24px", md: "40px 28px" },
                         backgroundColor: bgColor,
-                        height: "100%",
+                        height: {
+                            xs: hideImageOnMobile ? "auto" : "100%",
+                            md: "100%",
+                        },
                     }}
                 >
                     <ScrollReveal delay={0}>
@@ -96,7 +102,10 @@ export default function SplitSectionRight({
                         order: { xs: 1, md: 0 },
                         display: hideImageOnMobile ? { xs: "none", md: "block" } : undefined,
                         position: "relative",
-                        height: { xs: "50vh", md: "100vh" },
+                        height: {
+                            xs: hideImageOnMobile ? 0 : "50vh",
+                            md: "100vh",
+                        },
                     }}
                 >
                     <Image
