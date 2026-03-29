@@ -20,6 +20,10 @@ const Footer = dynamic(() => import("./components/Footer"), {
 export const metadata: Metadata = {
   title: "Felicia & Sebastian 2026",
   description: "A wedding website for Felicia and Sebastian",
+  icons: {
+    icon: "/logo.png",
+    apple: "/logo.png",
+  },
 };
 
 export default function RootLayout({
