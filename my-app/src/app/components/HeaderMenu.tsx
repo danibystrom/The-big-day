@@ -158,9 +158,13 @@ export default function HeaderMenu() {
               position: "relative",
               minHeight: { xs: 72, md: 88 },
               px: 0,
-              py: { xs: 1, md: 1.25 },
+              /* Vid scroll: ingen padding-top så linne-baren ligger kant i kant med viewport (samma 0.4s som bakgrundsformen) */
+              pt: scrolled ? 0 : { xs: 1, md: 1.25 },
+              pb: { xs: 1, md: 1.25 },
+              transition: "padding-top 0.4s ease-in-out",
               display: "flex",
-              alignItems: "center",
+              /* center = luftig rad över heron; stretch vid scroll så inget vertikalt glapp ovanför bakgrunden */
+              alignItems: scrolled ? "stretch" : "center",
               justifyContent: "center",
             }}
           >
@@ -172,8 +176,9 @@ export default function HeaderMenu() {
                 width: "100%",
                 flex: 1,
                 display: "flex",
-                alignItems: "center",
-                minHeight: { xs: 56, md: 64 },
+                alignItems: scrolled ? "stretch" : "center",
+                alignSelf: scrolled ? "stretch" : "auto",
+                minHeight: scrolled ? 0 : { xs: 56, md: 64 },
               }}
             >
               {/* Bara denna yta animeras vid scroll; länkar ligger i fast container under */}
@@ -225,6 +230,7 @@ export default function HeaderMenu() {
                 mx: "auto",
                 minHeight: 56,
                 py: 1,
+                height: scrolled ? "100%" : "auto",
                 display: { xs: "flex", md: "grid" },
                 alignItems: "center",
                 flexDirection: { xs: "row" },
