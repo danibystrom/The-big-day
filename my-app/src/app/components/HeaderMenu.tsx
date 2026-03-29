@@ -40,15 +40,43 @@ const navRight = [
   { label: "OSA", href: "/osa" },
 ];
 
+const headerNavLinkLabelClass = "header-nav-link-label";
+
+const underlineOnHover = {
+  textDecoration: "underline",
+  textUnderlineOffset: "0.22em",
+  textDecorationThickness: "max(1px, 0.05em)",
+} as const;
+
+/** Desktop: endast understrykning på etiketten, inte t.ex. chevron. */
+const desktopNavLinkButtonSx = {
+  textTransform: "none" as const,
+  p: 0,
+  "&:hover": {
+    backgroundColor: "transparent",
+    [`& .${headerNavLinkLabelClass}`]: underlineOnHover,
+  },
+};
+
 const dropdownLinkSx = {
   py: 1.25,
   px: 2,
   color: DARK,
   fontFamily: '"Antic Didone", serif',
   fontSize: "0.9rem",
+  textDecoration: "none",
   "&:hover": {
-    backgroundColor: "rgba(28, 26, 24, 0.06)",
+    backgroundColor: "transparent",
+    ...underlineOnHover,
   },
+} as const;
+
+/** Mobil drawer: samma hover som desktop (ingen grå bakgrund). */
+const drawerNavLinkButtonSx = {
+  "&:hover": {
+    backgroundColor: "transparent",
+  },
+  "&:hover .MuiListItemText-primary": underlineOnHover,
 } as const;
 
 export default function HeaderMenu() {
@@ -71,6 +99,7 @@ export default function HeaderMenu() {
     color: navTextColor,
     fontFamily: '"Antic Didone", serif',
     fontSize: "0.95rem",
+    textDecoration: "none",
   } as const;
 
   const handleToggleMobile = () => {
@@ -149,13 +178,14 @@ export default function HeaderMenu() {
                   disableRipple
                   component={Link}
                   href={item.href}
-                  sx={{
-                    textTransform: "none",
-                    "&:hover": { backgroundColor: "transparent" },
-                    p: 0,
-                  }}
+                  sx={desktopNavLinkButtonSx}
                 >
-                  <Typography sx={linkTypographySx}>{item.label}</Typography>
+                  <Typography
+                    className={headerNavLinkLabelClass}
+                    sx={linkTypographySx}
+                  >
+                    {item.label}
+                  </Typography>
                 </Button>
               ))}
 
@@ -177,11 +207,7 @@ export default function HeaderMenu() {
                   disableRipple
                   component={Link}
                   href="/brollopet"
-                  sx={{
-                    textTransform: "none",
-                    "&:hover": { backgroundColor: "transparent" },
-                    p: 0,
-                  }}
+                  sx={desktopNavLinkButtonSx}
                 >
                   <Box
                     component="span"
@@ -191,7 +217,11 @@ export default function HeaderMenu() {
                       gap: 0.15,
                     }}
                   >
-                    <Typography component="span" sx={linkTypographySx}>
+                    <Typography
+                      component="span"
+                      className={headerNavLinkLabelClass}
+                      sx={linkTypographySx}
+                    >
                       Bröllopet
                     </Typography>
                     <ExpandMoreIcon
@@ -221,7 +251,7 @@ export default function HeaderMenu() {
                     zIndex: 1400,
                   }}
                 >
-                  {/* Box istället för Paper — inga MUI-skuggor; samma yta som headern */}
+                 
                   <Box
                     sx={{
                       backgroundColor: LIGHT,
@@ -308,13 +338,14 @@ export default function HeaderMenu() {
                   disableRipple
                   component={Link}
                   href={item.href}
-                  sx={{
-                    textTransform: "none",
-                    "&:hover": { backgroundColor: "transparent" },
-                    p: 0,
-                  }}
+                  sx={desktopNavLinkButtonSx}
                 >
-                  <Typography sx={linkTypographySx}>{item.label}</Typography>
+                  <Typography
+                    className={headerNavLinkLabelClass}
+                    sx={linkTypographySx}
+                  >
+                    {item.label}
+                  </Typography>
                 </Button>
               ))}
             </Box>
@@ -344,6 +375,7 @@ export default function HeaderMenu() {
                   component={Link}
                   href={item.href}
                   onClick={handleCloseMobile}
+                  sx={drawerNavLinkButtonSx}
                 >
                   <ListItemText
                     primary={item.label}
@@ -392,7 +424,7 @@ export default function HeaderMenu() {
                 component={Link}
                 href="/brollopet"
                 onClick={handleCloseMobile}
-                sx={{ pr: 6 }}
+                sx={{ pr: 6, ...drawerNavLinkButtonSx }}
               >
                 <ListItemText
                   primary="Bröllopet"
@@ -414,7 +446,7 @@ export default function HeaderMenu() {
                       component={Link}
                       href={sub.href}
                       onClick={handleCloseMobile}
-                      sx={{ pl: 4, py: 1.25 }}
+                      sx={{ pl: 4, py: 1.25, ...drawerNavLinkButtonSx }}
                     >
                       <ListItemText
                         primary={sub.label}
@@ -438,6 +470,7 @@ export default function HeaderMenu() {
                   component={Link}
                   href={item.href}
                   onClick={handleCloseMobile}
+                  sx={drawerNavLinkButtonSx}
                 >
                   <ListItemText
                     primary={item.label}
