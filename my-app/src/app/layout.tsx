@@ -24,17 +24,17 @@ export const metadata: Metadata = {
   icons: {
     icon: [
       {
-        url: "/logo_blad_2.png",
+        url: "/logo_black.png",
         media: "(prefers-color-scheme: light)",
       },
       {
-        url: "/logo.png",
+        url: "/logo_black.png",
         media: "(prefers-color-scheme: dark)",
       },
-      { url: "/logo_blad_2.png" },
+      { url: "/logo_black.png" },
     ],
     /** Ingen media-query i alla klienter; mörk logga funkar oftast mot ljus hem-skärm. */
-    apple: "/logo_blad_2.png",
+    apple: "/logo_black.png",
   },
 };
 
