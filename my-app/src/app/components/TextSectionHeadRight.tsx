@@ -9,7 +9,7 @@ export default function TextSectionHeadRight({
   children,
   uppercaseTitle = true,
 }: {
-  title: string;
+  title: ReactNode;
   children: ReactNode;
   uppercaseTitle?: boolean;
 }) {

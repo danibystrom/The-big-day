@@ -48,16 +48,10 @@ function BrollopetContent() {
         </Typography>
 
         <Typography component="p" variant="body1" sx={{ ...body, mb: 2 }}>
-          Det här är mer än en dag.
-          <br />
-          Det är en upplevelse. En känsla. Ett ögonblick vi vill sträcka ut i tiden.
+          Det här är mer än en dag. Det är en upplevelse. En känsla. Ett ögonblick vi vill sträcka ut i tiden. Vi bjuder in er till ett bröllop där kärlek, estetik och närvaro står i
+          centrum. Där varje detalj är vald med omsorg. Där mörket är kuliss och ljuset är en symbol på kärlek och glädje.
         </Typography>
 
-        <Typography component="p" variant="body1" sx={{ ...body, mb: 2 }}>
-          Vi bjuder in er till ett bröllop där kärlek, estetik och närvaro står i
-          centrum. Där varje detalj är vald med omsorg. Där mörket är kuliss och
-          ljuset kommer från er, och oss.
-        </Typography>
 
         <Typography component="p" variant="body1" sx={{ ...body, mb: 2 }}>
           Fredagens inledning blir en mer intim samling tillsammans med våra
@@ -69,13 +63,17 @@ function BrollopetContent() {
         </Typography>
 
         <Typography component="p" variant="body1" sx={{ ...body, mb: 0 }}>
-          Det här är början på resten av vårt liv.
-          <br />
-          Och vi vill börja det tillsammans med er.
+          Det här är början på resten av vårt liv. Och vi vill börja det tillsammans med er.
+
         </Typography>
       </StaggerReveal>
 
-      <TextSectionHeadLeft title="Vår vision">
+      <TextSectionHeadLeft title={
+        <>
+          Så här ser vår <br />
+          drömdag ut
+        </>
+      }>
         <Typography component="p" variant="body1" sx={body}>
           Vi har alltid trott att kärlek är ett statement.
           <br />
@@ -95,7 +93,12 @@ function BrollopetContent() {
         </Typography>
       </TextSectionHeadLeft>
 
-      <TextSectionHeadRight title="Dresscode: all black">
+      <TextSectionHeadRight title={
+        <>
+          Det här är vår dresscode och <br />
+          tanken bakom den
+        </>
+      }>
         <Typography component="p" variant="body1" sx={body}>
           Vi önskar att ni klär er i helsvart, i den mån det är möjligt.
         </Typography>
@@ -104,20 +107,12 @@ function BrollopetContent() {
           variant="body1"
           sx={{
             ...body,
-            fontStyle: "italic",
+            // fontStyle: "italic",
             color: "#2a2622",
           }}
         >
-          Svart är inte sorg hos oss.
-          <br />
-          Svart är styrka. Svart är elegans. Svart är en fond där kärleken får ta
-          all plats.
-        </Typography>
-        <Typography component="p" variant="body1" sx={body}>
-          Tänk smoking, svart kostym, lång svart klänning, strukturer, siden,
-          sammet, spets.
-          <br />
-          Lek med material, silhuetter och personlighet men håll färgpaletten
+          Svart är inte sorg hos oss.Svart är styrka. Svart är elegans. Svart är en fond där kärleken får ta all plats. Tänk smoking, svart kostym, lång svart klänning, strukturer, siden,
+          sammet, spets. Lek med material, silhuetter och personlighet men håll färgpaletten
           svart.
         </Typography>
         <Typography component="p" variant="body1" sx={{ ...body, mb: 0 }}>
