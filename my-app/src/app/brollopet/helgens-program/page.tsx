@@ -1,5 +1,9 @@
 "use client";
 
+import {
+  heroViewportContainerSx,
+  subpageHeroTitleSx,
+} from "@/app/components/heroLayout";
 import { StaggerReveal } from "@/app/components/ScrollReveal";
 import SplitSectionLeft from "@/app/components/SplitSectionLeft";
 import SplitSectionRight from "@/app/components/SplitSectionRight";
@@ -279,32 +283,12 @@ export default function HelgensProgramPage() {
     <Box>
       <Box
         sx={{
-          height: "100vh",
-          display: "flex",
-          flexDirection: "column",
-          justifyContent: "center",
-          alignItems: "center",
+          ...heroViewportContainerSx,
           backgroundImage:
             "linear-gradient(to bottom, rgba(28, 26, 24, 0.62) 0%, rgba(28, 26, 24, 0.18) 20%, transparent 42%), url(/Tezza-7683.jpg)",
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          textAlign: "center",
-          paddingX: { xs: 2, sm: 4 },
         }}
       >
-        <Typography
-          variant="h1"
-          sx={{
-            fontFamily: '"Italiana", sans-serif',
-            fontWeight: 400,
-            color: "#fff",
-            textAlign: "center",
-            lineHeight: { xs: 1.12, sm: 1.08 },
-            maxWidth: "min(90vw, 900px)",
-            textShadow: "0 2px 24px rgba(0,0,0,0.45)",
-            textTransform: "uppercase",
-          }}
-        >
+        <Typography variant="h1" sx={subpageHeroTitleSx}>
           HELGENS PROGRAM
         </Typography>
       </Box>

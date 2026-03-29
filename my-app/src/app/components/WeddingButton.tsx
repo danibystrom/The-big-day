@@ -6,6 +6,23 @@ import Link from "next/link";
 type BackgroundTone = "light" | "dark";
 type StyleVariant = "filled" | "outlined";
 
+/** Standard: 80 % mobil och tablet (under MUI `md`), 50 % desktop (`md` och upp). */
+const defaultResponsiveWidth = {
+  xs: "80%",
+  sm: "80%",
+  md: "50%",
+} as const;
+
+type WeddingButtonWidth =
+  | string
+  | number
+  | {
+      xs?: string | number;
+      sm?: string | number;
+      md?: string | number;
+      lg?: string | number;
+    };
+
 interface WeddingButtonProps {
   text: string;
   /** När den saknas: vanlig knapp (t.ex. `type="submit"` i formulär). */
@@ -14,7 +31,8 @@ interface WeddingButtonProps {
   disabled?: boolean;
   background: BackgroundTone;
   variant?: StyleVariant;
-  width?: string | number;
+  /** Utelämnad = responsiv (80 % t.o.m. sm, 50 % från md). */
+  width?: WeddingButtonWidth;
 }
 
 const DARK = "#1C1A18";
@@ -61,7 +79,7 @@ export default function WeddingButton({
   disabled = false,
   background,
   variant = "filled",
-  width = "50%",
+  width,
 }: WeddingButtonProps) {
   const isDarkBg = background === "dark";
   const styles = variantStyles(isDarkBg, variant);
@@ -76,7 +94,7 @@ export default function WeddingButton({
   };
 
   const sx = {
-    width,
+    width: width ?? defaultResponsiveWidth,
     borderRadius: 0,
     fontFamily: '"Antic Didone", serif',
     textTransform: "uppercase",

@@ -1,6 +1,10 @@
 "use client";
 
 import CheckIcon from "@mui/icons-material/Check";
+import {
+  heroViewportContainerSx,
+  subpageHeroTitleSx,
+} from "@/app/components/heroLayout";
 import { StaggerReveal } from "@/app/components/ScrollReveal";
 import SplitSectionLeft from "@/app/components/SplitSectionLeft";
 import WeddingButton from "@/app/components/WeddingButton";
@@ -123,28 +127,15 @@ export default function OsaPage() {
     <Box>
       <Box
         sx={{
-          height: "100vh",
-          display: "flex",
-          flexDirection: "column",
-          justifyContent: "center",
-          alignItems: "center",
+          ...heroViewportContainerSx,
           backgroundImage:
             "linear-gradient(to bottom, rgba(28, 26, 24, 0.62) 0%, rgba(28, 26, 24, 0.18) 20%, transparent 42%), url(/Tezza-0266.jpg)",
-          backgroundSize: "cover",
-          backgroundPosition: "center",
         }}
       >
-        <Typography
-          variant="h1"
-          sx={{
-            fontFamily: '"Italiana", sans-serif',
-            color: "#fff",
-            textAlign: "center",
-            lineHeight: 1,
-            mb: 4,
-          }}
-        >
-          ANMÄL DIG TILL BRÖLLOPET
+        <Typography variant="h1" sx={subpageHeroTitleSx}>
+          ANMÄL DIG TILL
+          <br />
+          BRÖLLOPET
         </Typography>
       </Box>
 
@@ -283,7 +274,6 @@ export default function OsaPage() {
               variant="filled"
               type="submit"
               disabled={submitting}
-              width="50%"
             />
           </Box>
           </StaggerReveal>
