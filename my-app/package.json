@@ -17,7 +17,7 @@
     "@mui/styles": "^6.4.12",
     "@prisma/client": "^6.19.2",
     "framer-motion": "^12.19.2",
-    "next": "15.3.2",
+    "next": "15.3.9",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
   },
@@ -27,7 +27,7 @@
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "eslint": "^9",
-    "eslint-config-next": "15.3.2",
+    "eslint-config-next": "15.3.9",
     "prisma": "^6.19.2",
     "typescript": "^5"
   }
