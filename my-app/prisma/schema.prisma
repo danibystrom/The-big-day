@@ -15,4 +15,5 @@ model Rsvp {
   email      String
   phone      String
   allergies  String?
+  transportSaturday Boolean @default(false)
 }

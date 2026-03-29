@@ -8,7 +8,15 @@ import {
 import { StaggerReveal } from "@/app/components/ScrollReveal";
 import SplitSectionLeft from "@/app/components/SplitSectionLeft";
 import WeddingButton from "@/app/components/WeddingButton";
-import { Box, TextField, Typography, Alert, Snackbar } from "@mui/material";
+import {
+  Box,
+  TextField,
+  Typography,
+  Alert,
+  Snackbar,
+  Checkbox,
+  FormControlLabel,
+} from "@mui/material";
 import { FormEvent, useState } from "react";
 
 export default function OsaPage() {
@@ -20,6 +28,7 @@ export default function OsaPage() {
   const [submitting, setSubmitting] = useState(false);
   const [successOpen, setSuccessOpen] = useState(false);
   const [errorOpen, setErrorOpen] = useState(false);
+  const [transportSaturdayInterested, setTransportSaturdayInterested] = useState(false);
 
   const placeholderColor = "rgba(28, 26, 24, 0.32)";
   const bodyFont = '"Antic Didone", serif';
@@ -103,6 +112,7 @@ export default function OsaPage() {
           email,
           phone,
           allergies: allergies.trim() || null,
+          transportSaturday: transportSaturdayInterested,
         }),
       });
 
@@ -254,7 +264,7 @@ export default function OsaPage() {
               placeholder="Lämna tomt om inget gäller, eller beskriv kort här…"
               sx={{
                 ...fieldSx,
-                mb: 6,
+                mb: 3,
                 "& .MuiInputBase-root": {
                   paddingTop: 0,
                   paddingBottom: 0,
@@ -266,6 +276,23 @@ export default function OsaPage() {
               }}
               value={allergies}
               onChange={(e) => setAllergies(e.target.value)}
+            />
+
+            <FormControlLabel
+              sx={{ alignItems: "flex-start", mb: 4 }}
+              control={
+                <Checkbox
+                  checked={transportSaturdayInterested}
+                  onChange={(e) => setTransportSaturdayInterested(e.target.checked)}
+                  sx={{
+                    color: "#1C1A18",
+                    "&.Mui-checked": { color: "#1C1A18" },
+                    padding: 0,
+                    marginTop: "2px",
+                  }}
+                />
+              }
+              label="Intresserad av transport på lördag? Vi undersöker möjligheten att anordna samåkning från Heden till vigseln. Kryssa i om du vill vara med. (Notera att transport fredag och söndag står du själv för.)"
             />
 
             <WeddingButton
