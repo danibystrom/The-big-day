@@ -16,10 +16,14 @@ import {
   Toolbar,
   Typography,
 } from "@mui/material";
-import useMediaQuery from "@mui/material/useMediaQuery";
 import Link from "next/link";
 import { motion, useMotionValueEvent, useScroll } from "framer-motion";
-import { useLayoutEffect, useState, type MouseEvent } from "react";
+import {
+  useLayoutEffect,
+  useState,
+  useSyncExternalStore,
+  type MouseEvent,
+} from "react";
 
 const LIGHT = "#F2EDE4";
 const DARK = "#1C1A18";
@@ -37,6 +41,23 @@ const HEADER_SHAPE_TRANSITION = {
   ease: "easeInOut" as const,
 };
 const LINEN_SHADOW = "0 8px 32px rgba(28, 26, 24, 0.12)";
+
+const MD_UP_MEDIA_QUERY = "(min-width: 900px)";
+
+function subscribeMdUp(onChange: () => void) {
+  const mq = window.matchMedia(MD_UP_MEDIA_QUERY);
+  mq.addEventListener("change", onChange);
+  return () => mq.removeEventListener("change", onChange);
+}
+
+function getMdUpSnapshot() {
+  return window.matchMedia(MD_UP_MEDIA_QUERY).matches;
+}
+
+/** Samma som MUI md men utan hydration mismatch (server + första klient-render = false). */
+function useHydrationSafeMdUp() {
+  return useSyncExternalStore(subscribeMdUp, getMdUpSnapshot, () => false);
+}
 
 /** Undersidor under Bröllopet (samma ordning i desktop-dropdown och mobilmeny) */
 export const BROLLOPET_SUBLINKS = [
@@ -102,7 +123,7 @@ export default function HeaderMenu() {
   const [headerHovered, setHeaderHovered] = useState(false);
 
   const { scrollY } = useScroll();
-  const isMdUp = useMediaQuery("(min-width:900px)", { noSsr: true });
+  const isMdUp = useHydrationSafeMdUp();
 
   useLayoutEffect(() => {
     setScrolled(window.scrollY > 0);
