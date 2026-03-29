@@ -27,7 +27,7 @@ export async function POST(request: Request) {
 
     return NextResponse.json({ success: true }, { status: 201 });
   } catch (error) {
-    console.error(error);
+    console.error("[api/rsvp]", error);
     return NextResponse.json(
       { error: "Något gick fel, försök igen senare." },
       { status: 500 }
