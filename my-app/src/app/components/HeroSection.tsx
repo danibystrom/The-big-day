@@ -30,7 +30,7 @@ export default function HeroSection() {
                     fontSize: { xs: '4.4rem', sm: '5rem' },
                 }}
             >
-                SAVE THE DATE
+                WE'RE GETTING MARRIED
             </Typography>
 
             <Typography
@@ -41,7 +41,7 @@ export default function HeroSection() {
                     fontSize: { xs: '1.1rem', sm: '1.5rem' }
                 }}
             >
-                22 Augusti 2026 kl. 14.00 | Villa Strömfors 1, Svenljunga
+                22 Augusti 2026 kl. 14.00 | Villa Strömsfors 1, Svenljunga
             </Typography>
         </Box>
     );

@@ -2,7 +2,8 @@
 
 import CheckIcon from "@mui/icons-material/Check";
 import SplitSectionLeft from "@/app/components/SplitSectionLeft";
-import { Box, Button, TextField, Typography, Alert, Snackbar } from "@mui/material";
+import WeddingButton from "@/app/components/WeddingButton";
+import { Box, TextField, Typography, Alert, Snackbar } from "@mui/material";
 import { FormEvent, useState } from "react";
 
 export default function OsaPage() {
@@ -276,24 +277,14 @@ export default function OsaPage() {
               onChange={(e) => setAllergies(e.target.value)}
             />
 
-            <Button
+            <WeddingButton
+              text={submitting ? "Skickar..." : "Anmäl dig här"}
+              background="light"
+              variant="filled"
               type="submit"
-              variant="contained"
-              sx={{
-                backgroundColor: "#1C1A18",
-                color: "#fff",
-                borderRadius: 0,
-                px: 4,
-                py: 1.2,
-                textTransform: "none",
-                fontFamily: '"Antic Didone", serif',
-                boxShadow: "none",
-                "&:hover": { backgroundColor: "#1C1A18", boxShadow: "none" },
-              }}
               disabled={submitting}
-            >
-              {submitting ? "Skickar..." : "Anmäl dig här"}
-            </Button>
+              width="50%"
+            />
           </Box>
         </Box>
       </Box>
