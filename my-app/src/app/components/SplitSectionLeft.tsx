@@ -1,6 +1,7 @@
 "use client";
 import { Box, Grid, Typography } from "@mui/material";
 import Image from "next/image";
+import { ScrollReveal } from "./ScrollReveal";
 import WeddingButton from "./WeddingButton";
 
 interface SectionProps {
@@ -75,21 +76,31 @@ export default function SplitSectionLeft({
                         height: "100%",
                     }}
                 >
-                    <Typography variant="h3" sx={{ fontFamily: '"Italiana", sans-serif', marginBottom: 6, fontWeight: 400 }}>
-                        {title}
-                    </Typography>
-                    <Typography variant="body1" sx={{ fontFamily: '"Antic Didone", serif', marginBottom: 2 }}>
-                        {text}
-                    </Typography>
-                    <Typography variant="body1" sx={{ fontFamily: '"Antic Didone", serif', marginBottom: 8 }}>
-                        {text2}
-                    </Typography>
-                    <WeddingButton
-                        text={buttonText}
-                        href={buttonHref}
-                        background={isDark ? "dark" : "light"}
-                        variant={resolvedButtonStyle}
-                    />
+                    <ScrollReveal delay={0}>
+                        <Typography variant="h3" sx={{ fontFamily: '"Italiana", sans-serif', marginBottom: 6, fontWeight: 400 }}>
+                            {title}
+                        </Typography>
+                    </ScrollReveal>
+                    <ScrollReveal delay={0.12}>
+                        <Typography variant="body1" sx={{ fontFamily: '"Antic Didone", serif', marginBottom: 2 }}>
+                            {text}
+                        </Typography>
+                    </ScrollReveal>
+                    {text2 ? (
+                        <ScrollReveal delay={0.24}>
+                            <Typography variant="body1" sx={{ fontFamily: '"Antic Didone", serif', marginBottom: 8 }}>
+                                {text2}
+                            </Typography>
+                        </ScrollReveal>
+                    ) : null}
+                    <ScrollReveal delay={text2 ? 0.36 : 0.24}>
+                        <WeddingButton
+                            text={buttonText}
+                            href={buttonHref}
+                            background={isDark ? "dark" : "light"}
+                            variant={resolvedButtonStyle}
+                        />
+                    </ScrollReveal>
                 </Grid>
 
             </Grid>

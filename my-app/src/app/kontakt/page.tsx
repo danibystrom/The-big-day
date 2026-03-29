@@ -1,5 +1,6 @@
 "use client";
 
+import { StaggerReveal } from "@/app/components/ScrollReveal";
 import TextSectionHeadLeft from "@/app/components/TextSectionHeadLeft";
 import { textPageColumnSx } from "@/app/components/TextSplitBand";
 import { Box, Link, Typography } from "@mui/material";
@@ -28,31 +29,32 @@ const SPLIT_TEXT2 = "Från dresscode till packlista, från vigselns tider till m
 function KontaktContent() {
   return (
     <Box component="article">
-      <Typography
-        variant="h3"
-        component="h2"
-        sx={{
-          fontFamily: '"Italiana", sans-serif',
-          fontWeight: 400,
-          color: "#1C1A18",
-          marginBottom: 3,
-          marginTop: 3,
-          letterSpacing: 0.5,
-          lineHeight: 1.05,
-          textTransform: "uppercase",
-        }}
-      >
-        Frågor, funderingar <br />eller en idé du bara måste dela?
-      </Typography>
+      <StaggerReveal stepDelay={0.1}>
+        <Typography
+          variant="h3"
+          component="h2"
+          sx={{
+            fontFamily: '"Italiana", sans-serif',
+            fontWeight: 400,
+            color: "#1C1A18",
+            marginBottom: 3,
+            marginTop: 3,
+            letterSpacing: 0.5,
+            lineHeight: 1.05,
+            textTransform: "uppercase",
+          }}
+        >
+          Frågor, funderingar <br />eller en idé du bara måste dela?
+        </Typography>
 
-      <Typography component="p" variant="body1" sx={{ ...body, mb: 2 }}>
-        Vi vill att du ska känna dig trygg och förväntansfull inför helgen — och det börjar med att du vet vart du ska vända dig.
-      </Typography>
+        <Typography component="p" variant="body1" sx={{ ...body, mb: 2 }}>
+          Vi vill att du ska känna dig trygg och förväntansfull inför helgen — och det börjar med att du vet vart du ska vända dig.
+        </Typography>
 
-      <Typography component="p" variant="body1" sx={{ ...body, mb: 2 }}>
-        Planerar du ett tal, vill framföra något alldeles särskilt eller har du en överraskning på gång? Hör av dig till vårt fantastiska toastpar Jennifer Svernlöv och Maximilian Lajsic på toastsoflove@gmail.com. De tar hand om dig.
-      </Typography>
-
+        <Typography component="p" variant="body1" sx={{ ...body, mb: 2 }}>
+          Planerar du ett tal, vill framföra något alldeles särskilt eller har du en överraskning på gång? Hör av dig till vårt fantastiska toastpar Jennifer Svernlöv och Maximilian Lajsic på toastsoflove@gmail.com. De tar hand om dig.
+        </Typography>
+      </StaggerReveal>
 
       <TextSectionHeadLeft title="Logistik och brudpar">
         <Typography component="p" variant="body1" sx={{ ...body, mb: 0 }}>

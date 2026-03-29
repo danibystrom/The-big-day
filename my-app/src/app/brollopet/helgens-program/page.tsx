@@ -1,5 +1,6 @@
 "use client";
 
+import { StaggerReveal } from "@/app/components/ScrollReveal";
 import SplitSectionLeft from "@/app/components/SplitSectionLeft";
 import SplitSectionRight from "@/app/components/SplitSectionRight";
 import TextSectionHeadLeft from "@/app/components/TextSectionHeadLeft";
@@ -66,6 +67,7 @@ const introTitleSx = {
 function HelgensProgramContent() {
   return (
     <Box component="article">
+      <StaggerReveal stepDelay={0.06}>
       <Typography variant="h3" component="h2" sx={introTitleSx}>
         From white to black
       </Typography>
@@ -242,6 +244,7 @@ function HelgensProgramContent() {
       <Typography component="p" variant="body1" sx={{ ...englishPoetic, mb: 4 }}>
         And just like that, a new chapter begins.
       </Typography>
+      </StaggerReveal>
 
       <TextSectionHeadLeft title="Praktisk information">
         <Typography component="p" variant="body1" sx={{ ...body, mb: 2 }}>

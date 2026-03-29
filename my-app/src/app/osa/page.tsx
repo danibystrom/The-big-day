@@ -1,6 +1,7 @@
 "use client";
 
 import CheckIcon from "@mui/icons-material/Check";
+import { StaggerReveal } from "@/app/components/ScrollReveal";
 import SplitSectionLeft from "@/app/components/SplitSectionLeft";
 import WeddingButton from "@/app/components/WeddingButton";
 import { Box, TextField, Typography, Alert, Snackbar } from "@mui/material";
@@ -164,34 +165,35 @@ export default function OsaPage() {
             py: { xs: 6, md: 6 },
           }}
         >
-          <Typography
-            variant="h3"
-            sx={{
-              fontFamily: '"Italiana", sans-serif',
-              color: "#1C1A18",
-              textAlign: "left",
-              lineHeight: 1.05,
-              mb: 3,
-              letterSpacing: 0.5,
-            }}
-          >
-            FYLL I DINA UPPGIFTER NEDAN
-          </Typography>
-          <Typography
-            variant="h5"
-            sx={{
-              fontFamily: '"Italiana", sans-serif',
-              color: "#1C1A18",
-              textAlign: "left",
-              lineHeight: 1.05,
-              mb: 3,
-              letterSpacing: 0.5,
-            }}
-          >
-            OM ER INBJUDAN INNEHÅLLER TVÅ NAMN BEHÖVER VI ATT NI FYLLER I ANMÄLAN SEPARAT.
-          </Typography>
+          <StaggerReveal stepDelay={0.12}>
+            <Typography
+              variant="h3"
+              sx={{
+                fontFamily: '"Italiana", sans-serif',
+                color: "#1C1A18",
+                textAlign: "left",
+                lineHeight: 1.05,
+                mb: 3,
+                letterSpacing: 0.5,
+              }}
+            >
+              FYLL I DINA UPPGIFTER NEDAN
+            </Typography>
+            <Typography
+              variant="h5"
+              sx={{
+                fontFamily: '"Italiana", sans-serif',
+                color: "#1C1A18",
+                textAlign: "left",
+                lineHeight: 1.05,
+                mb: 3,
+                letterSpacing: 0.5,
+              }}
+            >
+              OM ER INBJUDAN INNEHÅLLER TVÅ NAMN BEHÖVER VI ATT NI FYLLER I ANMÄLAN SEPARAT.
+            </Typography>
 
-          <Box component="form" noValidate autoComplete="off" sx={{ mt: 8 }} onSubmit={handleSubmit}>
+            <Box component="form" noValidate autoComplete="off" sx={{ mt: 8 }} onSubmit={handleSubmit}>
             <Box
               sx={{
                 display: "grid",
@@ -284,6 +286,7 @@ export default function OsaPage() {
               width="50%"
             />
           </Box>
+          </StaggerReveal>
         </Box>
       </Box>
       <SplitSectionLeft
