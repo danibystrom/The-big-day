@@ -41,11 +41,16 @@ export default function SplitSectionLeft({
             }}
         >
             <Grid container sx={{ height: { xs: "auto", md: "100vh" } }}>
+                {/* Under md: bild först (order 1), text under (order 2). Desktop: sida vid sida, bild vänster. */}
                 <Grid
                     item
                     xs={12}
                     md={6}
-                    sx={{ position: "relative", height: { xs: "50vh", md: "100vh" } }}
+                    sx={{
+                        order: { xs: 1, md: 0 },
+                        position: "relative",
+                        height: { xs: "50vh", md: "100vh" },
+                    }}
                 >
                     <Image
                         src={imageSrc}
@@ -60,6 +65,7 @@ export default function SplitSectionLeft({
                     xs={12}
                     md={6}
                     sx={{
+                        order: { xs: 2, md: 0 },
                         color: textColor,
                         display: "flex",
                         flexDirection: "column",

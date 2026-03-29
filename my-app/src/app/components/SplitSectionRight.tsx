@@ -14,6 +14,8 @@ interface SectionProps {
     buttonStyle?: "filled" | "outlined";
 
     bgColor?: "#F2EDE4" | "#1C1A18";
+    /** Döljer bildkolumnen under `md` (t.ex. efter HeroSection för att undvika dubbel bild). */
+    hideImageOnMobile?: boolean;
 }
 
 /* This component displays a split section with the image on the right and text on the left. */
@@ -27,9 +29,10 @@ export default function SplitSectionRight({
     buttonHref,
     buttonStyle,
     bgColor = "#1C1A18",
+    hideImageOnMobile = false,
 }: SectionProps) {
     const isDark = bgColor === "#1C1A18";
-    const textColor = isDark ? "#fff" : "#1C1A18"; 
+    const textColor = isDark ? "#fff" : "#1C1A18";
     const resolvedButtonStyle = buttonStyle ?? (isDark ? "outlined" : "filled");
 
     return (
@@ -42,12 +45,13 @@ export default function SplitSectionRight({
             }}
         >
             <Grid container sx={{ height: { xs: "auto", md: "100vh" } }}>
-
+                {/* Under md: order 2 så text hamnar under bilden (bild order 1). Desktop: order 0 = källordning, text vänster. */}
                 <Grid
                     item
                     xs={12}
                     md={6}
                     sx={{
+                        order: hideImageOnMobile ? { xs: 0, md: 0 } : { xs: 2, md: 0 },
                         color: textColor,
                         display: "flex",
                         flexDirection: "column",
@@ -77,7 +81,12 @@ export default function SplitSectionRight({
                     item
                     xs={12}
                     md={6}
-                    sx={{ position: "relative", height: { xs: "50vh", md: "100vh" } }}
+                    sx={{
+                        order: { xs: 1, md: 0 },
+                        display: hideImageOnMobile ? { xs: "none", md: "block" } : undefined,
+                        position: "relative",
+                        height: { xs: "50vh", md: "100vh" },
+                    }}
                 >
                     <Image
                         src={imageSrc}

@@ -1,352 +1,288 @@
 "use client";
-import AddIcon from '@mui/icons-material/Add';
-import {
-    Accordion,
-    AccordionDetails,
-    AccordionSummary,
-    Box,
-    Container,
-    Grid,
-    Hidden,
-    Link,
-    Typography
-} from "@mui/material";
-import { usePathname } from "next/navigation";
 
-function StyledLink({
-    text,
-    href,
-}: {
-    text: string;
-    href: string;
-    datacy?: string;
-}) {
-    // const pathname = usePathname();
-    return (
-        <Link
-            sx={{
-                textDecoration: "none",
-                color: "#fff",
-                letterSpacing: "-0.05em",
-                fontFamily: "sans-serif, 'Futura', 'Trebuchet MS', 'Arial'",
-                fontSize: "0.8rem",
-                margin: "0.2rem 0",
-                "&:hover": {
-                    color: "gray",
-                },
-            }}
-            href={href}
-        >
-            {text}
+import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+import {
+  Accordion,
+  AccordionDetails,
+  AccordionSummary,
+  Box,
+  Container,
+  Link,
+  Typography,
+} from "@mui/material";
+import Image from "next/image";
+import NextLink from "next/link";
+import { BROLLOPET_SUBLINKS } from "./HeaderMenu";
+
+const italiana = '"Italiana", sans-serif';
+
+const navHeadingSx = {
+  fontFamily: italiana,
+  fontWeight: 400,
+  letterSpacing: "0.12em",
+  fontSize: "0.78rem",
+  color: "#fff",
+  textTransform: "uppercase" as const,
+  textDecoration: "none",
+  display: "block",
+  py: 1.25,
+  "&:hover": {
+    color: "rgba(255,255,255,0.72)",
+  },
+};
+
+const subLinkSx = {
+  fontFamily: italiana,
+  fontWeight: 400,
+  fontSize: "0.76rem",
+  letterSpacing: "0.06em",
+  color: "rgba(255,255,255,0.88)",
+  textDecoration: "none",
+  display: "block",
+  py: 0.65,
+  pl: 0.5,
+  "&:hover": {
+    color: "#fff",
+  },
+};
+
+const columnTitleSx = {
+  fontFamily: italiana,
+  fontWeight: 400,
+  letterSpacing: "0.12em",
+  fontSize: "0.78rem",
+  color: "#fff",
+  textTransform: "uppercase" as const,
+  mb: 1.5,
+};
+
+const columnBodySx = {
+  fontFamily: italiana,
+  fontWeight: 400,
+  fontSize: "0.8rem",
+  letterSpacing: "0.05em",
+  lineHeight: 1.65,
+  color: "rgba(255,255,255,0.9)",
+};
+
+const instagramProfiles = [
+  {
+    label: "@feliciarosensporre",
+    href: "https://www.instagram.com/feliciarosensporre/",
+  },
+  {
+    label: "@sebastianszalai",
+    href: "https://www.instagram.com/sebastianszalai/",
+  },
+] as const;
+
+function BrollopetSubLinks() {
+  return (
+    <>
+      <Link component={NextLink} href="/brollopet" sx={subLinkSx}>
+        Översikt
+      </Link>
+      {BROLLOPET_SUBLINKS.map((sub) => (
+        <Link key={sub.href} component={NextLink} href={sub.href} sx={subLinkSx}>
+          {sub.label}
         </Link>
-    );
+      ))}
+    </>
+  );
 }
 
 export default function Footer() {
-    const pathname = usePathname();
-    return (
+  return (
+    <Box
+      component="footer"
+      sx={{
+        backgroundColor: "#1C1A18",
+        width: "100%",
+        pt: { xs: 4, md: 5 },
+        pb: { xs: 4, md: 5 },
+      }}
+    >
+      <Container maxWidth="lg" sx={{ px: { xs: 3, md: 5 } }}>
         <Box
-            component="footer"
-            sx={{
-                backgroundColor: "#1C1A18",
-                width: "100%",
-                padding: "1rem 0",
-                paddingTop: "2rem",
-                // borderTop: "1px solid #e0e0e0",
-            }}
+          sx={{
+            display: "flex",
+            justifyContent: "center",
+            mb: { xs: 3, md: 4 },
+          }}
         >
-            <Container
-                sx={{
-                    minWidth: "100%",
-                }}
-            >
-                <Grid
-                    container
-                    spacing={1}
-                    sx={{
-                        fontFamily: "Playfair Display",
-                        marginTop: "2rem",
-                        marginBottom: "2rem",
-                        color: "#ffffff",
-                    }}
-                >
-                    <Grid item xs={12} sm={12} md={3}>
-                        <Box display="flex" justifyContent="center">
-                            <Hidden mdDown>
-                                <Box
-                                    display="flex"
-                                    flexDirection="column"
-                                    alignItems="flex-start"
-                                >
-                                    <Typography
-                                        sx={{
-                                            fontWeight: "100",
-                                            letterSpacing: "-0.05em",
-                                            fontSize: "0.8rem",
-                                            paddingBottom: "0.8rem",
-                                        }}
-                                    >
-                                        VÅR HISTORIA
-                                    </Typography>
-                                    <StyledLink text="Mer info kommer" href="/" />
-                                    {/* <StyledLink text="Om Felicia & Sebastian" href="/" /> */}
-                                    {/* <StyledLink text="Till våra gäster" href="/" /> */}
-                                </Box>
-                            </Hidden>
-                        </Box>
-                        <Hidden mdUp>
-                            <Accordion>
-                                <AccordionSummary
-                                    expandIcon={<AddIcon sx={{ fontSize: "1rem", color: "#fff" }} />}
-                                    aria-controls="panel1a-content"
-                                    id="panel1a-header"
-                                    sx={{
-                                        backgroundColor: "#1C1A18",
-                                    }}
-                                >
-                                    <Typography
-                                        sx={{
-                                            fontWeight: "100",
-                                            letterSpacing: "-0.05em",
-
-                                            fontSize: "0.7rem",
-
-                                            color: "#ffffff",
-                                        }}
-                                    >
-                                        VÅR HISTORIA
-                                    </Typography>
-                                </AccordionSummary>
-                                <AccordionDetails
-                                    sx={{
-                                        display: "flex",
-                                        flexDirection: "column",
-                                        backgroundColor: "#1C1A18",
-                                    }}
-                                >
-                                    <StyledLink text="Mer info kommer" href="/" />
-                                    {/* <StyledLink text="Om Felicia & Sebastian" href="/" /> */}
-                                    {/* <StyledLink text="Till våra gäster" href="/" /> */}
-                                </AccordionDetails>
-                            </Accordion>
-                        </Hidden>
-                    </Grid>
-                    <Grid item xs={12} sm={12} md={3}>
-                        <Box display="flex" justifyContent="center">
-                            <Hidden mdDown>
-                                <Box
-                                    display="flex"
-                                    flexDirection="column"
-                                    alignItems="flex-start"
-                                >
-                                    <Typography
-                                        sx={{
-                                            fontWeight: "100",
-                                            letterSpacing: "-0.05em",
-                                            fontSize: "0.8rem",
-                                            paddingBottom: "0.8rem",
-                                        }}
-                                    >
-                                        BRÖLLOPPET
-                                    </Typography>
-                                    <StyledLink text="Mer info kommer" href="/" />
-                                    {/* <StyledLink text="OSA" href="/" /> */}
-                                    {/* <StyledLink text="Klädkod" href="/" /> */}
-                                    {/* <StyledLink text="Viktig information" href="/" /> */}
-                                </Box>
-                            </Hidden>
-                        </Box>
-                        <Hidden mdUp>
-                            <Accordion>
-                                <AccordionSummary
-                                    expandIcon={<AddIcon sx={{ fontSize: "1rem", color: "#fff" }} />}
-                                    aria-controls="panel1a-content"
-                                    id="panel1a-header"
-                                    sx={{
-                                        backgroundColor: "#1C1A18",
-                                    }}
-                                >
-                                    <Typography
-                                        sx={{
-                                            fontWeight: "100",
-                                            letterSpacing: "-0.05em",
-
-                                            fontSize: "0.7rem",
-
-                                            color: "#ffffff",
-                                        }}
-                                    >
-                                        BRÖLLOPPET
-                                    </Typography>
-                                </AccordionSummary>
-                                <AccordionDetails
-                                    sx={{
-                                        display: "flex",
-                                        flexDirection: "column",
-
-                                        backgroundColor: "#1C1A18",
-                                    }}
-                                >
-                                    <StyledLink text="Mer info kommer" href="/" />
-                                    {/* <StyledLink text="OSA" href="/" /> */}
-                                    {/* <StyledLink text="Klädkod" href="/" /> */}
-                                    {/* <StyledLink text="Viktig information" href="/" /> */}
-                                </AccordionDetails>
-                            </Accordion>
-                        </Hidden>
-                    </Grid>
-                    <Grid item xs={12} sm={12} md={3}>
-                        <Box display="flex" justifyContent="center">
-                            <Hidden mdDown>
-                                <Box
-                                    display="flex"
-                                    flexDirection="column"
-                                    alignItems="flex-start"
-                                >
-                                    <Typography
-                                        sx={{
-                                            fontWeight: "100",
-                                            letterSpacing: "-0.05em",
-                                            fontSize: "0.8rem",
-                                            paddingBottom: "0.8rem",
-                                        }}
-                                    >
-                                        KONTAKT
-                                    </Typography>
-                                    <StyledLink text="Mer info kommer" href="/" />
-                                    {/* <StyledLink text="Hör av dig" href="/" /> */}
-                                    {/* <StyledLink text="Frågor & Svar" href="/" /> */}
-                                </Box>
-                            </Hidden>
-                        </Box>
-                        <Hidden mdUp>
-                            <Accordion>
-                                <AccordionSummary
-                                    expandIcon={<AddIcon sx={{ fontSize: "1rem", color: "#fff" }} />}
-                                    aria-controls="panel1a-content"
-                                    id="panel1a-header"
-                                    sx={{
-                                        backgroundColor: "#1C1A18",
-                                    }}
-                                >
-                                    <Typography
-                                        sx={{
-                                            fontWeight: "100",
-                                            letterSpacing: "-0.05em",
-
-                                            fontSize: "0.7rem",
-
-                                            color: "#ffffff",
-                                        }}
-                                    >
-                                        KONTAKT
-                                    </Typography>
-                                </AccordionSummary>
-                                <AccordionDetails
-                                    sx={{
-                                        display: "flex",
-                                        flexDirection: "column",
-                                        backgroundColor: "#1C1A18",
-                                    }}
-                                >
-                                    <StyledLink text="Mer info kommer" href="/" />
-                                    {/* <StyledLink text="Hör av dig" href="/" /> */}
-                                    {/* <StyledLink text="Frågor & Svar" href="/" /> */}
-                                </AccordionDetails>
-                            </Accordion>
-                        </Hidden>
-                    </Grid>
-                    <Grid item xs={12} sm={12} md={3}>
-                        <Box display="flex" justifyContent="center">
-                            <Hidden mdDown>
-                                <Box
-                                    display="flex"
-                                    flexDirection="column"
-                                    alignItems="flex-start"
-                                >
-                                    <Typography
-                                        sx={{
-                                            fontWeight: "100",
-                                            letterSpacing: "-0.05em",
-                                            fontSize: "0.8rem",
-                                            paddingBottom: "0.8rem",
-                                        }}
-                                    >
-                                        FÖLJ OSS
-                                    </Typography>
-                                    <StyledLink text="@feliciarosensporre" href="/" />
-                                    <StyledLink text="@sebastains.szalai" href="/" />
-                                </Box>
-                            </Hidden>
-                        </Box>
-                        <Hidden mdUp>
-                            <Accordion>
-                                <AccordionSummary
-                                    expandIcon={<AddIcon sx={{ fontSize: "1rem", color: "#fff" }} />}
-                                    aria-controls="panel1a-content"
-                                    id="panel1a-header"
-                                    sx={{
-                                        backgroundColor: "#1C1A18",
-                                    }}
-                                >
-                                    <Typography
-                                        sx={{
-                                            fontWeight: "100",
-                                            letterSpacing: "-0.05em",
-
-                                            fontSize: "0.7rem",
-
-                                            color: "#ffffff",
-                                        }}
-                                    >
-                                        FÖLJ OSS
-                                    </Typography>
-                                </AccordionSummary>
-                                <AccordionDetails
-                                    sx={{
-                                        display: "flex",
-                                        flexDirection: "column",
-
-                                        backgroundColor: "#1C1A18",
-                                    }}
-                                >
-                                    <StyledLink text="@feliciarosensporre" href="/" />
-                                    <StyledLink text="@sebastains.szalai" href="/" />
-                                </AccordionDetails>
-                            </Accordion>
-                        </Hidden>
-                    </Grid>
-                </Grid>
-
-                <Box
-                    display="flex"
-                    justifyContent="center"
-                    alignItems="center"
-                    sx={{
-                        marginTop: "1rem",
-                        paddingBottom: "1rem",
-                        borderBottom:
-                            pathname === "/about" ? "1px solid #2a2a2a" : "1px solid #e0e0e0",
-                    }}
-                >
-                </Box>
-
-                <Typography
-                    sx={{
-                        fontFamily: "'Futura', 'Trebuchet MS', 'Arial', sans-serif",
-                        fontWeight: "400",
-                        letterSpacing: "-0.02em",
-                        fontSize: "0.9rem",
-                        padding: "1.5rem 0",
-
-                        color: "#ffffff",
-                    }}
-                    variant="body1"
-                    align="center"
-                >
-                    © 2025 FELICIA & SEBASTIAN
-                </Typography>
-            </Container>
+          <Box
+            sx={{
+              position: "relative",
+              width: { xs: 120, sm: 140 },
+              height: { xs: 48, sm: 56 },
+            }}
+          >
+            <Image
+              src="/logo.png"
+              alt="Felicia & Sebastian"
+              fill
+              sizes="140px"
+              style={{ objectFit: "contain" }}
+              priority={false}
+            />
+          </Box>
         </Box>
-    );
+
+        <Box
+          sx={{
+            height: "1px",
+            backgroundColor: "rgba(255,255,255,0.35)",
+            maxWidth: "min(100%, 960px)",
+            mx: "auto",
+            mb: { xs: 3, md: 4 },
+          }}
+        />
+
+        {/*
+          Samma maxbredd som linjen under loggan (960px), så kolumn 1 linjerar med streckets vänsterkant.
+          Grid: 1fr | auto | 1fr — mittenkolumnen (auto) hamnar geometriskt centrerad = under logotypen.
+        */}
+        <Box
+          sx={{
+            maxWidth: "min(100%, 960px)",
+            mx: "auto",
+            display: "grid",
+            gridTemplateColumns: {
+              xs: "1fr",
+              md: "minmax(0, 1fr) auto minmax(0, 1fr)",
+            },
+            columnGap: { xs: 0, md: 7 },
+            rowGap: { xs: 4, md: 0 },
+            alignItems: "start",
+          }}
+        >
+          {/* Kolumn 1 — vänster, i linje med strecket */}
+          <Box
+            sx={{
+              justifySelf: "start",
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "flex-start",
+              maxWidth: 300,
+              width: "100%",
+            }}
+          >
+            <Link component={NextLink} href="/" sx={navHeadingSx}>
+              Hem
+            </Link>
+
+            <Accordion
+              defaultExpanded={false}
+              disableGutters
+              elevation={0}
+              square
+              sx={{
+                width: "100%",
+                backgroundColor: "transparent",
+                color: "#fff",
+                "&:before": { display: "none" },
+              }}
+            >
+              <AccordionSummary
+                expandIcon={
+                  <ExpandMoreIcon sx={{ color: "#fff", fontSize: "1.05rem" }} />
+                }
+                aria-controls="footer-brollopet-panel"
+                id="footer-brollopet-header"
+                sx={{
+                  px: 0,
+                  minHeight: 0,
+                  width: "100%",
+                  justifyContent: "flex-start",
+                  "& .MuiAccordionSummary-content": {
+                    flexGrow: 0,
+                    my: 0,
+                    alignItems: "center",
+                    marginRight: 0.25,
+                  },
+                  "& .MuiAccordionSummary-expandIconWrapper": {
+                    marginLeft: 0,
+                    marginRight: 0,
+                    transform: "none",
+                    "&.Mui-expanded": {
+                      transform: "rotate(180deg)",
+                    },
+                  },
+                }}
+              >
+                <Typography sx={{ ...navHeadingSx, py: 0 }}>Bröllopet</Typography>
+              </AccordionSummary>
+              <AccordionDetails sx={{ px: 0, pt: 0, pb: 0.5 }}>
+                <BrollopetSubLinks />
+              </AccordionDetails>
+            </Accordion>
+
+            <Link component={NextLink} href="/kontakt" sx={navHeadingSx}>
+              Kontakt
+            </Link>
+            <Link component={NextLink} href="/osa" sx={navHeadingSx}>
+              OSA
+            </Link>
+          </Box>
+
+          {/* Kolumn 2 — centrerad under logotypen */}
+          <Box
+            sx={{
+              justifySelf: { xs: "start", md: "center" },
+              textAlign: { xs: "left", md: "center" },
+              maxWidth: 280,
+              px: { xs: 0, md: 1 },
+            }}
+          >
+            <Typography component="h2" sx={columnTitleSx}>
+              Hitta hit
+            </Typography>
+            <Typography sx={columnBodySx}>
+              Villa Strömsfors 1, Svenljunga
+            </Typography>
+          </Box>
+
+          {/* Kolumn 3 — höger */}
+          <Box
+            sx={{
+              justifySelf: { xs: "start", md: "end" },
+              textAlign: { xs: "left", md: "right" },
+              maxWidth: 300,
+              width: "100%",
+            }}
+          >
+            <Typography component="h2" sx={columnTitleSx}>
+              Följ oss
+            </Typography>
+            <Box
+              sx={{
+                display: "flex",
+                flexDirection: "column",
+                gap: 0.5,
+                alignItems: { xs: "flex-start", md: "flex-end" },
+              }}
+            >
+              {instagramProfiles.map((ig) => (
+                <Link
+                  key={ig.href}
+                  component={NextLink}
+                  href={ig.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  sx={{
+                    ...columnBodySx,
+                    textDecoration: "none",
+                    display: "block",
+                    "&:hover": { color: "#fff" },
+                  }}
+                >
+                  {ig.label}
+                </Link>
+              ))}
+            </Box>
+          </Box>
+        </Box>
+      </Container>
+    </Box>
+  );
 }

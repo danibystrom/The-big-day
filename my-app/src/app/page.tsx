@@ -7,24 +7,23 @@ export default function Home() {
     <>
       <HeroSection />
       <SplitSectionRight
+        hideImageOnMobile
         title="DEN SOM VÄNTAR PÅ NÅGOT GOTT..."
-        text="Två hjärtan fann varandra, och en berättelse vi aldrig ville ta slut på började.
-En berättelse om kärlek, om skratt, om drömmar vi delar och om livet vi vill bygga tillsammans.
-Vi har skrivit många kapitel, men det största ligger framför oss. Nu vill vi säga ja till varandra med er vid vår sida, för en kärlek som växer och blomstrar i evighet.
-Vi vill redan nu skicka en kärleksfull påminnelse om att skriva in datumet i kalendern. Mer information kommer längre fram, vi längtar att få fira den största dagen i våra liv tillsammans med er, våra viktigaste som vi älskar allra mest."
+        text="Vi har skrivit många kapitel, men det största ligger framför oss. Nu vill vi säga ja till varandra med er vid vår sida, för en kärlek som växer och blomstrar i evighet. Den här sidan är vår lilla hörna för er. Här hittar ni allt ni behöver veta inför den stora dagen. Från praktisk information till schemalagda festligheter, vi hoppas att ni känner er välkomna, förberedda och lika förväntansfulla som vi."
+        // text2="Den här sidan är vår lilla hörna för er. Här hittar ni allt ni behöver veta inför den stora dagen. Från praktisk information till schemalagda festligheter, vi hoppas att ni känner er välkomna, förberedda och lika förväntansfulla som vi. Vi längtar efter att få fira livets största dag omringade av er, våra viktigaste som vi älskar allra mest."
         imageSrc="/garden.jpg"
-        buttonText="Mer om oss"
+        buttonText="Mer om bröllopet"
         buttonStyle="outlined"
-        buttonHref="/var-historia"
+        buttonHref="/brollopet"
         bgColor="#F2EDE4"
       />
       <SplitSectionLeft
-        title="OM VÅRT BRÖLLOP..."
-        text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas posuere luctus eros sed sollicitudin. Curabitur mattis leo mauris, at pharetra lectus iaculis sollicitudin. Donec cursus commodo congue. Praesent eu accumsan metus. Donec suscipit venenatis placerat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas posuere luctus eros sed sollicitudin. Curabitur mattis leo mauris, at pharetra lectus iaculis sollicitudin. Donec cursus commodo congue. Praesent eu accumsan metus. Donec suscipit venenatis placerat."
+        title="YOUR PRESENCE IS EVERYTHING"
+        text="Det enda vi ber er om är att låta oss veta att ni kommer. OSA görs enkelt här på hemsidan senast den 30 april 2026. Ange eventuella allergier eller kostpreferenser i samband med anmälan, så att vi kan ta hand om er på bästa sätt.."
         imageSrc="/cheers.jpeg"
-        buttonText="Vårt bröllop"
+        buttonText="Anmäl dig här"
         buttonStyle="outlined"
-        buttonHref="/brollopet"
+        buttonHref="/osa"
         bgColor="#F2EDE4"
       />
     </>

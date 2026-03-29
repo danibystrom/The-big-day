@@ -2,7 +2,8 @@
 
 import CheckIcon from "@mui/icons-material/Check";
 import SplitSectionLeft from "@/app/components/SplitSectionLeft";
-import { Box, Button, TextField, Typography, Alert, Snackbar } from "@mui/material";
+import WeddingButton from "@/app/components/WeddingButton";
+import { Box, TextField, Typography, Alert, Snackbar } from "@mui/material";
 import { FormEvent, useState } from "react";
 
 export default function OsaPage() {
@@ -276,32 +277,22 @@ export default function OsaPage() {
               onChange={(e) => setAllergies(e.target.value)}
             />
 
-            <Button
+            <WeddingButton
+              text={submitting ? "Skickar..." : "Anmäl dig här"}
+              background="light"
+              variant="filled"
               type="submit"
-              variant="contained"
-              sx={{
-                backgroundColor: "#1C1A18",
-                color: "#fff",
-                borderRadius: 0,
-                px: 4,
-                py: 1.2,
-                textTransform: "none",
-                fontFamily: '"Antic Didone", serif',
-                boxShadow: "none",
-                "&:hover": { backgroundColor: "#1C1A18", boxShadow: "none" },
-              }}
               disabled={submitting}
-            >
-              {submitting ? "Skickar..." : "Anmäl dig här"}
-            </Button>
+              width="50%"
+            />
           </Box>
         </Box>
       </Box>
       <SplitSectionLeft
-        title="OM VÅRT BRÖLLOP..."
-        text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas posuere luctus eros sed sollicitudin. Curabitur mattis leo mauris, at pharetra lectus iaculis sollicitudin. Donec cursus commodo congue. Praesent eu accumsan metus. Donec suscipit venenatis placerat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas posuere luctus eros sed sollicitudin. Curabitur mattis leo mauris, at pharetra lectus iaculis sollicitudin. Donec cursus commodo congue. Praesent eu accumsan metus. Donec suscipit venenatis placerat."
-        imageSrc="/cheers.jpeg"
-        buttonText="Vårt bröllop"
+        title="DEN SOM VÄNTAR PÅ NÅGOT GOTT..."
+        text="Vi har skrivit många kapitel, men det största ligger framför oss. Nu vill vi säga ja till varandra med er vid vår sida, för en kärlek som växer och blomstrar i evighet. Den här sidan är vår lilla hörna för er. Här hittar ni allt ni behöver veta inför den stora dagen. Från praktisk information till schemalagda festligheter, vi hoppas att ni känner er välkomna, förberedda och lika förväntansfulla som vi."
+        imageSrc="/Tezza-5686.jpg"
+        buttonText="Mer om bröllopet"
         buttonHref="/brollopet"
         bgColor="#1C1A18"
       />

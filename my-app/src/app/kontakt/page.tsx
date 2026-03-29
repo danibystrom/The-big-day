@@ -21,7 +21,7 @@ const contactLinkSx = {
 } as const;
 
 const SPLIT_TEXT =
-  "Vi hoppas att du vill vara en del av det här.Att du vill klä dig i svart, höja ditt glas och fira kärleken med oss. Om du vet att du kommer, eller om hjärtat redan har svarat ja, tar vi emot ditt OSA här med öppna armar.";
+  "Vi hoppas att du vill vara en del av det här. Att du vill klä dig i svart, höja ditt glas och fira kärleken med oss. Om du vet att du kommer, eller om hjärtat redan har svarat ja, tar vi emot ditt OSA här med öppna armar.";
 
 const SPLIT_TEXT2 = "Från dresscode till packlista, från vigselns tider till morgonen efter. Vi har tänkt på detaljerna så att du slipper. Här hittar du allt du kan tänkas behöva inför helgen. Vad du ska ha på dig, vad du bör packa, när du ska vara var och vad som väntar dig när du väl är på plats. Allt samlat på ett ställe, med kärlek och omsorg. Kom förberedd. Kom i svart. Kom redo att fira.";
 
