@@ -45,7 +45,7 @@ const contentSx = {
 };
 
 export type TextSplitBandProps = {
-  title: string;
+  title: ReactNode;
   /** "left" = rubrik vänsterkolumn, brödtext höger (som din inspo-bild) */
   headPosition: "left" | "right";
   children: ReactNode;
