@@ -146,8 +146,10 @@ export default function ResaAnkomstPage() {
       <Box
         sx={{
           ...heroViewportContainerSx,
-          backgroundImage:
-            "linear-gradient(to bottom, rgba(28, 26, 24, 0.62) 0%, rgba(28, 26, 24, 0.18) 20%, transparent 42%), url(/Tezza-7243.jpg)",
+          backgroundImage: {
+            xs: "url(/IMG_5692.jpeg)",
+            md: "url(/hero-resa-ankomst-desktop.jpg)",
+          },
         }}
       >
         <Typography variant="h1" sx={subpageHeroTitleSx}>
@@ -177,7 +179,7 @@ export default function ResaAnkomstPage() {
       <SplitSectionLeft
         title="DET HÄR ÄR VÅR BERÄTTELSE."
         text={SPLIT_TEXT}
-        imageSrc="/garden.jpg"
+        imageSrc="/shoeschampagne.jpeg"
         imageAlt="Helgens program"
         buttonText="Om bröllopet"
         buttonHref="/brollopet"

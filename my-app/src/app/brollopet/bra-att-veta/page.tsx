@@ -154,7 +154,7 @@ export default function BraAttVetaPage() {
         buttonStyle="outlined"
       />
       <SplitSectionRight
-        title="ALLT DU BEHÖVER VETA, OCH VEMS DU SKA FRÅGA."
+        title="ALLT DU BEHÖVER VETA, OCH VEM DU SKA FRÅGA."
         text={SPLIT_TEXT2}
         imageSrc="/couplebw.jpeg"
         imageAlt="Resa och ankomst"

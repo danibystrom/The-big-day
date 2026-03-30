@@ -11,16 +11,31 @@ export default function HeroSection() {
     <Box
       sx={{
         ...heroViewportContainerSx,
-        backgroundImage: "url(/coupleimg.jpg)",
+        position: "relative",
+        backgroundImage: {
+          xs: "url(/start-hero-mobile.JPG)",
+          md: "url(/start-hero-desktop.JPG)",
+        },
+        "&::before": {
+          content: '""',
+          position: "absolute",
+          inset: 0,
+          background:
+            "linear-gradient(180deg, rgba(0, 0, 0, 0.38) 0%, rgba(0, 0, 0, 0.48) 100%)",
+          pointerEvents: "none",
+          zIndex: 0,
+        },
       }}
     >
-      <Typography variant="h1" sx={{ ...heroMainTitleSx, marginBottom: 2 }}>
-        {"WE'RE GETTING MARRIED"}
-      </Typography>
+      <Box sx={{ position: "relative", zIndex: 1 }}>
+        <Typography variant="h1" sx={{ ...heroMainTitleSx, marginBottom: 2 }}>
+          {"WE'RE GETTING MARRIED"}
+        </Typography>
 
-      <Typography variant="h6" sx={heroSubtitleSx}>
-        22 Augusti 2026 kl. 14.00 | Villa Strömsfors 1, Svenljunga
-      </Typography>
+        <Typography variant="h6" sx={heroSubtitleSx}>
+          22 Augusti 2026 kl. 14.00 | Villa Strömsfors 1, Svenljunga
+        </Typography>
+      </Box>
     </Box>
   );
 }

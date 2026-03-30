@@ -111,7 +111,7 @@ function BrollopetContent() {
             color: "#2a2622",
           }}
         >
-          Svart är inte sorg hos oss.Svart är styrka. Svart är elegans. Svart är en fond där kärleken får ta all plats. Tänk smoking, svart kostym, lång svart klänning, strukturer, siden,
+          Svart är inte sorg hos oss. Svart är styrka. Svart är elegans. Svart är en fond där kärleken får ta all plats. Tänk smoking, svart kostym, lång svart klänning, strukturer, siden,
           sammet, spets. Lek med material, silhuetter och personlighet men håll färgpaletten
           svart.
         </Typography>
