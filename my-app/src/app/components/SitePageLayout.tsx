@@ -34,7 +34,7 @@ export type SitePageLayoutProps = {
 export default function SitePageLayout({
   heroTitle,
   heroSubtitle,
-  heroImageSrc = "/sectionimg.jpeg",
+  heroImageSrc = "/sectionimg.webp",
   sectionTitle,
   sectionBody = LOREM,
   sectionChildren,

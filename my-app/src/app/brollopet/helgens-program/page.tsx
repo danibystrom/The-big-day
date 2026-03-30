@@ -250,7 +250,7 @@ export default function HelgensProgramPage() {
         sx={{
           ...heroViewportContainerSx,
           backgroundImage:
-            "linear-gradient(to bottom, rgba(28, 26, 24, 0.62) 0%, rgba(28, 26, 24, 0.18) 20%, transparent 42%), url(/Tezza-9263.jpg)",
+            "linear-gradient(to bottom, rgba(28, 26, 24, 0.62) 0%, rgba(28, 26, 24, 0.18) 20%, transparent 42%), url(/Tezza-9263.webp)",
         }}
       >
         <Typography variant="h1" sx={subpageHeroTitleSx}>
@@ -280,7 +280,7 @@ export default function HelgensProgramPage() {
       <SplitSectionLeft
         title="ÄR DU MED OSS?"
         text={SPLIT_TEXT}
-        imageSrc="/cheers.jpeg"
+        imageSrc="/cheers.webp"
         imageAlt="Bröllop"
         buttonText="Anmäl dig här"
         buttonHref="/osa"
@@ -290,7 +290,7 @@ export default function HelgensProgramPage() {
       <SplitSectionRight
         title="ALLT DU BEHÖVER VETA, OCH VEMS DU SKA FRÅGA."
         text={SPLIT_TEXT2}
-        imageSrc="/Tezza-8542.jpg"
+        imageSrc="/Tezza-8542.webp"
         imageAlt="Bröllop"
         buttonText="Till kontakt"
         buttonHref="/kontakt"

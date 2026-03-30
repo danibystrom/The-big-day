@@ -13,8 +13,8 @@ export default function HeroSection() {
         ...heroViewportContainerSx,
         position: "relative",
         backgroundImage: {
-          xs: "url(/start-hero-mobile.JPG)",
-          md: "url(/start-hero-desktop.JPG)",
+          xs: "url(/start-hero-mobile.webp)",
+          md: "url(/start-hero-desktop.webp)",
         },
         "&::before": {
           content: '""',

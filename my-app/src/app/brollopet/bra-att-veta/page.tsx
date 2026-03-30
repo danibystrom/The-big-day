@@ -44,66 +44,66 @@ function BraAttVetaContent() {
   return (
     <Box component="article">
       <StaggerReveal stepDelay={0.09}>
-      <Typography component="h3" variant="h4" sx={{ ...chapterHeadingSx, mt: 0 }}>
-        Mat & dryck
-      </Typography>
-      <Typography component="p" variant="body1" sx={{ ...body, mb: 2 }}>
-        Vi kommer att servera en noggrant utvald meny under lördagen.
-      </Typography>
-      <Typography component="p" variant="body1" sx={{ ...body, mb: 2 }}>
-        Har du allergier eller särskilda kostpreferenser? Ange detta i samband
-        med{" "}
-        <Link href="/osa" underline="hover" sx={linkSx}>
-          OSA
-        </Link>
-        .
-      </Typography>
-      <Typography component="p" variant="body1" sx={{ ...body, mb: 3 }}>
-        Dryck kommer att kunna köpas under hela kvällen fram till kl 01.00 från
-        baren.
-      </Typography>
+        <Typography component="h3" variant="h4" sx={{ ...chapterHeadingSx, mt: 0 }}>
+          Mat & dryck
+        </Typography>
+        <Typography component="p" variant="body1" sx={{ ...body, mb: 2 }}>
+          Vi kommer att servera en noggrant utvald meny under lördagen.
+        </Typography>
+        <Typography component="p" variant="body1" sx={{ ...body, mb: 2 }}>
+          Har du allergier eller särskilda kostpreferenser? Ange detta i samband
+          med{" "}
+          <Link href="/osa" underline="hover" sx={linkSx}>
+            OSA
+          </Link>
+          .
+        </Typography>
+        <Typography component="p" variant="body1" sx={{ ...body, mb: 3 }}>
+          Dryck kommer att kunna köpas under hela kvällen fram till kl 01.00 från
+          baren.
+        </Typography>
 
-      <Typography component="h3" variant="h4" sx={chapterHeadingSx}>
-        Barn & sällskap
-      </Typography>
-      <Typography component="p" variant="body1" sx={{ ...body, mb: 3 }}>
-        Denna helg är tillägnad de vuxna. Vi hoppas att ni ser det som en
-        möjlighet att klä upp er, andas ut och vara fullt närvarande.
-      </Typography>
+        <Typography component="h3" variant="h4" sx={chapterHeadingSx}>
+          Barn & sällskap
+        </Typography>
+        <Typography component="p" variant="body1" sx={{ ...body, mb: 3 }}>
+          Denna helg är tillägnad de vuxna. Vi hoppas att ni ser det som en
+          möjlighet att klä upp er, andas ut och vara fullt närvarande.
+        </Typography>
 
-      <Typography component="h3" variant="h4" sx={chapterHeadingSx}>
-        Gåvor
-      </Typography>
-      <Typography component="p" variant="body1" sx={{ ...body, mb: 2 }}>
-        Er närvaro på vår bröllopsdag är den största gåvan.
-      </Typography>
-      <Typography component="p" variant="body1" sx={{ ...body, mb: 2 }}>
-        För den som ändå önskar ge något uppskattar vi ett bidrag till vår
-        bröllopsresa.
-      </Typography>
-      <Typography component="p" variant="body1" sx={{ ...body, mb: 0.5 }}>
-        <Box component="span" sx={{ fontWeight: 600 }}>
-          Swish:
-        </Box>{" "}
-        076 – 165 16 46
-      </Typography>
-      <Typography component="p" variant="body1" sx={{ ...body, mb: 2 }}>
-        Märk gärna betalningen med ”Bröllopsresa”.
-      </Typography>
-      <Typography component="p" variant="body1" sx={{ ...body, mb: 3 }}>
-        Men viktigast av allt. Kom. Klä er i svart. Fira kärleken med oss.
-      </Typography>
+        <Typography component="h3" variant="h4" sx={chapterHeadingSx}>
+          Gåvor
+        </Typography>
+        <Typography component="p" variant="body1" sx={{ ...body, mb: 2 }}>
+          Er närvaro på vår bröllopsdag är den största gåvan.
+        </Typography>
+        <Typography component="p" variant="body1" sx={{ ...body, mb: 2 }}>
+          För den som ändå önskar ge något uppskattar vi ett bidrag till vår
+          bröllopsresa.
+        </Typography>
+        <Typography component="p" variant="body1" sx={{ ...body, mb: 0.5 }}>
+          <Box component="span" sx={{ fontWeight: 600 }}>
+            Swish:
+          </Box>{" "}
+          076 – 165 16 46
+        </Typography>
+        <Typography component="p" variant="body1" sx={{ ...body, mb: 2 }}>
+          Märk gärna betalningen med ”Bröllopsresa”.
+        </Typography>
+        <Typography component="p" variant="body1" sx={{ ...body, mb: 3 }}>
+          Men viktigast av allt. Kom. Klä er i svart. Fira kärleken med oss.
+        </Typography>
 
-      <Typography component="h3" variant="h4" sx={chapterHeadingSx}>
-        Väder & atmosfär
-      </Typography>
-      <Typography component="p" variant="body1" sx={{ ...body, mb: 2 }}>
-        Vi planerar för en ceremoni utomhus. Skulle vädret vilja annat har vi en
-        lika vacker plan B.
-      </Typography>
-      <Typography component="p" variant="body1" sx={{ ...body, mb: 0 }}>
-        Oavsett väder lovar vi en atmosfär som är varm, intim och oförglömlig.
-      </Typography>
+        <Typography component="h3" variant="h4" sx={chapterHeadingSx}>
+          Väder & atmosfär
+        </Typography>
+        <Typography component="p" variant="body1" sx={{ ...body, mb: 2 }}>
+          Vi planerar för en ceremoni utomhus. Skulle vädret vilja annat har vi en
+          lika vacker plan B.
+        </Typography>
+        <Typography component="p" variant="body1" sx={{ ...body, mb: 0 }}>
+          Oavsett väder lovar vi en atmosfär som är varm, intim och oförglömlig.
+        </Typography>
       </StaggerReveal>
     </Box>
   );
@@ -116,7 +116,7 @@ export default function BraAttVetaPage() {
         sx={{
           ...heroViewportContainerSx,
           backgroundImage:
-            "linear-gradient(to bottom, rgba(28, 26, 24, 0.62) 0%, rgba(28, 26, 24, 0.18) 20%, transparent 42%), url(/garden.jpg)",
+            "linear-gradient(to bottom, rgba(28, 26, 24, 0.62) 0%, rgba(28, 26, 24, 0.18) 20%, transparent 42%), url(/garden.webp)",
         }}
       >
         <Typography variant="h1" sx={subpageHeroTitleSx}>
@@ -146,7 +146,7 @@ export default function BraAttVetaPage() {
       <SplitSectionLeft
         title="YOUR PRESENCE IS EVERYTHING"
         text={SPLIT_TEXT}
-        imageSrc="/bubbel.jpeg"
+        imageSrc="/bubbel.webp"
         imageAlt="Helgens program"
         buttonText="Anmäl dig här"
         buttonHref="/osa"
@@ -156,7 +156,7 @@ export default function BraAttVetaPage() {
       <SplitSectionRight
         title="ALLT DU BEHÖVER VETA, OCH VEM DU SKA FRÅGA."
         text={SPLIT_TEXT2}
-        imageSrc="/couplebw.jpeg"
+        imageSrc="/couplebw.webp"
         imageAlt="Resa och ankomst"
         buttonText="Kontakta oss"
         buttonHref="/kontakt"

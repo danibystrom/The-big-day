@@ -63,78 +63,78 @@ function ResaAnkomstContent() {
   return (
     <Box component="article">
       <StaggerReveal stepDelay={0.09}>
-      <Typography variant="h3" component="h2" sx={introTitleSx}>
-        In i vår värld
-      </Typography>
-      <Typography component="p" variant="body1" sx={{ ...body, mb: 2, mt: 0 }}>
-        Det är en resa. Inte bara geografiskt utan in i vår värld.  För er som reser längre rekommenderar vi att ni anländer till ert boende
-        i god tid innan vigseln. Ge er själva utrymme att landa, byta om, andas
-        in platsen.
-      </Typography>
+        <Typography variant="h3" component="h2" sx={introTitleSx}>
+          In i vår värld
+        </Typography>
+        <Typography component="p" variant="body1" sx={{ ...body, mb: 2, mt: 0 }}>
+          Det är en resa. Inte bara geografiskt utan in i vår värld.  För er som reser längre rekommenderar vi att ni anländer till ert boende
+          i god tid innan vigseln. Ge er själva utrymme att landa, byta om, andas
+          in platsen.
+        </Typography>
 
-      <Typography component="p" variant="body1" sx={{ ...body, mb: 2 }}>
-        <Box component="span" sx={{ fontWeight: 600 }}>
-          Transport till boende/vigselplats:
-        </Box>{" "}
-        Vi undersöker just nu möjligheten att anordna buss från Heden till Villa Strömsfors på lördag. För att kunna säkerställa detta behöver vi veta hur många som är intresserade. Bocka i transportalternativet i samband med din OSA så återkommer vi med mer information. Transport fredag och söndag ordnar du själv.
-      </Typography>
-      <Typography component="p" variant="body1" sx={{ ...body, mb: 3 }}>
-        Om ni önskar samåka eller dela transport, hör av er till brudparet för
-        stöttning. Kärlek är fint. Logistik är ännu finare.
-      </Typography>
+        <Typography component="p" variant="body1" sx={{ ...body, mb: 2 }}>
+          <Box component="span" sx={{ fontWeight: 600 }}>
+            Transport till boende/vigselplats:
+          </Box>{" "}
+          Vi undersöker just nu möjligheten att anordna buss från Heden till Villa Strömsfors på lördag. För att kunna säkerställa detta behöver vi veta hur många som är intresserade. Bocka i transportalternativet i samband med din OSA så återkommer vi med mer information. Transport fredag och söndag ordnar du själv.
+        </Typography>
+        <Typography component="p" variant="body1" sx={{ ...body, mb: 3 }}>
+          Om ni önskar samåka eller dela transport, hör av er till brudparet för
+          stöttning. Kärlek är fint. Logistik är ännu finare.
+        </Typography>
 
-      <Typography component="h3" variant="h4" sx={chapterHeadingSx}>
-        Boende
-      </Typography>
-      <Typography component="p" variant="body1" sx={{ ...body, mb: 2 }}>
-        Vi älskar tanken på att alla bor så nära varandra som möjligt den här
-        helgen. Som en tillfällig liten värld skapad bara för oss.
-      </Typography>
-      <Typography component="p" variant="body1" sx={{ ...body, mb: 3 }}>
-        Vi har en bokningskod på Quality Grand Hotel i Borås som ger 15% rabatt
-        per rum. Koden är{" "}
-        <Box component="span" sx={{ fontWeight: 600 }}>
-          Bröllop15
+        <Typography component="h3" variant="h4" sx={chapterHeadingSx}>
+          Boende
+        </Typography>
+        <Typography component="p" variant="body1" sx={{ ...body, mb: 2 }}>
+          Vi älskar tanken på att alla bor så nära varandra som möjligt den här
+          helgen. Som en tillfällig liten värld skapad bara för oss.
+        </Typography>
+        <Typography component="p" variant="body1" sx={{ ...body, mb: 3 }}>
+          Vi har en bokningskod på Quality Grand Hotel i Borås som ger 15% rabatt
+          per rum. Koden är{" "}
+          <Box component="span" sx={{ fontWeight: 600 }}>
+            Bröllop15
+          </Box>
+          .
+        </Typography>
+
+        <Typography component="h3" variant="h4" sx={chapterHeadingSx}>
+          Packlista (i all elegans)
+        </Typography>
+        <Typography component="p" variant="body1" sx={{ ...body, mb: 2 }}>
+          För att göra helgen så smidig som möjligt:
+        </Typography>
+        <Box
+          component="ul"
+          sx={{
+            ...listSx,
+            listStyleType: "disc",
+          }}
+        >
+          <Typography component="li" variant="body1" sx={body}>
+            Helvit outfit till fredagens välkomstkväll (gäller för dig som bor i
+            Villa Strömsfors som familjemedlem eller brudtärna/marsalk)
+          </Typography>
+          <Typography component="li" variant="body1" sx={body}>
+            Helsvart, elegant outfit till lördagens vigsel och middag
+          </Typography>
+          <Typography component="li" variant="body1" sx={body}>
+            Bekväma skor till dansgolvet
+          </Typography>
+          <Typography component="li" variant="body1" sx={body}>
+            Eventuell jacka/sjal om kvällen blir sval
+          </Typography>
+          <Typography component="li" variant="body1" sx={body}>
+            Solglasögon för söndagens morgonstund
+          </Typography>
+          <Typography component="li" variant="body1" sx={body}>
+            Badkläder om ni vill ta ett dopp i poolen
+          </Typography>
         </Box>
-        .
-      </Typography>
-
-      <Typography component="h3" variant="h4" sx={chapterHeadingSx}>
-        Packlista (i all elegans)
-      </Typography>
-      <Typography component="p" variant="body1" sx={{ ...body, mb: 2 }}>
-        För att göra helgen så smidig som möjligt:
-      </Typography>
-      <Box
-        component="ul"
-        sx={{
-          ...listSx,
-          listStyleType: "disc",
-        }}
-      >
-        <Typography component="li" variant="body1" sx={body}>
-          Helvit outfit till fredagens välkomstkväll (gäller för dig som bor i
-          Villa Strömsfors som familjemedlem eller brudtärna/marsalk)
+        <Typography component="p" variant="body1" sx={{ ...body, mb: 0 }}>
+          Och viktigast av allt: energi att fira kärleken.
         </Typography>
-        <Typography component="li" variant="body1" sx={body}>
-          Helsvart, elegant outfit till lördagens vigsel och middag
-        </Typography>
-        <Typography component="li" variant="body1" sx={body}>
-          Bekväma skor till dansgolvet
-        </Typography>
-        <Typography component="li" variant="body1" sx={body}>
-          Eventuell jacka/sjal om kvällen blir sval
-        </Typography>
-        <Typography component="li" variant="body1" sx={body}>
-          Solglasögon för söndagens morgonstund
-        </Typography>
-        <Typography component="li" variant="body1" sx={body}>
-          Badkläder om ni vill ta ett dopp i poolen
-        </Typography>
-      </Box>
-      <Typography component="p" variant="body1" sx={{ ...body, mb: 0 }}>
-        Och viktigast av allt: energi att fira kärleken.
-      </Typography>
       </StaggerReveal>
     </Box>
   );
@@ -147,8 +147,8 @@ export default function ResaAnkomstPage() {
         sx={{
           ...heroViewportContainerSx,
           backgroundImage: {
-            xs: "url(/IMG_5692.jpeg)",
-            md: "url(/hero-resa-ankomst-desktop.jpg)",
+            xs: "url(/IMG_5692.webp)",
+            md: "url(/hero-resa-ankomst-desktop.webp)",
           },
         }}
       >
@@ -179,7 +179,7 @@ export default function ResaAnkomstPage() {
       <SplitSectionLeft
         title="DET HÄR ÄR VÅR BERÄTTELSE."
         text={SPLIT_TEXT}
-        imageSrc="/shoechampagne.jpeg"
+        imageSrc="/shoechampagne.webp"
         imageAlt="Helgens program"
         buttonText="Om bröllopet"
         buttonHref="/brollopet"
@@ -189,7 +189,7 @@ export default function ResaAnkomstPage() {
       <SplitSectionRight
         title="VI VILL VETA ATT NI KOMMER."
         text={SPLIT_TEXT2}
-        imageSrc="/Tezza-5306.jpg"
+        imageSrc="/Tezza-5306.webp"
         imageAlt="Bröllop"
         buttonText="Anmäl dig här"
         buttonHref="/osa"

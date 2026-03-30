@@ -131,7 +131,7 @@ export default function BrollopetPage() {
         sx={{
           ...heroViewportContainerSx,
           backgroundImage:
-            "linear-gradient(to bottom, rgba(28, 26, 24, 0.62) 0%, rgba(28, 26, 24, 0.18) 20%, transparent 42%), url(/Tezza-7683.jpg)",
+            "linear-gradient(to bottom, rgba(28, 26, 24, 0.62) 0%, rgba(28, 26, 24, 0.18) 20%, transparent 42%), url(/Tezza-7683.webp)",
         }}
       >
         <Typography variant="h1" sx={subpageHeroTitleSx}>
@@ -161,7 +161,7 @@ export default function BrollopetPage() {
       <SplitSectionLeft
         title="EN HELG I TRE KAPITEL"
         text={SPLIT_TEXT}
-        imageSrc="/bubbel-torn.jpeg"
+        imageSrc="/bubbel-torn.webp"
         imageAlt="Bröllop"
         buttonText="Se helgens program"
         buttonHref="/brollopet/helgens-program"
@@ -171,7 +171,7 @@ export default function BrollopetPage() {
       <SplitSectionRight
         title="RESA, BOENDET OCH ALLT DÄREMELLAN"
         text={SPLIT_TEXT2}
-        imageSrc="/Tezza-8542.jpg"
+        imageSrc="/Tezza-8542.webp"
         imageAlt="Bröllop"
         buttonText="Läs mer om resa & boende"
         buttonHref="/brollopet/resa-ankomst"

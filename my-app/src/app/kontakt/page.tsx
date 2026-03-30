@@ -56,7 +56,7 @@ function KontaktContent() {
         </Typography>
 
         <Typography component="p" variant="body1" sx={{ ...body, mb: 2 }}>
-        Våra legendariska toastmasters Jennifer Svernlöv och Maximilian Lajsic finns där för att hålla handen och hjälpa dig med allt de kan. Håll utkik i inkorgen, de kommer att höra av sig till dig.
+          Våra legendariska toastmasters Jennifer Svernlöv och Maximilian Lajsic finns där för att hålla handen och hjälpa dig med allt de kan. Håll utkik i inkorgen, de kommer att höra av sig till dig.
         </Typography>
       </StaggerReveal>
 
@@ -104,7 +104,7 @@ export default function KontaktPage() {
       <Box
         sx={{
           ...heroViewportContainerSx,
-          backgroundImage: "url(/Tezza-5981.jpg)",
+          backgroundImage: "url(/Tezza-5981.webp)",
         }}
       >
         <Typography variant="h1" sx={subpageHeroTitleSx}>
@@ -133,7 +133,7 @@ export default function KontaktPage() {
       <SplitSectionLeft
         title="ÄR DU MED OSS?"
         text={SPLIT_TEXT}
-        imageSrc="/cheers.jpeg"
+        imageSrc="/cheers.webp"
         imageAlt="Bröllop"
         buttonText="Anmäl dig här"
         buttonHref="/brollopet/helgens-program"
@@ -143,7 +143,7 @@ export default function KontaktPage() {
       <SplitSectionRight
         title="ALLT DU BEHÖVER VETA INFÖR HELGEN"
         text={SPLIT_TEXT2}
-        imageSrc="/Tezza-1077.jpg"
+        imageSrc="/Tezza-1077.webp"
         imageAlt="Bröllop"
         buttonText="Läs mer om bröllopet"
         buttonHref="/brollopet/resa-ankomst"

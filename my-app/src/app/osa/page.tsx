@@ -124,7 +124,7 @@ export default function OsaPage() {
       color: placeholderColor,
       opacity: 1,
       fontFamily: bodyFont,
-    },  
+    },
     "& textarea.MuiInputBase-input::placeholder": {
       fontFamily: bodyFont,
     },
@@ -200,7 +200,7 @@ export default function OsaPage() {
         sx={{
           ...heroViewportContainerSx,
           backgroundImage:
-            "linear-gradient(to bottom, rgba(28, 26, 24, 0.62) 0%, rgba(28, 26, 24, 0.18) 20%, transparent 42%), url(/Tezza-0266.jpg)",
+            "linear-gradient(to bottom, rgba(28, 26, 24, 0.62) 0%, rgba(28, 26, 24, 0.18) 20%, transparent 42%), url(/Tezza-0266.webp)",
         }}
       >
         <Typography variant="h1" sx={subpageHeroTitleSx}>
@@ -256,148 +256,148 @@ export default function OsaPage() {
             </Typography>
 
             <Box component="form" noValidate autoComplete="off" sx={{ mt: 8 }} onSubmit={handleSubmit}>
-            <Box
-              sx={{
-                display: "grid",
-                gridTemplateColumns: { xs: "1fr", md: "1fr 1fr" },
-                columnGap: { xs: 4, md: 10 },
-                rowGap: 2,
-                mb: 6,
-              }}
-            >
-              <TextField
-                variant="standard"
-                label="Förnamn:"
-                fullWidth
-                InputLabelProps={{ shrink: true }}
-                placeholder="Skriv ditt förnamn här"
-                sx={fieldSx}
-                value={firstName}
-                onChange={(e) => setFirstName(e.target.value)}
-                required
-              />
+              <Box
+                sx={{
+                  display: "grid",
+                  gridTemplateColumns: { xs: "1fr", md: "1fr 1fr" },
+                  columnGap: { xs: 4, md: 10 },
+                  rowGap: 2,
+                  mb: 6,
+                }}
+              >
+                <TextField
+                  variant="standard"
+                  label="Förnamn:"
+                  fullWidth
+                  InputLabelProps={{ shrink: true }}
+                  placeholder="Skriv ditt förnamn här"
+                  sx={fieldSx}
+                  value={firstName}
+                  onChange={(e) => setFirstName(e.target.value)}
+                  required
+                />
+
+                <TextField
+                  variant="standard"
+                  label="Efternamn:"
+                  fullWidth
+                  InputLabelProps={{ shrink: true }}
+                  placeholder="Skriv ditt efternamn här"
+                  sx={fieldSx}
+                  value={lastName}
+                  onChange={(e) => setLastName(e.target.value)}
+                  required
+                />
+
+                <TextField
+                  variant="standard"
+                  label="Epost:"
+                  type="email"
+                  fullWidth
+                  InputLabelProps={{ shrink: true }}
+                  placeholder="namn@exempel.se"
+                  sx={fieldSx}
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  required
+                />
+
+                <TextField
+                  variant="standard"
+                  label="Telefonnummer:"
+                  fullWidth
+                  InputLabelProps={{ shrink: true }}
+                  placeholder="T.ex. 070 123 45 67"
+                  sx={fieldSx}
+                  value={phone}
+                  onChange={(e) => setPhone(e.target.value)}
+                  required
+                />
+              </Box>
 
               <TextField
                 variant="standard"
-                label="Efternamn:"
+                label="Om du har någon form av allergi eller önskemål om specialkost, fyll i nedan:"
                 fullWidth
+                multiline
+                minRows={1}
                 InputLabelProps={{ shrink: true }}
-                placeholder="Skriv ditt efternamn här"
-                sx={fieldSx}
-                value={lastName}
-                onChange={(e) => setLastName(e.target.value)}
-                required
+                placeholder="Lämna tomt om inget gäller, eller beskriv kort här…"
+                sx={{
+                  ...fieldSx,
+                  mb: 3,
+                  "& .MuiInputBase-root": {
+                    paddingTop: 0,
+                    paddingBottom: 0,
+                    marginTop: 1,
+                  },
+                  "& textarea": {
+                    padding: 0,
+                  },
+                }}
+                value={allergies}
+                onChange={(e) => setAllergies(e.target.value)}
               />
 
-              <TextField
-                variant="standard"
-                label="Epost:"
-                type="email"
-                fullWidth
-                InputLabelProps={{ shrink: true }}
-                placeholder="namn@exempel.se"
-                sx={fieldSx}
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                required
+              <FormControlLabel
+                sx={{
+                  alignItems: "flex-start",
+                  mt: "6px",
+                  mb: 4,
+                  ml: 0,
+                  gap: 1.25,
+                  "& .MuiFormControlLabel-label": {
+                    fontFamily: bodyFont,
+                    color: "#1C1A18",
+                    fontSize: { xs: 16, sm: 18 },
+                    lineHeight: 1.65,
+                    letterSpacing: 0.2,
+                  },
+                }}
+                control={
+                  <Checkbox
+                    disableRipple
+                    icon={<TransportCheckboxEmpty />}
+                    checkedIcon={<TransportCheckboxChecked />}
+                    checked={transportSaturdayInterested}
+                    onChange={(e) => setTransportSaturdayInterested(e.target.checked)}
+                    sx={{
+                      p: 0,
+                      mr: 0,
+                      mt: "5px",
+                      alignSelf: "flex-start",
+                      overflow: "visible",
+                      color: "transparent",
+                      backgroundColor: "transparent",
+                      "&.Mui-checked": { color: "transparent" },
+                      "&:hover": { backgroundColor: "transparent" },
+                      "&.Mui-focusVisible": {
+                        backgroundColor: "transparent",
+                        outline: "2px solid rgba(28, 26, 24, 0.35)",
+                        outlineOffset: 2,
+                      },
+                      "& .MuiTouchRipple-root": { display: "none" },
+                    }}
+                  />
+                }
+                label="Intresserad av transport på lördag? Vi undersöker möjligheten att anordna samåkning från Heden till vigseln. Kryssa i om du vill vara med. (Notera att transport fredag och söndag står du själv för.)"
               />
 
-              <TextField
-                variant="standard"
-                label="Telefonnummer:"
-                fullWidth
-                InputLabelProps={{ shrink: true }}
-                placeholder="T.ex. 070 123 45 67"
-                sx={fieldSx}
-                value={phone}
-                onChange={(e) => setPhone(e.target.value)}
-                required
+              <WeddingButton
+                text={submitting ? "Skickar..." : "Anmäl dig här"}
+                background="light"
+                variant="filled"
+                type="submit"
+                disabled={submitting}
               />
             </Box>
-
-            <TextField
-              variant="standard"
-              label="Om du har någon form av allergi eller önskemål om specialkost, fyll i nedan:"
-              fullWidth
-              multiline
-              minRows={1}
-              InputLabelProps={{ shrink: true }}
-              placeholder="Lämna tomt om inget gäller, eller beskriv kort här…"
-              sx={{
-                ...fieldSx,
-                mb: 3,
-                "& .MuiInputBase-root": {
-                  paddingTop: 0,
-                  paddingBottom: 0,
-                  marginTop: 1,
-                },
-                "& textarea": {
-                  padding: 0,
-                },
-              }}
-              value={allergies}
-              onChange={(e) => setAllergies(e.target.value)}
-            />
-
-            <FormControlLabel
-              sx={{
-                alignItems: "flex-start",
-                mt: "6px",
-                mb: 4,
-                ml: 0,
-                gap: 1.25,
-                "& .MuiFormControlLabel-label": {
-                  fontFamily: bodyFont,
-                  color: "#1C1A18",
-                  fontSize: { xs: 16, sm: 18 },
-                  lineHeight: 1.65,
-                  letterSpacing: 0.2,
-                },
-              }}
-              control={
-                <Checkbox
-                  disableRipple
-                  icon={<TransportCheckboxEmpty />}
-                  checkedIcon={<TransportCheckboxChecked />}
-                  checked={transportSaturdayInterested}
-                  onChange={(e) => setTransportSaturdayInterested(e.target.checked)}
-                  sx={{
-                    p: 0,
-                    mr: 0,
-                    mt: "5px",
-                    alignSelf: "flex-start",
-                    overflow: "visible",
-                    color: "transparent",
-                    backgroundColor: "transparent",
-                    "&.Mui-checked": { color: "transparent" },
-                    "&:hover": { backgroundColor: "transparent" },
-                    "&.Mui-focusVisible": {
-                      backgroundColor: "transparent",
-                      outline: "2px solid rgba(28, 26, 24, 0.35)",
-                      outlineOffset: 2,
-                    },
-                    "& .MuiTouchRipple-root": { display: "none" },
-                  }}
-                />
-              }
-              label="Intresserad av transport på lördag? Vi undersöker möjligheten att anordna samåkning från Heden till vigseln. Kryssa i om du vill vara med. (Notera att transport fredag och söndag står du själv för.)"
-            />
-
-            <WeddingButton
-              text={submitting ? "Skickar..." : "Anmäl dig här"}
-              background="light"
-              variant="filled"
-              type="submit"
-              disabled={submitting}
-            />
-          </Box>
           </StaggerReveal>
         </Box>
       </Box>
       <SplitSectionLeft
         title="DEN SOM VÄNTAR PÅ NÅGOT GOTT..."
         text="Vi har skrivit många kapitel, men det största ligger framför oss. Nu vill vi säga ja till varandra med er vid vår sida, för en kärlek som växer och blomstrar i evighet. Den här sidan är vår lilla hörna för er. Här hittar ni allt ni behöver veta inför den stora dagen. Från praktisk information till schemalagda festligheter, vi hoppas att ni känner er välkomna, förberedda och lika förväntansfulla som vi."
-        imageSrc="/Tezza-5686.jpg"
+        imageSrc="/Tezza-5686.webp"
         buttonText="Mer om bröllopet"
         buttonHref="/brollopet"
         bgColor="#1C1A18"
