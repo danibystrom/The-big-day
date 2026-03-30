@@ -115,13 +115,24 @@ export default function BraAttVetaPage() {
       <Box
         sx={{
           ...heroViewportContainerSx,
-          backgroundImage:
-            "linear-gradient(to bottom, rgba(28, 26, 24, 0.62) 0%, rgba(28, 26, 24, 0.18) 20%, transparent 42%), url(/garden.webp)",
+          position: "relative",
+          backgroundImage: "url(/garden.webp)",
+          "&::before": {
+            content: '""',
+            position: "absolute",
+            inset: 0,
+            background:
+              "linear-gradient(180deg, rgba(0, 0, 0, 0.38) 0%, rgba(0, 0, 0, 0.48) 100%)",
+            pointerEvents: "none",
+            zIndex: 0,
+          },
         }}
       >
-        <Typography variant="h1" sx={subpageHeroTitleSx}>
-          BRA ATT VETA
-        </Typography>
+        <Box sx={{ position: "relative", zIndex: 1 }}>
+          <Typography variant="h1" sx={subpageHeroTitleSx}>
+            BRA ATT VETA
+          </Typography>
+        </Box>
       </Box>
 
       <Box

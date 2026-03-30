@@ -40,10 +40,8 @@ export default function SplitSectionRight({
         <Box
             sx={{
                 width: "100%",
-                /* Utan bild på mobil: låt sektionen sluta efter innehållet (inga 100vh “tomraster”). */
-                minHeight: hideImageOnMobile
-                    ? { xs: "auto", md: "100vh" }
-                    : "100vh",
+                /* Mobil: samma som vänster-split — undvik 100vh-min som visar body-färg under sista innehållsraden. */
+                minHeight: { xs: "auto", md: "100vh" },
                 display: "flex",
                 flexDirection: "column",
             }}

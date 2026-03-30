@@ -36,7 +36,8 @@ export default function SplitSectionLeft({
         <Box
             sx={{
                 width: "100%",
-                minHeight: "100vh",
+                /* Mobil: bara innehållets höjd — annars fylls utfälld 100vh med “tomrum” och body-bakgrund syns mellan sektioner. */
+                minHeight: { xs: "auto", md: "100vh" },
                 display: "flex",
                 flexDirection: "column",
             }}
