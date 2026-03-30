@@ -56,7 +56,7 @@ function KontaktContent() {
         </Typography>
 
         <Typography component="p" variant="body1" sx={{ ...body, mb: 2 }}>
-          Planerar du ett tal, vill framföra något alldeles särskilt eller har du en överraskning på gång? Hör av dig till vårt fantastiska toastpar Jennifer Svernlöv och Maximilian Lajsic på toastsoflove@gmail.com. De tar hand om dig.
+        Våra legendariska toastmasters Jennifer Svernlöv och Maximilian Lajsic finns där för att hålla handen och hjälpa dig med allt de kan. Håll utkik i inkorgen, de kommer att höra av sig till dig.
         </Typography>
       </StaggerReveal>
 

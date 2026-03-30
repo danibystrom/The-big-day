@@ -179,7 +179,7 @@ export default function ResaAnkomstPage() {
       <SplitSectionLeft
         title="DET HÄR ÄR VÅR BERÄTTELSE."
         text={SPLIT_TEXT}
-        imageSrc="/garden.jpg"
+        imageSrc="/shoeschampagne.jpeg"
         imageAlt="Helgens program"
         buttonText="Om bröllopet"
         buttonHref="/brollopet"
